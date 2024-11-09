@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbReportAllData" msprop:Generator_RowClassName="tbReportAllDataRow" msprop:Generator_RowEvHandlerName="tbReportAllDataRowChangeEventHandler" msprop:Generator_RowDeletedName="tbReportAllDataRowDeleted" msprop:Generator_RowDeletingName="tbReportAllDataRowDeleting" msprop:Generator_RowEvArgName="tbReportAllDataRowChangeEvent" msprop:Generator_TablePropName="tbReportAllData" msprop:Generator_RowChangedName="tbReportAllDataRowChanged" msprop:Generator_RowChangingName="tbReportAllDataRowChanging" msprop:Generator_TableClassName="tbReportAllDataDataTable" msprop:Generator_UserTableName="tbReportAllData" msprop:Generator_TableVarName="tabletbReportAllData">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ordernumber" msprop:Generator_ColumnPropNameInRow="ordernumber" msprop:Generator_ColumnPropNameInTable="ordernumberColumn" msprop:Generator_ColumnVarNameInTable="columnordernumber" msprop:Generator_UserColumnName="ordernumber" type="xs:string" minOccurs="0" />
+              <xs:element name="carnumber" msprop:Generator_ColumnPropNameInRow="carnumber" msprop:Generator_ColumnPropNameInTable="carnumberColumn" msprop:Generator_ColumnVarNameInTable="columncarnumber" msprop:Generator_UserColumnName="carnumber" type="xs:string" minOccurs="0" />
+              <xs:element name="date" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_UserColumnName="date" type="xs:string" minOccurs="0" />
+              <xs:element name="time" msprop:Generator_ColumnPropNameInRow="time" msprop:Generator_ColumnPropNameInTable="timeColumn" msprop:Generator_ColumnVarNameInTable="columntime" msprop:Generator_UserColumnName="time" type="xs:string" minOccurs="0" />
+              <xs:element name="wghOut" msprop:Generator_ColumnPropNameInRow="wghOut" msprop:Generator_ColumnPropNameInTable="wghOutColumn" msprop:Generator_ColumnVarNameInTable="columnwghOut" msprop:Generator_UserColumnName="wghOut" type="xs:string" minOccurs="0" />
+              <xs:element name="wghIn" msprop:Generator_ColumnPropNameInRow="wghIn" msprop:Generator_ColumnPropNameInTable="wghInColumn" msprop:Generator_ColumnVarNameInTable="columnwghIn" msprop:Generator_UserColumnName="wghIn" type="xs:string" minOccurs="0" />
+              <xs:element name="wghNet" msprop:Generator_ColumnPropNameInRow="wghNet" msprop:Generator_ColumnPropNameInTable="wghNetColumn" msprop:Generator_ColumnVarNameInTable="columnwghNet" msprop:Generator_UserColumnName="wghNet" type="xs:string" minOccurs="0" />
+              <xs:element name="company" msprop:Generator_ColumnPropNameInRow="company" msprop:Generator_ColumnPropNameInTable="companyColumn" msprop:Generator_ColumnVarNameInTable="columncompany" msprop:Generator_UserColumnName="company" type="xs:string" minOccurs="0" />
+              <xs:element name="product" msprop:Generator_ColumnPropNameInRow="product" msprop:Generator_ColumnPropNameInTable="productColumn" msprop:Generator_ColumnVarNameInTable="columnproduct" msprop:Generator_UserColumnName="product" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbReportCarWait" msprop:Generator_RowEvHandlerName="tbReportCarWaitRowChangeEventHandler" msprop:Generator_RowDeletedName="tbReportCarWaitRowDeleted" msprop:Generator_RowDeletingName="tbReportCarWaitRowDeleting" msprop:Generator_RowEvArgName="tbReportCarWaitRowChangeEvent" msprop:Generator_TablePropName="tbReportCarWait" msprop:Generator_RowChangedName="tbReportCarWaitRowChanged" msprop:Generator_RowChangingName="tbReportCarWaitRowChanging" msprop:Generator_TableClassName="tbReportCarWaitDataTable" msprop:Generator_RowClassName="tbReportCarWaitRow" msprop:Generator_TableVarName="tabletbReportCarWait" msprop:Generator_UserTableName="tbReportCarWait">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="carnumber" msprop:Generator_ColumnPropNameInRow="carnumber" msprop:Generator_ColumnPropNameInTable="carnumberColumn" msprop:Generator_ColumnVarNameInTable="columncarnumber" msprop:Generator_UserColumnName="carnumber" type="xs:string" minOccurs="0" />
+              <xs:element name="date" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_UserColumnName="date" type="xs:string" minOccurs="0" />
+              <xs:element name="time" msprop:Generator_ColumnPropNameInRow="time" msprop:Generator_ColumnPropNameInTable="timeColumn" msprop:Generator_ColumnVarNameInTable="columntime" msprop:Generator_UserColumnName="time" type="xs:string" minOccurs="0" />
+              <xs:element name="wghIn" msprop:Generator_ColumnPropNameInRow="wghIn" msprop:Generator_ColumnPropNameInTable="wghInColumn" msprop:Generator_ColumnVarNameInTable="columnwghIn" msprop:Generator_UserColumnName="wghIn" type="xs:string" minOccurs="0" />
+              <xs:element name="company" msprop:Generator_ColumnPropNameInRow="company" msprop:Generator_ColumnPropNameInTable="companyColumn" msprop:Generator_ColumnVarNameInTable="columncompany" msprop:Generator_UserColumnName="company" type="xs:string" minOccurs="0" />
+              <xs:element name="product" msprop:Generator_ColumnPropNameInRow="product" msprop:Generator_ColumnPropNameInTable="productColumn" msprop:Generator_ColumnVarNameInTable="columnproduct" msprop:Generator_UserColumnName="product" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbReportHireWGH" msprop:Generator_RowEvHandlerName="tbReportHireWGHRowChangeEventHandler" msprop:Generator_RowDeletedName="tbReportHireWGHRowDeleted" msprop:Generator_RowDeletingName="tbReportHireWGHRowDeleting" msprop:Generator_RowEvArgName="tbReportHireWGHRowChangeEvent" msprop:Generator_TablePropName="tbReportHireWGH" msprop:Generator_RowChangedName="tbReportHireWGHRowChanged" msprop:Generator_RowChangingName="tbReportHireWGHRowChanging" msprop:Generator_TableClassName="tbReportHireWGHDataTable" msprop:Generator_RowClassName="tbReportHireWGHRow" msprop:Generator_TableVarName="tabletbReportHireWGH" msprop:Generator_UserTableName="tbReportHireWGH">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ORDERNUM" msprop:Generator_ColumnPropNameInRow="ORDERNUM" msprop:Generator_ColumnPropNameInTable="ORDERNUMColumn" msprop:Generator_ColumnVarNameInTable="columnORDERNUM" msprop:Generator_UserColumnName="ORDERNUM" type="xs:string" minOccurs="0" />
+              <xs:element name="CARNUM_H" msprop:Generator_ColumnPropNameInRow="CARNUM_H" msprop:Generator_ColumnPropNameInTable="CARNUM_HColumn" msprop:Generator_ColumnVarNameInTable="columnCARNUM_H" msprop:Generator_UserColumnName="CARNUM_H" type="xs:string" minOccurs="0" />
+              <xs:element name="WG" msprop:Generator_ColumnPropNameInRow="WG" msprop:Generator_ColumnPropNameInTable="WGColumn" msprop:Generator_ColumnVarNameInTable="columnWG" msprop:Generator_UserColumnName="WG" type="xs:string" minOccurs="0" />
+              <xs:element name="DATE_IN" msprop:Generator_ColumnPropNameInRow="DATE_IN" msprop:Generator_ColumnPropNameInTable="DATE_INColumn" msprop:Generator_ColumnVarNameInTable="columnDATE_IN" msprop:Generator_UserColumnName="DATE_IN" type="xs:string" minOccurs="0" />
+              <xs:element name="TIME_IN" msprop:Generator_ColumnPropNameInRow="TIME_IN" msprop:Generator_ColumnPropNameInTable="TIME_INColumn" msprop:Generator_ColumnVarNameInTable="columnTIME_IN" msprop:Generator_UserColumnName="TIME_IN" type="xs:string" minOccurs="0" />
+              <xs:element name="comdesc" msprop:Generator_ColumnPropNameInRow="comdesc" msprop:Generator_ColumnPropNameInTable="comdescColumn" msprop:Generator_ColumnVarNameInTable="columncomdesc" msprop:Generator_UserColumnName="comdesc" type="xs:string" minOccurs="0" />
+              <xs:element name="typedesc" msprop:Generator_ColumnPropNameInRow="typedesc" msprop:Generator_ColumnPropNameInTable="typedescColumn" msprop:Generator_ColumnVarNameInTable="columntypedesc" msprop:Generator_UserColumnName="typedesc" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbimg" msprop:Generator_RowEvHandlerName="tbimgRowChangeEventHandler" msprop:Generator_RowDeletedName="tbimgRowDeleted" msprop:Generator_RowDeletingName="tbimgRowDeleting" msprop:Generator_RowEvArgName="tbimgRowChangeEvent" msprop:Generator_TablePropName="tbimg" msprop:Generator_RowChangedName="tbimgRowChanged" msprop:Generator_RowChangingName="tbimgRowChanging" msprop:Generator_TableClassName="tbimgDataTable" msprop:Generator_RowClassName="tbimgRow" msprop:Generator_TableVarName="tabletbimg" msprop:Generator_UserTableName="tbimg">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="QRCodeImage" msprop:Generator_ColumnPropNameInRow="QRCodeImage" msprop:Generator_ColumnPropNameInTable="QRCodeImageColumn" msprop:Generator_ColumnVarNameInTable="columnQRCodeImage" msprop:Generator_UserColumnName="QRCodeImage" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
