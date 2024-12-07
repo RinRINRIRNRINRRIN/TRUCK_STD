@@ -150,7 +150,6 @@ namespace TRUCK_STD.Design
             Thread td2 = new Thread(CHECK_PRIVIRAGE);
             td2.Start();
 
-
             // เรียกใช้ TIMER เช็ควันหมดอายุ
             tmDateEXP.Start();
         }
