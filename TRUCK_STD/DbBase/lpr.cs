@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
+using TRUCK_STD.Functions;
 using TRUCK_STD.Models;
 
 namespace TRUCK_STD.DbBase
@@ -25,6 +26,35 @@ namespace TRUCK_STD.DbBase
             try
             {
                 sql = "SELECT * FROM lpr WHERE position = 'หน้า' or position = 'หลัง' ";
+                da = new MySqlDataAdapter(sql, con);
+                tb = new DataTable();
+                da.Fill(tb);
+            }
+            catch (System.Exception ex)
+            {
+                ERR = ex.Message;
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// For select ทางเข้า และทางออก 
+        /// </summary>
+        /// <returns></returns>
+        public static bool SelectCamInOut()
+        {
+            try
+            {
+                switch (registy.system.stationType)
+                {
+                    case "สถานีชั่ง":
+                        sql = "SELECT * FROM truckdata.lpr WHERE position = 'หน้า' or position = 'หลัง' ";
+                        break;
+                    case "จุดลงทะเบียน":
+                        sql = "SELECT * FROM truckdata.lpr WHERE position = 'ทางเข้า' or position = 'ทางออก' ";
+                        break;
+                }
                 da = new MySqlDataAdapter(sql, con);
                 tb = new DataTable();
                 da.Fill(tb);

@@ -36,7 +36,7 @@ namespace TRUCK_STD.DbBase
         {
             try
             {
-                sql = $"SELECT * FROM product WHERE names LIKE '%{productModel.names}%'";
+                sql = $"SELECT * FROM product WHERE productName LIKE '%{productModel.names}%'";
                 da = new MySqlDataAdapter(sql, con);
                 tb = new DataTable();
                 da.Fill(tb);
@@ -48,6 +48,47 @@ namespace TRUCK_STD.DbBase
             }
 
             return true;
+        }
+        public static string SelectChar(string names)
+        {
+            string result = "";
+            try
+            {
+                sql = $"SELECT * FROM product WHERE productName LIKE '%{names}%'";
+                da = new MySqlDataAdapter(sql, con);
+                tb = new DataTable();
+                da.Fill(tb);
+                foreach (DataRow rw in tb.Rows)
+                {
+                    result = rw["id"].ToString();
+                }
+
+            }
+            catch (System.Exception ex)
+            {
+                ERR = ex.Message;
+                return "";
+            }
+
+            return result;
+        }
+
+        public static DataTable SelectId(int id)
+        {
+            try
+            {
+                sql = $"SELECT * FROM product WHERE id = {id}";
+                da = new MySqlDataAdapter(sql, con);
+                tb = new DataTable();
+                da.Fill(tb);
+            }
+            catch (System.Exception ex)
+            {
+                ERR = ex.Message;
+
+            }
+
+            return tb;
         }
         public static bool Insert(productModel product)
         {

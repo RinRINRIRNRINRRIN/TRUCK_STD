@@ -19,7 +19,7 @@ namespace TRUCK_STD.DbBase
         {
             try
             {
-                sql = "SELECT * FROM customer";
+                sql = "SELECT * FROM truckdata.customer";
                 da = new MySqlDataAdapter(sql, con);
                 tb = new DataTable();
                 da.Fill(tb);
@@ -36,7 +36,7 @@ namespace TRUCK_STD.DbBase
         {
             try
             {
-                sql = $"SELECT * FROM customer WHERE names LIKE '%{customerModel.names}%'";
+                sql = $"SELECT * FROM customer WHERE customerName LIKE '%{customerModel.names}%'";
                 da = new MySqlDataAdapter(sql, con);
                 tb = new DataTable();
                 da.Fill(tb);
@@ -48,6 +48,30 @@ namespace TRUCK_STD.DbBase
             }
 
             return true;
+        }
+
+        public static string SelectChar(string names)
+        {
+            string result = "";
+            try
+            {
+                sql = $"SELECT * FROM customer WHERE customerName LIKE '%{names}%'";
+                da = new MySqlDataAdapter(sql, con);
+                tb = new DataTable();
+                da.Fill(tb);
+                foreach (DataRow rw in tb.Rows)
+                {
+                    result = rw["id"].ToString();
+                }
+
+            }
+            catch (System.Exception ex)
+            {
+                ERR = ex.Message;
+                return "";
+            }
+
+            return result;
         }
         public static bool Insert(customerModel customer)
         {
