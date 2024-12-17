@@ -43,8 +43,6 @@ app.post('/camera/', async (req, res) => {
 
 app.get('/get-licensePlate/', (req, res) => {
   const ip = req.query.ipcam;
-
-
   switch (ip) {
     case "192.168.1.205":
       res.status(200).json(ip1); // ส่งข้อมูล JSON ที่พบ
