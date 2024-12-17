@@ -1,11 +1,9 @@
 ﻿using Bunifu.UI.WinForms;
 using System;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using TRUCK_STD.Function;
-using TRUCK_STD.MSACCESSCommand;
 namespace TRUCK_STD.Design
 {
     public partial class frmChangeUser : Form
@@ -17,7 +15,6 @@ namespace TRUCK_STD.Design
 
 
         BunifuSnackbar msg = new BunifuSnackbar();
-        tbEMPLOYEE tbEMPLOYEE = new tbEMPLOYEE();
         private void frmChangeUser_Load(object sender, EventArgs e)
         {
             gbMain.Text = "ยินดีต้อนรับ : " + Func_Privilage.emp_name;
@@ -36,17 +33,6 @@ namespace TRUCK_STD.Design
             else
             {
 
-                if (tbEMPLOYEE.SELECT_USERNAME_PASSWORD(txtUsername.Text, txtPassword.Text))
-                {
-                    txtNewName.Text = Func_Privilage.emp_name;
-                    txtNewUser.Text = Func_Privilage.emp_usernmae;
-
-                    bunifuTransition1.ShowSync(panel1);
-                }
-                else
-                {
-                    msg.Show(this, "ชื่อผู้ใช้หรือรหัสไม่ถูกต้อง", BunifuSnackbar.MessageTypes.Warning, 3000, "OK", BunifuSnackbar.Positions.TopCenter);
-                }
             }
         }
 
@@ -107,24 +93,8 @@ namespace TRUCK_STD.Design
             }
             else
             {
-                DataTable tb = tbEMPLOYEE.SELECT_ALL_DATA();
-                // ตรวจสอบ username ห้ามซ้ำ
-                foreach (DataRow row in tb.Rows)
-                {
-                    string a = row["emp_username"].ToString();
 
-                    if (a == txtNewUser.Text.Trim())
-                    {
-                        msg.Show(this, "พบ username มีซ้ำในระบบ", BunifuSnackbar.MessageTypes.Warning, 3000, "OK", BunifuSnackbar.Positions.TopCenter);
-                        return;
-                    }
-                }
 
-                if (tbEMPLOYEE.UPDATE_ALL_DATA(txtNewName.Text, txtNewUser.Text, txtNewpassconfirm.Text, Func_Privilage.emp_usernmae))
-                {
-                    MessageBox.Show("แก้ไขรายการสำเร็จ ระบบจะปิดกรุณาเข้าสู่ระบบอีกครั้ง", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Application.Exit();
-                }
             }
         }
     }
