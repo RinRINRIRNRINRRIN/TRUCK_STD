@@ -7,7 +7,6 @@ using System.Windows.Forms;
 using TRUCK_STD.DbBase;
 using TRUCK_STD.Functions;
 using TRUCK_STD.Models;
-using TRUCK_STD.MSACCESSCommand;
 namespace TRUCK_STD.Design
 {
     public partial class frmAccount : Form
@@ -19,8 +18,6 @@ namespace TRUCK_STD.Design
         #region variable local
 
         List<string> menuName = new List<string>(); // array สำหรับเก็บค่า เมนู
-        tbEMPLOYEE tbEMPLOYEE = new tbEMPLOYEE();
-        tbPRIVIVRAGE tbPRIVIVRAGE = new tbPRIVIVRAGE();
         BunifuSnackbar msg = new BunifuSnackbar();
         #endregion
 
