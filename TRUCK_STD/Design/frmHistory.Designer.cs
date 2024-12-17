@@ -31,18 +31,10 @@ namespace TRUCK_STD.Design
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
-            this.gbMain = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvHireWeight = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cl_hire_print = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,58 +65,14 @@ namespace TRUCK_STD.Design
             this.cbSearchProduct = new System.Windows.Forms.CheckBox();
             this.cbSearchCar = new System.Windows.Forms.CheckBox();
             this.cbSearchCustomer = new System.Windows.Forms.CheckBox();
-            this.dgvWGH_IN = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.cl_del_in = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvWGH_OUT = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.cl_print_out = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cl_del_out = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cl_order_numb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_date_in = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_time_in = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_date_out = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_time_out = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_gross = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_w_in = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_w_out = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_typedesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_compdesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_typecode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_compcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_priceNet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_carnum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.gbMain.SuspendLayout();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHireWeight)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWGH_IN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWGH_OUT)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2ControlBox1.BorderColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.BorderRadius = 6;
-            this.guna2ControlBox1.BorderThickness = 1;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1149, 3);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(34, 32);
-            this.guna2ControlBox1.TabIndex = 8;
             // 
             // bunifuSnackbar1
             // 
@@ -195,44 +143,23 @@ namespace TRUCK_STD.Design
             this.bunifuSnackbar1.WarningOptions.IconLeftMargin = 12;
             this.bunifuSnackbar1.ZoomCloseIcon = true;
             // 
-            // gbMain
-            // 
-            this.gbMain.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.gbMain.BorderRadius = 8;
-            this.gbMain.BorderThickness = 2;
-            this.gbMain.Controls.Add(this.dgvHireWeight);
-            this.gbMain.Controls.Add(this.panel1);
-            this.gbMain.Controls.Add(this.dgvWGH_IN);
-            this.gbMain.Controls.Add(this.dgvWGH_OUT);
-            this.gbMain.Controls.Add(this.guna2ControlBox1);
-            this.gbMain.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.gbMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbMain.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMain.ForeColor = System.Drawing.Color.White;
-            this.gbMain.Location = new System.Drawing.Point(0, 0);
-            this.gbMain.Name = "gbMain";
-            this.gbMain.Size = new System.Drawing.Size(1195, 793);
-            this.gbMain.TabIndex = 4;
-            this.gbMain.Text = "ประวัติการชั่งทั้งหมด";
-            this.gbMain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // dgvHireWeight
             // 
             this.dgvHireWeight.AllowUserToAddRows = false;
             this.dgvHireWeight.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvHireWeight.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvHireWeight.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvHireWeight.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.dgvHireWeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dgvHireWeight.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHireWeight.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Athiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHireWeight.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvHireWeight.ColumnHeadersHeight = 37;
             this.dgvHireWeight.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvHireWeight.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -247,16 +174,16 @@ namespace TRUCK_STD.Design
             this.cl_hire_product,
             this.cl_hire_customer,
             this.cl_hire_carnumber});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHireWeight.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHireWeight.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvHireWeight.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvHireWeight.Location = new System.Drawing.Point(251, 58);
+            this.dgvHireWeight.Location = new System.Drawing.Point(251, 67);
             this.dgvHireWeight.Name = "dgvHireWeight";
             this.dgvHireWeight.ReadOnly = true;
             this.dgvHireWeight.RowHeadersVisible = false;
@@ -410,7 +337,7 @@ namespace TRUCK_STD.Design
             this.panel1.Controls.Add(this.cbSearchProduct);
             this.panel1.Controls.Add(this.cbSearchCar);
             this.panel1.Controls.Add(this.cbSearchCustomer);
-            this.panel1.Location = new System.Drawing.Point(6, 43);
+            this.panel1.Location = new System.Drawing.Point(2, 67);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(239, 714);
             this.panel1.TabIndex = 75;
@@ -477,7 +404,6 @@ namespace TRUCK_STD.Design
             this.cbbTable.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbbTable.TabIndex = 72;
             this.cbbTable.DropDown += new System.EventHandler(this.cbbTable_DropDown);
-            this.cbbTable.SelectedIndexChanged += new System.EventHandler(this.cbbTable_SelectedIndexChanged);
             this.cbbTable.DropDownClosed += new System.EventHandler(this.cbbTable_DropDownClosed);
             // 
             // btnSearch
@@ -694,427 +620,9 @@ namespace TRUCK_STD.Design
             this.cbSearchCustomer.UseVisualStyleBackColor = true;
             this.cbSearchCustomer.CheckedChanged += new System.EventHandler(this.cbSearchCustomer_CheckedChanged);
             // 
-            // dgvWGH_IN
-            // 
-            this.dgvWGH_IN.AllowUserToAddRows = false;
-            this.dgvWGH_IN.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvWGH_IN.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvWGH_IN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            this.dgvWGH_IN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dgvWGH_IN.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWGH_IN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvWGH_IN.ColumnHeadersHeight = 37;
-            this.dgvWGH_IN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvWGH_IN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cl_del_in,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvWGH_IN.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvWGH_IN.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvWGH_IN.Location = new System.Drawing.Point(836, 518);
-            this.dgvWGH_IN.Name = "dgvWGH_IN";
-            this.dgvWGH_IN.ReadOnly = true;
-            this.dgvWGH_IN.RowHeadersVisible = false;
-            this.dgvWGH_IN.RowTemplate.Height = 40;
-            this.dgvWGH_IN.Size = new System.Drawing.Size(945, 699);
-            this.dgvWGH_IN.TabIndex = 73;
-            this.dgvWGH_IN.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvWGH_IN.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvWGH_IN.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvWGH_IN.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvWGH_IN.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvWGH_IN.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvWGH_IN.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvWGH_IN.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvWGH_IN.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvWGH_IN.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvWGH_IN.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvWGH_IN.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvWGH_IN.ThemeStyle.HeaderStyle.Height = 37;
-            this.dgvWGH_IN.ThemeStyle.ReadOnly = true;
-            this.dgvWGH_IN.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvWGH_IN.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvWGH_IN.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvWGH_IN.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvWGH_IN.ThemeStyle.RowsStyle.Height = 40;
-            this.dgvWGH_IN.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvWGH_IN.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvWGH_IN.Visible = false;
-            this.dgvWGH_IN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWGH_IN_CellContentClick);
-            // 
-            // cl_del_in
-            // 
-            this.cl_del_in.HeaderText = "";
-            this.cl_del_in.Image = ((System.Drawing.Image)(resources.GetObject("cl_del_in.Image")));
-            this.cl_del_in.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.cl_del_in.Name = "cl_del_in";
-            this.cl_del_in.ReadOnly = true;
-            this.cl_del_in.Width = 40;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "CARNUM_H";
-            this.dataGridViewTextBoxColumn15.HeaderText = "ทะเบียนรถ";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn15.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DATE_IN";
-            this.dataGridViewTextBoxColumn2.HeaderText = "วันที่ชั่งเข้า";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn2.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "TIME_IN";
-            this.dataGridViewTextBoxColumn3.HeaderText = "เวลาที่ชั่งเข้า";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn3.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "WG";
-            this.dataGridViewTextBoxColumn7.HeaderText = "น้ำหนักชั่งเข้า";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn7.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "typedesc";
-            this.dataGridViewTextBoxColumn9.HeaderText = "ชื่อสินค้า";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn9.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "comdesc";
-            this.dataGridViewTextBoxColumn10.HeaderText = "ชื่อลูกค้า";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn10.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "typecode";
-            this.dataGridViewTextBoxColumn11.HeaderText = "รหัสสินค้า";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn11.Visible = false;
-            this.dataGridViewTextBoxColumn11.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "comcode";
-            this.dataGridViewTextBoxColumn12.HeaderText = "รหัสลูกค้า";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn12.Visible = false;
-            this.dataGridViewTextBoxColumn12.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "price";
-            this.dataGridViewTextBoxColumn13.HeaderText = "ราคาสินค้า";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn13.Visible = false;
-            this.dataGridViewTextBoxColumn13.Width = 180;
-            // 
-            // dgvWGH_OUT
-            // 
-            this.dgvWGH_OUT.AllowUserToAddRows = false;
-            this.dgvWGH_OUT.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvWGH_OUT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvWGH_OUT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            this.dgvWGH_OUT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dgvWGH_OUT.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWGH_OUT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvWGH_OUT.ColumnHeadersHeight = 37;
-            this.dgvWGH_OUT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvWGH_OUT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cl_print_out,
-            this.cl_del_out,
-            this.cl_order_numb,
-            this.cl_date_in,
-            this.cl_time_in,
-            this.cl_date_out,
-            this.cl_time_out,
-            this.cl_gross,
-            this.cl_w_in,
-            this.cl_w_out,
-            this.cl_typedesc,
-            this.cl_compdesc,
-            this.cl_typecode,
-            this.cl_compcode,
-            this.cl_price,
-            this.cl_priceNet,
-            this.cl_carnum});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvWGH_OUT.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvWGH_OUT.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvWGH_OUT.Location = new System.Drawing.Point(1031, 316);
-            this.dgvWGH_OUT.Name = "dgvWGH_OUT";
-            this.dgvWGH_OUT.ReadOnly = true;
-            this.dgvWGH_OUT.RowHeadersVisible = false;
-            this.dgvWGH_OUT.RowTemplate.Height = 40;
-            this.dgvWGH_OUT.Size = new System.Drawing.Size(945, 699);
-            this.dgvWGH_OUT.TabIndex = 9;
-            this.dgvWGH_OUT.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvWGH_OUT.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvWGH_OUT.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvWGH_OUT.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvWGH_OUT.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvWGH_OUT.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvWGH_OUT.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvWGH_OUT.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvWGH_OUT.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvWGH_OUT.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvWGH_OUT.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvWGH_OUT.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvWGH_OUT.ThemeStyle.HeaderStyle.Height = 37;
-            this.dgvWGH_OUT.ThemeStyle.ReadOnly = true;
-            this.dgvWGH_OUT.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvWGH_OUT.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvWGH_OUT.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvWGH_OUT.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvWGH_OUT.ThemeStyle.RowsStyle.Height = 40;
-            this.dgvWGH_OUT.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvWGH_OUT.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvWGH_OUT.Visible = false;
-            this.dgvWGH_OUT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWGH_OUT_CellContentClick);
-            // 
-            // cl_print_out
-            // 
-            this.cl_print_out.HeaderText = "";
-            this.cl_print_out.Image = ((System.Drawing.Image)(resources.GetObject("cl_print_out.Image")));
-            this.cl_print_out.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.cl_print_out.Name = "cl_print_out";
-            this.cl_print_out.ReadOnly = true;
-            this.cl_print_out.Width = 40;
-            // 
-            // cl_del_out
-            // 
-            this.cl_del_out.HeaderText = "";
-            this.cl_del_out.Image = ((System.Drawing.Image)(resources.GetObject("cl_del_out.Image")));
-            this.cl_del_out.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.cl_del_out.Name = "cl_del_out";
-            this.cl_del_out.ReadOnly = true;
-            this.cl_del_out.Width = 40;
-            // 
-            // cl_order_numb
-            // 
-            this.cl_order_numb.DataPropertyName = "ORDER_NUMB";
-            this.cl_order_numb.HeaderText = "เลขที่ออเดอร์";
-            this.cl_order_numb.Name = "cl_order_numb";
-            this.cl_order_numb.ReadOnly = true;
-            this.cl_order_numb.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_order_numb.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_order_numb.Width = 200;
-            // 
-            // cl_date_in
-            // 
-            this.cl_date_in.DataPropertyName = "DATE_IN";
-            this.cl_date_in.HeaderText = "วันที่ชั่งเข้า";
-            this.cl_date_in.Name = "cl_date_in";
-            this.cl_date_in.ReadOnly = true;
-            this.cl_date_in.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_date_in.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_date_in.Width = 180;
-            // 
-            // cl_time_in
-            // 
-            this.cl_time_in.DataPropertyName = "TIME_IN";
-            this.cl_time_in.HeaderText = "เวลาที่ชั่งเข้า";
-            this.cl_time_in.Name = "cl_time_in";
-            this.cl_time_in.ReadOnly = true;
-            this.cl_time_in.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_time_in.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_time_in.Width = 180;
-            // 
-            // cl_date_out
-            // 
-            this.cl_date_out.DataPropertyName = "DATE_OUT";
-            this.cl_date_out.HeaderText = "วันที่ชั่งออก";
-            this.cl_date_out.Name = "cl_date_out";
-            this.cl_date_out.ReadOnly = true;
-            this.cl_date_out.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_date_out.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_date_out.Width = 180;
-            // 
-            // cl_time_out
-            // 
-            this.cl_time_out.DataPropertyName = "TIME_OUT";
-            this.cl_time_out.HeaderText = "เวลาชั่งออก";
-            this.cl_time_out.Name = "cl_time_out";
-            this.cl_time_out.ReadOnly = true;
-            this.cl_time_out.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_time_out.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_time_out.Width = 180;
-            // 
-            // cl_gross
-            // 
-            this.cl_gross.DataPropertyName = "GROSS";
-            this.cl_gross.HeaderText = "น้ำหนักรวม";
-            this.cl_gross.Name = "cl_gross";
-            this.cl_gross.ReadOnly = true;
-            this.cl_gross.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_gross.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_gross.Width = 180;
-            // 
-            // cl_w_in
-            // 
-            this.cl_w_in.DataPropertyName = "W_IN";
-            this.cl_w_in.HeaderText = "น้ำหนักชั่งเข้า";
-            this.cl_w_in.Name = "cl_w_in";
-            this.cl_w_in.ReadOnly = true;
-            this.cl_w_in.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_w_in.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_w_in.Width = 180;
-            // 
-            // cl_w_out
-            // 
-            this.cl_w_out.DataPropertyName = "W_OUT";
-            this.cl_w_out.HeaderText = "น้ำหนักชั่งออก";
-            this.cl_w_out.Name = "cl_w_out";
-            this.cl_w_out.ReadOnly = true;
-            this.cl_w_out.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_w_out.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_w_out.Width = 180;
-            // 
-            // cl_typedesc
-            // 
-            this.cl_typedesc.DataPropertyName = "TYPEDESC";
-            this.cl_typedesc.HeaderText = "ชื่อสินค้า";
-            this.cl_typedesc.Name = "cl_typedesc";
-            this.cl_typedesc.ReadOnly = true;
-            this.cl_typedesc.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_typedesc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_typedesc.Width = 180;
-            // 
-            // cl_compdesc
-            // 
-            this.cl_compdesc.DataPropertyName = "COMPDESC";
-            this.cl_compdesc.HeaderText = "ชื่อลูกค้า";
-            this.cl_compdesc.Name = "cl_compdesc";
-            this.cl_compdesc.ReadOnly = true;
-            this.cl_compdesc.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_compdesc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_compdesc.Width = 180;
-            // 
-            // cl_typecode
-            // 
-            this.cl_typecode.DataPropertyName = "TYPECODE";
-            this.cl_typecode.HeaderText = "รหัสสินค้า";
-            this.cl_typecode.Name = "cl_typecode";
-            this.cl_typecode.ReadOnly = true;
-            this.cl_typecode.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_typecode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_typecode.Width = 180;
-            // 
-            // cl_compcode
-            // 
-            this.cl_compcode.DataPropertyName = "COMPCODE";
-            this.cl_compcode.HeaderText = "รหัสลูกค้า";
-            this.cl_compcode.Name = "cl_compcode";
-            this.cl_compcode.ReadOnly = true;
-            this.cl_compcode.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_compcode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_compcode.Width = 180;
-            // 
-            // cl_price
-            // 
-            this.cl_price.DataPropertyName = "PRICE";
-            this.cl_price.HeaderText = "ราคาสินค้า";
-            this.cl_price.Name = "cl_price";
-            this.cl_price.ReadOnly = true;
-            this.cl_price.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_price.Width = 180;
-            // 
-            // cl_priceNet
-            // 
-            this.cl_priceNet.DataPropertyName = "price_net";
-            this.cl_priceNet.HeaderText = "ราคารวม";
-            this.cl_priceNet.Name = "cl_priceNet";
-            this.cl_priceNet.ReadOnly = true;
-            this.cl_priceNet.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_priceNet.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_priceNet.Width = 200;
-            // 
-            // cl_carnum
-            // 
-            this.cl_carnum.DataPropertyName = "CARNUM";
-            this.cl_carnum.HeaderText = "ทะเบียนรถ";
-            this.cl_carnum.Name = "cl_carnum";
-            this.cl_carnum.ReadOnly = true;
-            this.cl_carnum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_carnum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_carnum.Width = 180;
-            // 
             // guna2DragControl1
             // 
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this.gbMain;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // printPreviewDialog1
@@ -1127,13 +635,34 @@ namespace TRUCK_STD.Design
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(43)))), ((int)(((byte)(28)))));
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(43)))), ((int)(((byte)(28)))));
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Athiti SemiBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(43)))), ((int)(((byte)(28)))));
+            this.label4.Location = new System.Drawing.Point(2, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(252, 46);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "ประวัติการชั่งทั้งหมด";
+            // 
             // frmHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1195, 793);
-            this.Controls.Add(this.gbMain);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dgvHireWeight);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Athiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1142,23 +671,17 @@ namespace TRUCK_STD.Design
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHistory";
             this.Load += new System.EventHandler(this.frmHistory_Load);
-            this.gbMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHireWeight)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWGH_IN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWGH_OUT)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Bunifu.UI.WinForms.BunifuSnackbar bunifuSnackbar1;
-        private Guna.UI2.WinForms.Guna2GroupBox gbMain;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvWGH_OUT;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Label label1;
@@ -1178,34 +701,6 @@ namespace TRUCK_STD.Design
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ComboBox cbbTable;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvWGH_IN;
-        private System.Windows.Forms.DataGridViewImageColumn cl_print_out;
-        private System.Windows.Forms.DataGridViewImageColumn cl_del_out;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_order_numb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_date_in;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_time_in;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_date_out;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_time_out;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_gross;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_w_in;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_w_out;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_typedesc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_compdesc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_typecode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_compcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_priceNet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_carnum;
-        private System.Windows.Forms.DataGridViewImageColumn cl_del_in;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvHireWeight;
         private System.Windows.Forms.DataGridViewImageColumn cl_hire_print;
@@ -1219,5 +714,7 @@ namespace TRUCK_STD.Design
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_hire_product;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_hire_customer;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_hire_carnumber;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private System.Windows.Forms.Label label4;
     }
 }
