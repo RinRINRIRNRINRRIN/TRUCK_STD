@@ -31,17 +31,20 @@ namespace TRUCK_STD.Design
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSetting));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState1 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
             Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState2 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
             Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState3 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState4 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
             Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState5 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
             Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState6 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState7 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState8 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState9 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState10 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState11 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState12 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,36 +55,25 @@ namespace TRUCK_STD.Design
             this.cbbWGH_COM = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbWGH_BUADRATE = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tgsBarrier = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.tgsLPR = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.tgsRFID = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.tgsCCTV = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.label24 = new System.Windows.Forms.Label();
+            this.pnComRFID = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbbComRFID = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbBardrateRFID = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnComPLC = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cbbPLC_COM = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbPLC_BAUDRATE = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.pnAddress = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnTestBarrier2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.btnTestBarrier1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.txtAddress2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtAddress1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtSlave = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tgsBarrierr = new Bunifu.UI.WinForms.BunifuToggleSwitch();
-            this.label18 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.d = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnLineTest = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tgsLineNotify = new Bunifu.UI.WinForms.BunifuToggleSwitch();
-            this.txtLineToken = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtTicTax = new Guna.UI2.WinForms.Guna2TextBox();
             this.gbTickPass = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -108,11 +100,8 @@ namespace TRUCK_STD.Design
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.pnComRFID.SuspendLayout();
             this.pnComPLC.SuspendLayout();
-            this.pnAddress.SuspendLayout();
-            this.d.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbTickPass.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -124,12 +113,11 @@ namespace TRUCK_STD.Design
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Controls.Add(this.d);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 73);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1267, 727);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1254, 727);
             this.flowLayoutPanel1.TabIndex = 23;
             // 
             // panel1
@@ -152,7 +140,7 @@ namespace TRUCK_STD.Design
             this.label2.Font = new System.Drawing.Font("Athiti Medium", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(5, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(239, 33);
             this.label2.TabIndex = 20;
@@ -244,17 +232,297 @@ namespace TRUCK_STD.Design
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.tgsBarrier);
+            this.panel3.Controls.Add(this.tgsLPR);
+            this.panel3.Controls.Add(this.tgsRFID);
+            this.panel3.Controls.Add(this.tgsCCTV);
+            this.panel3.Controls.Add(this.label24);
+            this.panel3.Controls.Add(this.pnComRFID);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.pnComPLC);
-            this.panel3.Controls.Add(this.pnAddress);
-            this.panel3.Controls.Add(this.tgsBarrierr);
-            this.panel3.Controls.Add(this.label18);
-            this.panel3.Controls.Add(this.panel9);
+            this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.panel8);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(13, 158);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1222, 344);
+            this.panel3.Size = new System.Drawing.Size(1222, 365);
             this.panel3.TabIndex = 36;
+            // 
+            // tgsBarrier
+            // 
+            this.tgsBarrier.Animation = 5;
+            this.tgsBarrier.BackColor = System.Drawing.Color.Transparent;
+            this.tgsBarrier.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tgsBarrier.BackgroundImage")));
+            this.tgsBarrier.Checked = false;
+            this.tgsBarrier.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tgsBarrier.InnerCirclePadding = 3;
+            this.tgsBarrier.Location = new System.Drawing.Point(15, 39);
+            this.tgsBarrier.Margin = new System.Windows.Forms.Padding(11, 29, 11, 29);
+            this.tgsBarrier.Name = "tgsBarrier";
+            this.tgsBarrier.Size = new System.Drawing.Size(59, 29);
+            this.tgsBarrier.TabIndex = 55;
+            this.tgsBarrier.ThumbMargin = 3;
+            toggleState1.BackColor = System.Drawing.Color.DarkGray;
+            toggleState1.BackColorInner = System.Drawing.Color.White;
+            toggleState1.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState1.BorderColorInner = System.Drawing.Color.White;
+            toggleState1.BorderRadius = 17;
+            toggleState1.BorderRadiusInner = 11;
+            toggleState1.BorderThickness = 1;
+            toggleState1.BorderThicknessInner = 1;
+            this.tgsBarrier.ToggleStateDisabled = toggleState1;
+            toggleState2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState2.BackColorInner = System.Drawing.Color.White;
+            toggleState2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState2.BorderColorInner = System.Drawing.Color.White;
+            toggleState2.BorderRadius = 17;
+            toggleState2.BorderRadiusInner = 11;
+            toggleState2.BorderThickness = 1;
+            toggleState2.BorderThicknessInner = 1;
+            this.tgsBarrier.ToggleStateOff = toggleState2;
+            toggleState3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState3.BackColorInner = System.Drawing.Color.White;
+            toggleState3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState3.BorderColorInner = System.Drawing.Color.White;
+            toggleState3.BorderRadius = 17;
+            toggleState3.BorderRadiusInner = 11;
+            toggleState3.BorderThickness = 1;
+            toggleState3.BorderThicknessInner = 1;
+            this.tgsBarrier.ToggleStateOn = toggleState3;
+            this.tgsBarrier.Value = false;
+            this.tgsBarrier.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs>(this.tgsBarrierr_CheckedChanged);
+            // 
+            // tgsLPR
+            // 
+            this.tgsLPR.Animation = 5;
+            this.tgsLPR.BackColor = System.Drawing.Color.Transparent;
+            this.tgsLPR.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tgsLPR.BackgroundImage")));
+            this.tgsLPR.Checked = false;
+            this.tgsLPR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tgsLPR.InnerCirclePadding = 3;
+            this.tgsLPR.Location = new System.Drawing.Point(15, 268);
+            this.tgsLPR.Margin = new System.Windows.Forms.Padding(11, 29, 11, 29);
+            this.tgsLPR.Name = "tgsLPR";
+            this.tgsLPR.Size = new System.Drawing.Size(59, 29);
+            this.tgsLPR.TabIndex = 54;
+            this.tgsLPR.ThumbMargin = 3;
+            toggleState4.BackColor = System.Drawing.Color.DarkGray;
+            toggleState4.BackColorInner = System.Drawing.Color.White;
+            toggleState4.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState4.BorderColorInner = System.Drawing.Color.White;
+            toggleState4.BorderRadius = 17;
+            toggleState4.BorderRadiusInner = 11;
+            toggleState4.BorderThickness = 1;
+            toggleState4.BorderThicknessInner = 1;
+            this.tgsLPR.ToggleStateDisabled = toggleState4;
+            toggleState5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState5.BackColorInner = System.Drawing.Color.White;
+            toggleState5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState5.BorderColorInner = System.Drawing.Color.White;
+            toggleState5.BorderRadius = 17;
+            toggleState5.BorderRadiusInner = 11;
+            toggleState5.BorderThickness = 1;
+            toggleState5.BorderThicknessInner = 1;
+            this.tgsLPR.ToggleStateOff = toggleState5;
+            toggleState6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState6.BackColorInner = System.Drawing.Color.White;
+            toggleState6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState6.BorderColorInner = System.Drawing.Color.White;
+            toggleState6.BorderRadius = 17;
+            toggleState6.BorderRadiusInner = 11;
+            toggleState6.BorderThickness = 1;
+            toggleState6.BorderThicknessInner = 1;
+            this.tgsLPR.ToggleStateOn = toggleState6;
+            this.tgsLPR.Value = false;
+            this.tgsLPR.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs>(this.tgsLPR_CheckedChanged);
+            // 
+            // tgsRFID
+            // 
+            this.tgsRFID.Animation = 5;
+            this.tgsRFID.BackColor = System.Drawing.Color.Transparent;
+            this.tgsRFID.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tgsRFID.BackgroundImage")));
+            this.tgsRFID.Checked = false;
+            this.tgsRFID.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tgsRFID.InnerCirclePadding = 3;
+            this.tgsRFID.Location = new System.Drawing.Point(644, 42);
+            this.tgsRFID.Margin = new System.Windows.Forms.Padding(11, 29, 11, 29);
+            this.tgsRFID.Name = "tgsRFID";
+            this.tgsRFID.Size = new System.Drawing.Size(59, 29);
+            this.tgsRFID.TabIndex = 53;
+            this.tgsRFID.ThumbMargin = 3;
+            toggleState7.BackColor = System.Drawing.Color.DarkGray;
+            toggleState7.BackColorInner = System.Drawing.Color.White;
+            toggleState7.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState7.BorderColorInner = System.Drawing.Color.White;
+            toggleState7.BorderRadius = 17;
+            toggleState7.BorderRadiusInner = 11;
+            toggleState7.BorderThickness = 1;
+            toggleState7.BorderThicknessInner = 1;
+            this.tgsRFID.ToggleStateDisabled = toggleState7;
+            toggleState8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState8.BackColorInner = System.Drawing.Color.White;
+            toggleState8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState8.BorderColorInner = System.Drawing.Color.White;
+            toggleState8.BorderRadius = 17;
+            toggleState8.BorderRadiusInner = 11;
+            toggleState8.BorderThickness = 1;
+            toggleState8.BorderThicknessInner = 1;
+            this.tgsRFID.ToggleStateOff = toggleState8;
+            toggleState9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState9.BackColorInner = System.Drawing.Color.White;
+            toggleState9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState9.BorderColorInner = System.Drawing.Color.White;
+            toggleState9.BorderRadius = 17;
+            toggleState9.BorderRadiusInner = 11;
+            toggleState9.BorderThickness = 1;
+            toggleState9.BorderThicknessInner = 1;
+            this.tgsRFID.ToggleStateOn = toggleState9;
+            this.tgsRFID.Value = false;
+            this.tgsRFID.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs>(this.tgsRFID_CheckedChanged);
+            // 
+            // tgsCCTV
+            // 
+            this.tgsCCTV.Animation = 5;
+            this.tgsCCTV.BackColor = System.Drawing.Color.Transparent;
+            this.tgsCCTV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tgsCCTV.BackgroundImage")));
+            this.tgsCCTV.Checked = false;
+            this.tgsCCTV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tgsCCTV.InnerCirclePadding = 3;
+            this.tgsCCTV.Location = new System.Drawing.Point(15, 157);
+            this.tgsCCTV.Margin = new System.Windows.Forms.Padding(8, 15, 8, 15);
+            this.tgsCCTV.Name = "tgsCCTV";
+            this.tgsCCTV.Size = new System.Drawing.Size(59, 29);
+            this.tgsCCTV.TabIndex = 49;
+            this.tgsCCTV.ThumbMargin = 3;
+            toggleState10.BackColor = System.Drawing.Color.DarkGray;
+            toggleState10.BackColorInner = System.Drawing.Color.White;
+            toggleState10.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState10.BorderColorInner = System.Drawing.Color.White;
+            toggleState10.BorderRadius = 17;
+            toggleState10.BorderRadiusInner = 11;
+            toggleState10.BorderThickness = 1;
+            toggleState10.BorderThicknessInner = 1;
+            this.tgsCCTV.ToggleStateDisabled = toggleState10;
+            toggleState11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState11.BackColorInner = System.Drawing.Color.White;
+            toggleState11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState11.BorderColorInner = System.Drawing.Color.White;
+            toggleState11.BorderRadius = 17;
+            toggleState11.BorderRadiusInner = 11;
+            toggleState11.BorderThickness = 1;
+            toggleState11.BorderThicknessInner = 1;
+            this.tgsCCTV.ToggleStateOff = toggleState11;
+            toggleState12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState12.BackColorInner = System.Drawing.Color.White;
+            toggleState12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState12.BorderColorInner = System.Drawing.Color.White;
+            toggleState12.BorderRadius = 17;
+            toggleState12.BorderRadiusInner = 11;
+            toggleState12.BorderThickness = 1;
+            toggleState12.BorderThicknessInner = 1;
+            this.tgsCCTV.ToggleStateOn = toggleState12;
+            this.tgsCCTV.Value = false;
+            this.tgsCCTV.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs>(this.tgsCCTV_CheckedChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Athiti Medium", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(3, 229);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(191, 33);
+            this.label24.TabIndex = 35;
+            this.label24.Text = "กล้องอ่านทะเบียนรถ";
+            // 
+            // pnComRFID
+            // 
+            this.pnComRFID.Controls.Add(this.label7);
+            this.pnComRFID.Controls.Add(this.label9);
+            this.pnComRFID.Controls.Add(this.cbbComRFID);
+            this.pnComRFID.Controls.Add(this.cbbBardrateRFID);
+            this.pnComRFID.Enabled = false;
+            this.pnComRFID.Location = new System.Drawing.Point(797, 0);
+            this.pnComRFID.Name = "pnComRFID";
+            this.pnComRFID.Size = new System.Drawing.Size(336, 89);
+            this.pnComRFID.TabIndex = 52;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(184, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 25);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Baudrate  RFID";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(2, 11);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(123, 25);
+            this.label9.TabIndex = 40;
+            this.label9.Text = "Comport  RFID";
+            // 
+            // cbbComRFID
+            // 
+            this.cbbComRFID.BackColor = System.Drawing.Color.Transparent;
+            this.cbbComRFID.BorderColor = System.Drawing.Color.Black;
+            this.cbbComRFID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbComRFID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbComRFID.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbComRFID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbComRFID.Font = new System.Drawing.Font("Athiti", 12F);
+            this.cbbComRFID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbComRFID.ItemHeight = 30;
+            this.cbbComRFID.Location = new System.Drawing.Point(4, 39);
+            this.cbbComRFID.Name = "cbbComRFID";
+            this.cbbComRFID.Size = new System.Drawing.Size(171, 36);
+            this.cbbComRFID.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbbComRFID.TabIndex = 38;
+            this.cbbComRFID.Tag = "comport";
+            this.cbbComRFID.DropDown += new System.EventHandler(this.DropDown_When_dropdown);
+            this.cbbComRFID.DropDownClosed += new System.EventHandler(this.DropDown_When_Close);
+            // 
+            // cbbBardrateRFID
+            // 
+            this.cbbBardrateRFID.BackColor = System.Drawing.Color.Transparent;
+            this.cbbBardrateRFID.BorderColor = System.Drawing.Color.Black;
+            this.cbbBardrateRFID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbBardrateRFID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbBardrateRFID.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbBardrateRFID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbBardrateRFID.Font = new System.Drawing.Font("Athiti", 12F);
+            this.cbbBardrateRFID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbBardrateRFID.ItemHeight = 30;
+            this.cbbBardrateRFID.Location = new System.Drawing.Point(184, 39);
+            this.cbbBardrateRFID.Name = "cbbBardrateRFID";
+            this.cbbBardrateRFID.Size = new System.Drawing.Size(146, 36);
+            this.cbbBardrateRFID.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbbBardrateRFID.TabIndex = 39;
+            this.cbbBardrateRFID.Tag = "baudrate";
+            this.cbbBardrateRFID.DropDown += new System.EventHandler(this.DropDown_When_dropdown);
+            this.cbbBardrateRFID.DropDownClosed += new System.EventHandler(this.DropDown_When_Close);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Athiti Medium", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(3, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 33);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "กล้อง CCTV";
             // 
             // pnComPLC
             // 
@@ -263,7 +531,7 @@ namespace TRUCK_STD.Design
             this.pnComPLC.Controls.Add(this.cbbPLC_COM);
             this.pnComPLC.Controls.Add(this.cbbPLC_BAUDRATE);
             this.pnComPLC.Enabled = false;
-            this.pnComPLC.Location = new System.Drawing.Point(5, 89);
+            this.pnComPLC.Location = new System.Drawing.Point(200, 3);
             this.pnComPLC.Name = "pnComPLC";
             this.pnComPLC.Size = new System.Drawing.Size(336, 89);
             this.pnComPLC.TabIndex = 51;
@@ -332,375 +600,23 @@ namespace TRUCK_STD.Design
             this.cbbPLC_BAUDRATE.DropDown += new System.EventHandler(this.DropDown_When_dropdown);
             this.cbbPLC_BAUDRATE.DropDownClosed += new System.EventHandler(this.DropDown_When_Close);
             // 
-            // pnAddress
+            // label6
             // 
-            this.pnAddress.Controls.Add(this.label16);
-            this.pnAddress.Controls.Add(this.label1);
-            this.pnAddress.Controls.Add(this.btnTestBarrier2);
-            this.pnAddress.Controls.Add(this.btnTestBarrier1);
-            this.pnAddress.Controls.Add(this.txtAddress2);
-            this.pnAddress.Controls.Add(this.txtAddress1);
-            this.pnAddress.Controls.Add(this.txtSlave);
-            this.pnAddress.Enabled = false;
-            this.pnAddress.Location = new System.Drawing.Point(585, 89);
-            this.pnAddress.Name = "pnAddress";
-            this.pnAddress.Size = new System.Drawing.Size(379, 124);
-            this.pnAddress.TabIndex = 50;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Athiti Medium", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.DimGray;
-            this.label16.Location = new System.Drawing.Point(136, 7);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(73, 25);
-            this.label16.TabIndex = 48;
-            this.label16.Text = "Address";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(3, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 25);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "Slave Number";
-            // 
-            // btnTestBarrier2
-            // 
-            this.btnTestBarrier2.AllowAnimations = true;
-            this.btnTestBarrier2.AllowMouseEffects = true;
-            this.btnTestBarrier2.AllowToggling = false;
-            this.btnTestBarrier2.AnimationSpeed = 200;
-            this.btnTestBarrier2.AutoGenerateColors = false;
-            this.btnTestBarrier2.AutoRoundBorders = false;
-            this.btnTestBarrier2.AutoSizeLeftIcon = true;
-            this.btnTestBarrier2.AutoSizeRightIcon = true;
-            this.btnTestBarrier2.BackColor = System.Drawing.Color.Transparent;
-            this.btnTestBarrier2.BackColor1 = System.Drawing.Color.White;
-            this.btnTestBarrier2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTestBarrier2.BackgroundImage")));
-            this.btnTestBarrier2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTestBarrier2.ButtonText = "ทดสอบ";
-            this.btnTestBarrier2.ButtonTextMarginLeft = 0;
-            this.btnTestBarrier2.ColorContrastOnClick = 45;
-            this.btnTestBarrier2.ColorContrastOnHover = 45;
-            this.btnTestBarrier2.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnTestBarrier2.CustomizableEdges = borderEdges1;
-            this.btnTestBarrier2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnTestBarrier2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnTestBarrier2.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnTestBarrier2.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnTestBarrier2.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnTestBarrier2.Font = new System.Drawing.Font("Athiti", 12F);
-            this.btnTestBarrier2.ForeColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier2.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTestBarrier2.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnTestBarrier2.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnTestBarrier2.IconMarginLeft = 11;
-            this.btnTestBarrier2.IconPadding = 10;
-            this.btnTestBarrier2.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTestBarrier2.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnTestBarrier2.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnTestBarrier2.IconSize = 25;
-            this.btnTestBarrier2.IdleBorderColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier2.IdleBorderRadius = 6;
-            this.btnTestBarrier2.IdleBorderThickness = 1;
-            this.btnTestBarrier2.IdleFillColor = System.Drawing.Color.White;
-            this.btnTestBarrier2.IdleIconLeftImage = null;
-            this.btnTestBarrier2.IdleIconRightImage = null;
-            this.btnTestBarrier2.IndicateFocus = false;
-            this.btnTestBarrier2.Location = new System.Drawing.Point(296, 80);
-            this.btnTestBarrier2.Name = "btnTestBarrier2";
-            this.btnTestBarrier2.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnTestBarrier2.OnDisabledState.BorderRadius = 6;
-            this.btnTestBarrier2.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTestBarrier2.OnDisabledState.BorderThickness = 1;
-            this.btnTestBarrier2.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnTestBarrier2.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnTestBarrier2.OnDisabledState.IconLeftImage = null;
-            this.btnTestBarrier2.OnDisabledState.IconRightImage = null;
-            this.btnTestBarrier2.onHoverState.BorderColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier2.onHoverState.BorderRadius = 6;
-            this.btnTestBarrier2.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTestBarrier2.onHoverState.BorderThickness = 1;
-            this.btnTestBarrier2.onHoverState.FillColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier2.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnTestBarrier2.onHoverState.IconLeftImage = null;
-            this.btnTestBarrier2.onHoverState.IconRightImage = null;
-            this.btnTestBarrier2.OnIdleState.BorderColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier2.OnIdleState.BorderRadius = 6;
-            this.btnTestBarrier2.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTestBarrier2.OnIdleState.BorderThickness = 1;
-            this.btnTestBarrier2.OnIdleState.FillColor = System.Drawing.Color.White;
-            this.btnTestBarrier2.OnIdleState.ForeColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier2.OnIdleState.IconLeftImage = null;
-            this.btnTestBarrier2.OnIdleState.IconRightImage = null;
-            this.btnTestBarrier2.OnPressedState.BorderColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier2.OnPressedState.BorderRadius = 6;
-            this.btnTestBarrier2.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTestBarrier2.OnPressedState.BorderThickness = 1;
-            this.btnTestBarrier2.OnPressedState.FillColor = System.Drawing.Color.White;
-            this.btnTestBarrier2.OnPressedState.ForeColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier2.OnPressedState.IconLeftImage = null;
-            this.btnTestBarrier2.OnPressedState.IconRightImage = null;
-            this.btnTestBarrier2.Size = new System.Drawing.Size(75, 39);
-            this.btnTestBarrier2.TabIndex = 46;
-            this.btnTestBarrier2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnTestBarrier2.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnTestBarrier2.TextMarginLeft = 0;
-            this.btnTestBarrier2.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnTestBarrier2.UseDefaultRadiusAndThickness = true;
-            this.btnTestBarrier2.Click += new System.EventHandler(this.TESTPLC);
-            // 
-            // btnTestBarrier1
-            // 
-            this.btnTestBarrier1.AllowAnimations = true;
-            this.btnTestBarrier1.AllowMouseEffects = true;
-            this.btnTestBarrier1.AllowToggling = false;
-            this.btnTestBarrier1.AnimationSpeed = 200;
-            this.btnTestBarrier1.AutoGenerateColors = false;
-            this.btnTestBarrier1.AutoRoundBorders = false;
-            this.btnTestBarrier1.AutoSizeLeftIcon = true;
-            this.btnTestBarrier1.AutoSizeRightIcon = true;
-            this.btnTestBarrier1.BackColor = System.Drawing.Color.Transparent;
-            this.btnTestBarrier1.BackColor1 = System.Drawing.Color.White;
-            this.btnTestBarrier1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTestBarrier1.BackgroundImage")));
-            this.btnTestBarrier1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTestBarrier1.ButtonText = "ทดสอบ";
-            this.btnTestBarrier1.ButtonTextMarginLeft = 0;
-            this.btnTestBarrier1.ColorContrastOnClick = 45;
-            this.btnTestBarrier1.ColorContrastOnHover = 45;
-            this.btnTestBarrier1.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnTestBarrier1.CustomizableEdges = borderEdges2;
-            this.btnTestBarrier1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnTestBarrier1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnTestBarrier1.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnTestBarrier1.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnTestBarrier1.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnTestBarrier1.Font = new System.Drawing.Font("Athiti", 12F);
-            this.btnTestBarrier1.ForeColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier1.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTestBarrier1.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnTestBarrier1.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnTestBarrier1.IconMarginLeft = 11;
-            this.btnTestBarrier1.IconPadding = 10;
-            this.btnTestBarrier1.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTestBarrier1.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnTestBarrier1.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnTestBarrier1.IconSize = 25;
-            this.btnTestBarrier1.IdleBorderColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier1.IdleBorderRadius = 6;
-            this.btnTestBarrier1.IdleBorderThickness = 1;
-            this.btnTestBarrier1.IdleFillColor = System.Drawing.Color.White;
-            this.btnTestBarrier1.IdleIconLeftImage = null;
-            this.btnTestBarrier1.IdleIconRightImage = null;
-            this.btnTestBarrier1.IndicateFocus = false;
-            this.btnTestBarrier1.Location = new System.Drawing.Point(296, 35);
-            this.btnTestBarrier1.Name = "btnTestBarrier1";
-            this.btnTestBarrier1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnTestBarrier1.OnDisabledState.BorderRadius = 6;
-            this.btnTestBarrier1.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTestBarrier1.OnDisabledState.BorderThickness = 1;
-            this.btnTestBarrier1.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnTestBarrier1.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnTestBarrier1.OnDisabledState.IconLeftImage = null;
-            this.btnTestBarrier1.OnDisabledState.IconRightImage = null;
-            this.btnTestBarrier1.onHoverState.BorderColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier1.onHoverState.BorderRadius = 6;
-            this.btnTestBarrier1.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTestBarrier1.onHoverState.BorderThickness = 1;
-            this.btnTestBarrier1.onHoverState.FillColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier1.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnTestBarrier1.onHoverState.IconLeftImage = null;
-            this.btnTestBarrier1.onHoverState.IconRightImage = null;
-            this.btnTestBarrier1.OnIdleState.BorderColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier1.OnIdleState.BorderRadius = 6;
-            this.btnTestBarrier1.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTestBarrier1.OnIdleState.BorderThickness = 1;
-            this.btnTestBarrier1.OnIdleState.FillColor = System.Drawing.Color.White;
-            this.btnTestBarrier1.OnIdleState.ForeColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier1.OnIdleState.IconLeftImage = null;
-            this.btnTestBarrier1.OnIdleState.IconRightImage = null;
-            this.btnTestBarrier1.OnPressedState.BorderColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier1.OnPressedState.BorderRadius = 6;
-            this.btnTestBarrier1.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnTestBarrier1.OnPressedState.BorderThickness = 1;
-            this.btnTestBarrier1.OnPressedState.FillColor = System.Drawing.Color.White;
-            this.btnTestBarrier1.OnPressedState.ForeColor = System.Drawing.Color.Navy;
-            this.btnTestBarrier1.OnPressedState.IconLeftImage = null;
-            this.btnTestBarrier1.OnPressedState.IconRightImage = null;
-            this.btnTestBarrier1.Size = new System.Drawing.Size(75, 39);
-            this.btnTestBarrier1.TabIndex = 45;
-            this.btnTestBarrier1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnTestBarrier1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnTestBarrier1.TextMarginLeft = 0;
-            this.btnTestBarrier1.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnTestBarrier1.UseDefaultRadiusAndThickness = true;
-            this.btnTestBarrier1.Click += new System.EventHandler(this.TESTPLC);
-            // 
-            // txtAddress2
-            // 
-            this.txtAddress2.Animated = true;
-            this.txtAddress2.BorderColor = System.Drawing.Color.Black;
-            this.txtAddress2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAddress2.DefaultText = "";
-            this.txtAddress2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAddress2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAddress2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAddress2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAddress2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress2.Font = new System.Drawing.Font("Athiti", 12F);
-            this.txtAddress2.ForeColor = System.Drawing.Color.Black;
-            this.txtAddress2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress2.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.txtAddress2.Location = new System.Drawing.Point(141, 80);
-            this.txtAddress2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtAddress2.MaxLength = 500;
-            this.txtAddress2.Name = "txtAddress2";
-            this.txtAddress2.PasswordChar = '\0';
-            this.txtAddress2.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtAddress2.PlaceholderText = "Address Barrier 2";
-            this.txtAddress2.SelectedText = "";
-            this.txtAddress2.Size = new System.Drawing.Size(149, 39);
-            this.txtAddress2.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtAddress2.TabIndex = 44;
-            // 
-            // txtAddress1
-            // 
-            this.txtAddress1.Animated = true;
-            this.txtAddress1.BorderColor = System.Drawing.Color.Black;
-            this.txtAddress1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAddress1.DefaultText = "";
-            this.txtAddress1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAddress1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAddress1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAddress1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAddress1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress1.Font = new System.Drawing.Font("Athiti", 12F);
-            this.txtAddress1.ForeColor = System.Drawing.Color.Black;
-            this.txtAddress1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress1.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.txtAddress1.Location = new System.Drawing.Point(141, 35);
-            this.txtAddress1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtAddress1.MaxLength = 500;
-            this.txtAddress1.Name = "txtAddress1";
-            this.txtAddress1.PasswordChar = '\0';
-            this.txtAddress1.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtAddress1.PlaceholderText = "Address Barrier 1";
-            this.txtAddress1.SelectedText = "";
-            this.txtAddress1.Size = new System.Drawing.Size(149, 39);
-            this.txtAddress1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtAddress1.TabIndex = 43;
-            // 
-            // txtSlave
-            // 
-            this.txtSlave.Animated = true;
-            this.txtSlave.BorderColor = System.Drawing.Color.Black;
-            this.txtSlave.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSlave.DefaultText = "";
-            this.txtSlave.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSlave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSlave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSlave.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSlave.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSlave.Font = new System.Drawing.Font("Athiti", 12F);
-            this.txtSlave.ForeColor = System.Drawing.Color.Black;
-            this.txtSlave.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSlave.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.txtSlave.Location = new System.Drawing.Point(8, 35);
-            this.txtSlave.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtSlave.MaxLength = 500;
-            this.txtSlave.Name = "txtSlave";
-            this.txtSlave.PasswordChar = '\0';
-            this.txtSlave.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtSlave.PlaceholderText = "Slave Number";
-            this.txtSlave.SelectedText = "";
-            this.txtSlave.Size = new System.Drawing.Size(129, 39);
-            this.txtSlave.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtSlave.TabIndex = 42;
-            // 
-            // tgsBarrierr
-            // 
-            this.tgsBarrierr.Animation = 5;
-            this.tgsBarrierr.BackColor = System.Drawing.Color.Transparent;
-            this.tgsBarrierr.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tgsBarrierr.BackgroundImage")));
-            this.tgsBarrierr.Checked = false;
-            this.tgsBarrierr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tgsBarrierr.InnerCirclePadding = 3;
-            this.tgsBarrierr.Location = new System.Drawing.Point(15, 43);
-            this.tgsBarrierr.Margin = new System.Windows.Forms.Padding(8, 15, 8, 15);
-            this.tgsBarrierr.Name = "tgsBarrierr";
-            this.tgsBarrierr.Size = new System.Drawing.Size(58, 29);
-            this.tgsBarrierr.TabIndex = 49;
-            this.tgsBarrierr.ThumbMargin = 3;
-            toggleState1.BackColor = System.Drawing.Color.DarkGray;
-            toggleState1.BackColorInner = System.Drawing.Color.White;
-            toggleState1.BorderColor = System.Drawing.Color.DarkGray;
-            toggleState1.BorderColorInner = System.Drawing.Color.White;
-            toggleState1.BorderRadius = 17;
-            toggleState1.BorderRadiusInner = 11;
-            toggleState1.BorderThickness = 1;
-            toggleState1.BorderThicknessInner = 1;
-            this.tgsBarrierr.ToggleStateDisabled = toggleState1;
-            toggleState2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            toggleState2.BackColorInner = System.Drawing.Color.White;
-            toggleState2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            toggleState2.BorderColorInner = System.Drawing.Color.White;
-            toggleState2.BorderRadius = 17;
-            toggleState2.BorderRadiusInner = 11;
-            toggleState2.BorderThickness = 1;
-            toggleState2.BorderThicknessInner = 1;
-            this.tgsBarrierr.ToggleStateOff = toggleState2;
-            toggleState3.BackColor = System.Drawing.Color.DodgerBlue;
-            toggleState3.BackColorInner = System.Drawing.Color.White;
-            toggleState3.BorderColor = System.Drawing.Color.DodgerBlue;
-            toggleState3.BorderColorInner = System.Drawing.Color.White;
-            toggleState3.BorderRadius = 17;
-            toggleState3.BorderRadiusInner = 11;
-            toggleState3.BorderThickness = 1;
-            toggleState3.BorderThicknessInner = 1;
-            this.tgsBarrierr.ToggleStateOn = toggleState3;
-            this.tgsBarrierr.Value = false;
-            this.tgsBarrierr.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs>(this.tgsBarrierr_CheckedChanged);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Athiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Navy;
-            this.label18.Location = new System.Drawing.Point(566, 216);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(418, 31);
-            this.label18.TabIndex = 38;
-            this.label18.Text = "การทดสอบเปิดปิดไม้กั้น ต้องตั้ง Address ให้ตรงกับ PLC";
-            // 
-            // panel9
-            // 
-            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel9.BackColor = System.Drawing.Color.Navy;
-            this.panel9.Location = new System.Drawing.Point(349, 12);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(5, 311);
-            this.panel9.TabIndex = 13;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(638, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 33);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "RFID Reader";
             // 
             // panel8
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel8.BackColor = System.Drawing.Color.Navy;
-            this.panel8.Location = new System.Drawing.Point(3, 334);
+            this.panel8.Location = new System.Drawing.Point(3, 355);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1218, 5);
             this.panel8.TabIndex = 12;
@@ -717,274 +633,6 @@ namespace TRUCK_STD.Design
             this.label4.TabIndex = 35;
             this.label4.Text = "ตั้งค่า ไม้กั้น";
             // 
-            // d
-            // 
-            this.d.Controls.Add(this.label11);
-            this.d.Controls.Add(this.pictureBox2);
-            this.d.Controls.Add(this.label3);
-            this.d.Controls.Add(this.btnLineTest);
-            this.d.Controls.Add(this.panel6);
-            this.d.Controls.Add(this.flowLayoutPanel2);
-            this.d.Controls.Add(this.label7);
-            this.d.Controls.Add(this.label6);
-            this.d.Controls.Add(this.tgsLineNotify);
-            this.d.Controls.Add(this.txtLineToken);
-            this.d.Location = new System.Drawing.Point(13, 508);
-            this.d.Name = "d";
-            this.d.Size = new System.Drawing.Size(1222, 629);
-            this.d.TabIndex = 24;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Athiti SemiBold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Navy;
-            this.label11.Location = new System.Drawing.Point(64, 166);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(480, 31);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "ตัวอย่างข้อความส่งไลน์กลุ่ม                                            ";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(590, 305);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(59, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 38;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Athiti Medium", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(7, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(289, 33);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "ตั้งค่าการแจ้งเตือน Line notify";
-            // 
-            // btnLineTest
-            // 
-            this.btnLineTest.AllowAnimations = true;
-            this.btnLineTest.AllowMouseEffects = true;
-            this.btnLineTest.AllowToggling = false;
-            this.btnLineTest.AnimationSpeed = 200;
-            this.btnLineTest.AutoGenerateColors = false;
-            this.btnLineTest.AutoRoundBorders = false;
-            this.btnLineTest.AutoSizeLeftIcon = true;
-            this.btnLineTest.AutoSizeRightIcon = true;
-            this.btnLineTest.BackColor = System.Drawing.Color.Transparent;
-            this.btnLineTest.BackColor1 = System.Drawing.Color.White;
-            this.btnLineTest.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLineTest.BackgroundImage")));
-            this.btnLineTest.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnLineTest.ButtonText = "ทดสอบ Line Notify";
-            this.btnLineTest.ButtonTextMarginLeft = 0;
-            this.btnLineTest.ColorContrastOnClick = 45;
-            this.btnLineTest.ColorContrastOnHover = 45;
-            this.btnLineTest.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnLineTest.CustomizableEdges = borderEdges3;
-            this.btnLineTest.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLineTest.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnLineTest.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnLineTest.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnLineTest.Enabled = false;
-            this.btnLineTest.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnLineTest.Font = new System.Drawing.Font("Athiti", 12F);
-            this.btnLineTest.ForeColor = System.Drawing.Color.Navy;
-            this.btnLineTest.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLineTest.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnLineTest.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnLineTest.IconMarginLeft = 11;
-            this.btnLineTest.IconPadding = 10;
-            this.btnLineTest.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLineTest.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnLineTest.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnLineTest.IconSize = 25;
-            this.btnLineTest.IdleBorderColor = System.Drawing.Color.Navy;
-            this.btnLineTest.IdleBorderRadius = 6;
-            this.btnLineTest.IdleBorderThickness = 1;
-            this.btnLineTest.IdleFillColor = System.Drawing.Color.White;
-            this.btnLineTest.IdleIconLeftImage = null;
-            this.btnLineTest.IdleIconRightImage = null;
-            this.btnLineTest.IndicateFocus = false;
-            this.btnLineTest.Location = new System.Drawing.Point(577, 516);
-            this.btnLineTest.Name = "btnLineTest";
-            this.btnLineTest.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnLineTest.OnDisabledState.BorderRadius = 6;
-            this.btnLineTest.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnLineTest.OnDisabledState.BorderThickness = 1;
-            this.btnLineTest.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnLineTest.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnLineTest.OnDisabledState.IconLeftImage = null;
-            this.btnLineTest.OnDisabledState.IconRightImage = null;
-            this.btnLineTest.onHoverState.BorderColor = System.Drawing.Color.Navy;
-            this.btnLineTest.onHoverState.BorderRadius = 6;
-            this.btnLineTest.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnLineTest.onHoverState.BorderThickness = 1;
-            this.btnLineTest.onHoverState.FillColor = System.Drawing.Color.Navy;
-            this.btnLineTest.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnLineTest.onHoverState.IconLeftImage = null;
-            this.btnLineTest.onHoverState.IconRightImage = null;
-            this.btnLineTest.OnIdleState.BorderColor = System.Drawing.Color.Navy;
-            this.btnLineTest.OnIdleState.BorderRadius = 6;
-            this.btnLineTest.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnLineTest.OnIdleState.BorderThickness = 1;
-            this.btnLineTest.OnIdleState.FillColor = System.Drawing.Color.White;
-            this.btnLineTest.OnIdleState.ForeColor = System.Drawing.Color.Navy;
-            this.btnLineTest.OnIdleState.IconLeftImage = null;
-            this.btnLineTest.OnIdleState.IconRightImage = null;
-            this.btnLineTest.OnPressedState.BorderColor = System.Drawing.Color.Navy;
-            this.btnLineTest.OnPressedState.BorderRadius = 6;
-            this.btnLineTest.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnLineTest.OnPressedState.BorderThickness = 1;
-            this.btnLineTest.OnPressedState.FillColor = System.Drawing.Color.White;
-            this.btnLineTest.OnPressedState.ForeColor = System.Drawing.Color.Navy;
-            this.btnLineTest.OnPressedState.IconLeftImage = null;
-            this.btnLineTest.OnPressedState.IconRightImage = null;
-            this.btnLineTest.Size = new System.Drawing.Size(465, 93);
-            this.btnLineTest.TabIndex = 35;
-            this.btnLineTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnLineTest.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnLineTest.TextMarginLeft = 0;
-            this.btnLineTest.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnLineTest.UseDefaultRadiusAndThickness = true;
-            this.btnLineTest.Click += new System.EventHandler(this.btnLineTest_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel6.BackColor = System.Drawing.Color.Navy;
-            this.panel6.Location = new System.Drawing.Point(6, 616);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1218, 5);
-            this.panel6.TabIndex = 32;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.Controls.Add(this.label12);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(63, 200);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(491, 409);
-            this.flowLayoutPanel2.TabIndex = 29;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Athiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Navy;
-            this.label12.Location = new System.Drawing.Point(3, 0);
-            this.label12.Name = "label12";
-            this.label12.Padding = new System.Windows.Forms.Padding(5);
-            this.label12.Size = new System.Drawing.Size(258, 382);
-            this.label12.TabIndex = 30;
-            this.label12.Text = resources.GetString("label12.Text");
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Athiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Navy;
-            this.label7.Location = new System.Drawing.Point(584, 200);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(619, 102);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "หมายถึง คีย์กลุ่มของแต่ละกลุ่มที่ได้สร้างเอาไว้ \r\nโดยการ GEN Token Line ผู้ใช้จำเ" +
-    "ป็นต้องสร้างกลุ่มไลน์ที่จะให้ส่งข้อมูลออกก่อน \r\nสามารถดูเพิ่มเติมโดยคลิ๊ก ?";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Athiti", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Navy;
-            this.label6.Location = new System.Drawing.Point(128, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(746, 31);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "!! ฟังชั่นนี้ จำเป็นต้องใช้อินเตอร์เน็ต โปรแกรมจะไม่เปิดให้ใช้หากไม่มีการเชื่อมต่" +
-    "ออินเตอร์เน็ต !!";
-            // 
-            // tgsLineNotify
-            // 
-            this.tgsLineNotify.Animation = 5;
-            this.tgsLineNotify.BackColor = System.Drawing.Color.Transparent;
-            this.tgsLineNotify.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tgsLineNotify.BackgroundImage")));
-            this.tgsLineNotify.Checked = false;
-            this.tgsLineNotify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tgsLineNotify.InnerCirclePadding = 3;
-            this.tgsLineNotify.Location = new System.Drawing.Point(60, 64);
-            this.tgsLineNotify.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.tgsLineNotify.Name = "tgsLineNotify";
-            this.tgsLineNotify.Size = new System.Drawing.Size(59, 30);
-            this.tgsLineNotify.TabIndex = 22;
-            this.tgsLineNotify.ThumbMargin = 3;
-            toggleState4.BackColor = System.Drawing.Color.DarkGray;
-            toggleState4.BackColorInner = System.Drawing.Color.White;
-            toggleState4.BorderColor = System.Drawing.Color.DarkGray;
-            toggleState4.BorderColorInner = System.Drawing.Color.White;
-            toggleState4.BorderRadius = 17;
-            toggleState4.BorderRadiusInner = 11;
-            toggleState4.BorderThickness = 1;
-            toggleState4.BorderThicknessInner = 1;
-            this.tgsLineNotify.ToggleStateDisabled = toggleState4;
-            toggleState5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            toggleState5.BackColorInner = System.Drawing.Color.White;
-            toggleState5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            toggleState5.BorderColorInner = System.Drawing.Color.White;
-            toggleState5.BorderRadius = 17;
-            toggleState5.BorderRadiusInner = 11;
-            toggleState5.BorderThickness = 1;
-            toggleState5.BorderThicknessInner = 1;
-            this.tgsLineNotify.ToggleStateOff = toggleState5;
-            toggleState6.BackColor = System.Drawing.Color.DodgerBlue;
-            toggleState6.BackColorInner = System.Drawing.Color.White;
-            toggleState6.BorderColor = System.Drawing.Color.DodgerBlue;
-            toggleState6.BorderColorInner = System.Drawing.Color.White;
-            toggleState6.BorderRadius = 17;
-            toggleState6.BorderRadiusInner = 11;
-            toggleState6.BorderThickness = 1;
-            toggleState6.BorderThicknessInner = 1;
-            this.tgsLineNotify.ToggleStateOn = toggleState6;
-            this.tgsLineNotify.Value = false;
-            this.tgsLineNotify.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs>(this.tgsLineNotify_CheckedChanged);
-            // 
-            // txtLineToken
-            // 
-            this.txtLineToken.Animated = true;
-            this.txtLineToken.BorderColor = System.Drawing.Color.Black;
-            this.txtLineToken.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLineToken.DefaultText = "";
-            this.txtLineToken.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtLineToken.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtLineToken.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLineToken.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLineToken.Enabled = false;
-            this.txtLineToken.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLineToken.Font = new System.Drawing.Font("Athiti", 12F);
-            this.txtLineToken.ForeColor = System.Drawing.Color.Black;
-            this.txtLineToken.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLineToken.IconRight = ((System.Drawing.Image)(resources.GetObject("txtLineToken.IconRight")));
-            this.txtLineToken.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.txtLineToken.Location = new System.Drawing.Point(60, 122);
-            this.txtLineToken.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtLineToken.MaxLength = 500;
-            this.txtLineToken.Name = "txtLineToken";
-            this.txtLineToken.PasswordChar = '\0';
-            this.txtLineToken.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtLineToken.PlaceholderText = "Line Token";
-            this.txtLineToken.SelectedText = "";
-            this.txtLineToken.Size = new System.Drawing.Size(484, 39);
-            this.txtLineToken.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtLineToken.TabIndex = 20;
-            this.txtLineToken.IconRightClick += new System.EventHandler(this.txtLineToken_IconRightClick);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.txtTicTax);
@@ -994,7 +642,7 @@ namespace TRUCK_STD.Design
             this.panel2.Controls.Add(this.txtTickPhone);
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Location = new System.Drawing.Point(13, 1143);
+            this.panel2.Location = new System.Drawing.Point(13, 529);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1222, 387);
             this.panel2.TabIndex = 35;
@@ -1061,11 +709,11 @@ namespace TRUCK_STD.Design
             this.btnUnlock.ColorContrastOnClick = 45;
             this.btnUnlock.ColorContrastOnHover = 45;
             this.btnUnlock.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnUnlock.CustomizableEdges = borderEdges4;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnUnlock.CustomizableEdges = borderEdges1;
             this.btnUnlock.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnUnlock.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUnlock.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1307,11 +955,11 @@ namespace TRUCK_STD.Design
             this.bunifuButton1.ColorContrastOnClick = 45;
             this.bunifuButton1.ColorContrastOnHover = 45;
             this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.bunifuButton1.CustomizableEdges = borderEdges5;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.bunifuButton1.CustomizableEdges = borderEdges2;
             this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1556,7 +1204,7 @@ namespace TRUCK_STD.Design
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(43)))), ((int)(((byte)(28)))));
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1234, 12);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1218, 12);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 25;
@@ -1566,7 +1214,7 @@ namespace TRUCK_STD.Design
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1289, 845);
+            this.ClientSize = new System.Drawing.Size(1273, 845);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.bunifuButton1);
@@ -1585,15 +1233,10 @@ namespace TRUCK_STD.Design
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.pnComRFID.ResumeLayout(false);
+            this.pnComRFID.PerformLayout();
             this.pnComPLC.ResumeLayout(false);
             this.pnComPLC.PerformLayout();
-            this.pnAddress.ResumeLayout(false);
-            this.pnAddress.PerformLayout();
-            this.d.ResumeLayout(false);
-            this.d.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.gbTickPass.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -1606,24 +1249,13 @@ namespace TRUCK_STD.Design
         private Bunifu.UI.WinForms.BunifuSnackbar bunifuSnackbar1;
         private Guna.UI2.WinForms.Guna2ComboBox cbbWGH_COM;
         private Guna.UI2.WinForms.Guna2ComboBox cbbWGH_BUADRATE;
-        private Guna.UI2.WinForms.Guna2TextBox txtLineToken;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private Bunifu.UI.WinForms.BunifuToggleSwitch tgsLineNotify;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel d;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label20;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnLineTest;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
@@ -1638,7 +1270,6 @@ namespace TRUCK_STD.Design
         private Guna.UI2.WinForms.Guna2GroupBox gbTickPass;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnUnlock;
         private Guna.UI2.WinForms.Guna2TextBox txtTickPass;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2TextBox txtTicTax;
@@ -1654,17 +1285,18 @@ namespace TRUCK_STD.Design
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel8;
-        private Guna.UI2.WinForms.Guna2TextBox txtSlave;
-        private Guna.UI2.WinForms.Guna2TextBox txtAddress2;
-        private Guna.UI2.WinForms.Guna2TextBox txtAddress1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnTestBarrier2;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnTestBarrier1;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label18;
-        private Bunifu.UI.WinForms.BunifuToggleSwitch tgsBarrierr;
         private System.Windows.Forms.Panel pnComPLC;
-        private System.Windows.Forms.Panel pnAddress;
+        private System.Windows.Forms.Label label24;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch tgsCCTV;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel pnComRFID;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbComRFID;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbBardrateRFID;
+        private System.Windows.Forms.Label label6;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch tgsLPR;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch tgsRFID;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch tgsBarrier;
     }
 }
