@@ -101,7 +101,7 @@ namespace TRUCK_STD.Design
 
                 btnAbout.Enabled = true;
                 guna2Transition1.ShowSync(btnAbout);
-
+                btnRFID.Visible = false;
                 label4.Text = registy.system.id;
             }));
         }
@@ -162,7 +162,6 @@ namespace TRUCK_STD.Design
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-
             Log.Information("CLICK EMPLOYEE PAGE");
             frmEmployee frm = new frmEmployee();
             frm.ShowDialog();
@@ -187,18 +186,19 @@ namespace TRUCK_STD.Design
             // ตรวจสอบฟังชั่นโปรแกรม
             if (registy.function.RFIDState == "TRUE")
             {
-
+                frmWeightRFID frmWeightRFID = new frmWeightRFID();
+                frmWeightRFID.ShowDialog();
                 return;
             }
             else if (registy.function.LPRState == "TRUE")
             {
-                frmNewWeight frmNewWeight = new frmNewWeight();
+                frmWeightLPR_CCTV frmNewWeight = new frmWeightLPR_CCTV();
                 frmNewWeight.ShowDialog();
                 return;
             }
             else
             {
-                frmWeightingNoPrice frmWeightingNoPrice = new frmWeightingNoPrice();
+                frmWeightNormal frmWeightingNoPrice = new frmWeightNormal();
                 frmWeightingNoPrice.ShowDialog();
             }
         }
@@ -206,10 +206,28 @@ namespace TRUCK_STD.Design
         private void btnHistory_Click(object sender, EventArgs e)
         {
             Log.Information("CLICK HISTORY PAGE");
-            // ตรวจสอบว่าผู้ใช้ login เข้าด้วยสิทธิ sa หรือไม่
+            // ตรวจสอบว่าผู้ใช้ login เข้าด้วยสิทธิ sa หรือไม่ 
 
-            frmHistory frm = new frmHistory();
-            frm.ShowDialog();
+            frmHistoryLPR frmHistoryLPR = new frmHistoryLPR();
+            frmHistoryLPR.ShowDialog();
+
+            //// ตรวจสอบฟังชั่นโปรแกรม
+            //if (registy.function.RFIDState == "TRUE")
+            //{
+
+            //    return;
+            //}
+            //else if (registy.function.LPRState == "TRUE")
+            //{
+            //    frmHistoryLPR frmHistoryLPR = new frmHistoryLPR();
+            //    frmHistoryLPR.ShowDialog();
+            //    return;
+            //}
+            //else
+            //{
+            //    frmWeightingNoPrice frmWeightingNoPrice = new frmWeightingNoPrice();
+            //    frmWeightingNoPrice.ShowDialog();
+            //}
 
         }
 
@@ -328,8 +346,24 @@ namespace TRUCK_STD.Design
 
         private void btnHireWeitgh_Click(object sender, EventArgs e)
         {
-            frmWeightHire frmHireWeight = new frmWeightHire();
-            frmHireWeight.ShowDialog();
+            // ตรวจสอบฟังชั่นโปรแกรม
+            if (registy.function.RFIDState == "TRUE")
+            {
+                frmHireRFID frmWeightRFID = new frmHireRFID();
+                frmWeightRFID.ShowDialog();
+                return;
+            }
+            else if (registy.function.LPRState == "TRUE")
+            {
+                frmHireLPR frm = new frmHireLPR();
+                frm.ShowDialog();
+                return;
+            }
+            else
+            {
+                frmHireNormal frm = new frmHireNormal();
+                frm.ShowDialog();
+            }
         }
 
         private void btnCCTV_Click(object sender, EventArgs e)
