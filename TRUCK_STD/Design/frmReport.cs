@@ -11,19 +11,28 @@ namespace TRUCK_STD.Design
         }
 
         public string reportType { get; set; }
-
+        public string id { get; set; }
         private void frmReport_Load(object sender, EventArgs e)
         {
             switch (reportType)
             {
                 case "HIRE":
-                    Func_Report.Report_hire_weight(reportViewer1);
+                    // Func_Report.Report_hire_weight(reportViewer1);
                     break;
-                case "NO_PRICE":
-                    Func_Report.Report_no_price(reportViewer1);
+                case "Cassava":
+                    Func_Report.ReportCassava(reportViewer1, int.Parse(id));
                     break;
-                case "HAVE_PRICE":
-                    Func_Report.Report_have_price(reportViewer1);
+                case "Paddy":
+                    Func_Report.ReportPaddy(reportViewer1, int.Parse(id));
+                    break;
+                case "Corn":
+                    Func_Report.ReportCorn(reportViewer1, int.Parse(id));
+                    break;
+                case "LPR":
+                    Func_Report.ReportLPR(reportViewer1);
+                    break;
+                case "MN":
+                    Func_Report.ReportManual(reportViewer1, int.Parse(id));
                     break;
             }
         }
