@@ -116,10 +116,6 @@ namespace TRUCK_STD.Design
                 Log.Warning("ปลดล็อคโปรแกรมสำเร็จ (Unlock)");
                 switch (extension)
                 {
-                    case "LINE":
-                        registy.function.LINEState = "TRUE";
-                        registy.function.LINEKey = txtPassUnlock.Text;
-                        break;
                     case "CAMERA":
                         registy.function.CAMERAState = "TRUE";
                         registy.function.CAMERAKey = txtPassUnlock.Text;
