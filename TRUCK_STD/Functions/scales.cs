@@ -10,6 +10,7 @@ namespace TRUCK_STD.Functions
 {
     internal class scales
     {
+
         private static string SCALE_NAME
         {
             get { return registy.scale.scaleName; }
@@ -18,14 +19,18 @@ namespace TRUCK_STD.Functions
         {
             get { return registy.scale.scalePort; }
         }
-
         private static int SCALE_BAURATE
         {
             get { return registy.scale.scaleBaudrate; }
         }
-
         public static string ERR { get; set; }
 
+
+
+        public static string GetScaleName()
+        {
+            return SCALE_NAME;
+        }
 
         /// <summary>
         /// สำหรับเช็คว่า Port ว่ามีการกำหนดค่าหรือไม่
@@ -40,9 +45,6 @@ namespace TRUCK_STD.Functions
             else
                 return true;
         }
-
-
-
         /// <summary>
         /// สำหรับเชื่อมต่อ Scale
         /// </summary>
@@ -52,7 +54,6 @@ namespace TRUCK_STD.Functions
         {
             try
             {
-
                 sa.PortName = SCALE_PORT;
                 sa.BaudRate = SCALE_BAURATE;
                 sa.Open();
@@ -64,7 +65,6 @@ namespace TRUCK_STD.Functions
             }
             return true;
         }
-
         public static void Disconnect(SerialPort sa)
         {
             if (sa.IsOpen)
@@ -72,8 +72,6 @@ namespace TRUCK_STD.Functions
                 sa.Close();
             }
         }
-
-
         public static void RS232_DataReceived(object sender, Label label)
         {
             string value = "";
@@ -105,8 +103,6 @@ namespace TRUCK_STD.Functions
                         string a = serialPort1.ReadLine();
                         value = a.Substring(2, 7).Trim();
                         break;
-
-
                     case "RickLake 680":
                         string l = serialPort1.ReadLine();
                         if (l.Length == 13)
@@ -135,9 +131,7 @@ namespace TRUCK_STD.Functions
                             }
                         }
                         break;
-
                     case "Leon Engineer LD5204-06":
-
                         string c = serialPort1.ReadExisting();
                         string[] cc = c.Split('\r');
                         if (cc[0].Length == 8)
@@ -181,7 +175,6 @@ namespace TRUCK_STD.Functions
 
                         int hhh = int.Parse(hh[2]);
                         value = Convert.ToString(hhh);
-
                         break;
                     case "AND_4329 TRUCKSCALE":
                         string i = serialPort1.ReadLine();
@@ -215,7 +208,6 @@ namespace TRUCK_STD.Functions
                         string k = serialPort1.ReadLine();
                         value = k.Substring(2, 7).Trim();
                         break;
-
                 }
                 // ส่งค่าที่รับมากลับไป
                 label.BeginInvoke(new MethodInvoker(delegate ()
