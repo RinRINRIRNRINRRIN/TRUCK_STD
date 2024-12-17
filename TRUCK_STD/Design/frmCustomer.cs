@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using TRUCK_STD.DbBase;
 using TRUCK_STD.Models;
-using TRUCK_STD.MSACCESSCommand;
+
 
 namespace TRUCK_STD.Design
 {
@@ -19,9 +19,6 @@ namespace TRUCK_STD.Design
 
 
         string COMPCODE = ""; // ใช้สำหรับเก็บค่าของ ID ที่ DGV
-
-        tbCOMPANY tbCOMPANY = new tbCOMPANY();
-        tbPRIVIVRAGE tbPRIVIVRAGE = new tbPRIVIVRAGE();
 
         #endregion
 
@@ -106,7 +103,6 @@ namespace TRUCK_STD.Design
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-
             // ทำการเช็คว่าเจอข้อมูลว่างก่อนบันทึกหรือไม่
             bool chk = true;
 
@@ -225,8 +221,11 @@ namespace TRUCK_STD.Design
                 string customer_name = dgvCustomer.Rows[e.RowIndex].Cells["cl_names"].Value.ToString();
                 if (dgvCustomer.Columns[e.ColumnIndex].Name == "cl_del")
                 {
-                    // ถามผู้ใช้ก่อนว่าต้องการลบข้อมูลจริง ๆ หรือไม่
-                    if (MessageBox.Show("คุณต้องการลบข้อมูลลูกค้า " + customer_name, "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+                    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+                    DialogResult dialogResult = guna2MessageDialog1.Show($"Do you want to delete the customer {customer_name}?", "Delete information");
+
+                    if (dialogResult == DialogResult.Yes)
                     {
                         // กำหนดค่า
                         customerModel customerModel = new customerModel

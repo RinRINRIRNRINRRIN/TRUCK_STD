@@ -46,15 +46,16 @@ namespace TRUCK_STD.Design
             this.btnAdd = new Bunifu.UI.WinForms.BunifuImageButton();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvCustomer = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.cl_del = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cl_edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_names = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuTransition1 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.cl_del = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cl_edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_names = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbCustomerDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
@@ -479,43 +480,6 @@ namespace TRUCK_STD.Design
             this.dgvCustomer.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
             // 
-            // cl_del
-            // 
-            this.cl_del.HeaderText = "";
-            this.cl_del.Image = ((System.Drawing.Image)(resources.GetObject("cl_del.Image")));
-            this.cl_del.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.cl_del.Name = "cl_del";
-            this.cl_del.ReadOnly = true;
-            this.cl_del.Width = 30;
-            // 
-            // cl_edit
-            // 
-            this.cl_edit.HeaderText = "";
-            this.cl_edit.Image = ((System.Drawing.Image)(resources.GetObject("cl_edit.Image")));
-            this.cl_edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.cl_edit.Name = "cl_edit";
-            this.cl_edit.ReadOnly = true;
-            this.cl_edit.Width = 30;
-            // 
-            // cl_id
-            // 
-            this.cl_id.DataPropertyName = "id";
-            this.cl_id.HeaderText = "รหัสลูกค้า";
-            this.cl_id.Name = "cl_id";
-            this.cl_id.ReadOnly = true;
-            this.cl_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_id.Width = 200;
-            // 
-            // cl_names
-            // 
-            this.cl_names.DataPropertyName = "names";
-            this.cl_names.HeaderText = "ชื่อลูกค้า";
-            this.cl_names.Name = "cl_names";
-            this.cl_names.ReadOnly = true;
-            this.cl_names.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_names.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_names.Width = 500;
-            // 
             // bunifuTransition1
             // 
             this.bunifuTransition1.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.VertBlind;
@@ -637,6 +601,52 @@ namespace TRUCK_STD.Design
             this.guna2BorderlessForm1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(43)))), ((int)(((byte)(28)))));
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.guna2MessageDialog1.Caption = null;
+            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.guna2MessageDialog1.Parent = this;
+            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.guna2MessageDialog1.Text = null;
+            // 
+            // cl_del
+            // 
+            this.cl_del.HeaderText = "";
+            this.cl_del.Image = ((System.Drawing.Image)(resources.GetObject("cl_del.Image")));
+            this.cl_del.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.cl_del.Name = "cl_del";
+            this.cl_del.ReadOnly = true;
+            this.cl_del.Width = 30;
+            // 
+            // cl_edit
+            // 
+            this.cl_edit.HeaderText = "";
+            this.cl_edit.Image = ((System.Drawing.Image)(resources.GetObject("cl_edit.Image")));
+            this.cl_edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.cl_edit.Name = "cl_edit";
+            this.cl_edit.ReadOnly = true;
+            this.cl_edit.Width = 30;
+            // 
+            // cl_id
+            // 
+            this.cl_id.DataPropertyName = "customer_id";
+            this.cl_id.HeaderText = "รหัสลูกค้า";
+            this.cl_id.Name = "cl_id";
+            this.cl_id.ReadOnly = true;
+            this.cl_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cl_id.Width = 200;
+            // 
+            // cl_names
+            // 
+            this.cl_names.DataPropertyName = "customerName";
+            this.cl_names.HeaderText = "ชื่อลูกค้า";
+            this.cl_names.Name = "cl_names";
+            this.cl_names.ReadOnly = true;
+            this.cl_names.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cl_names.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cl_names.Width = 500;
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
@@ -681,6 +691,7 @@ namespace TRUCK_STD.Design
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
         private System.Windows.Forms.DataGridViewImageColumn cl_del;
         private System.Windows.Forms.DataGridViewImageColumn cl_edit;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_id;
