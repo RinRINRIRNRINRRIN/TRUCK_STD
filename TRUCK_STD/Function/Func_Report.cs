@@ -1,203 +1,190 @@
 ﻿using Microsoft.Reporting.WinForms;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using TRUCK_STD.DbBase;
 using TRUCK_STD.Functions;
 
 namespace TRUCK_STD.Function
 {
     class Func_Report
     {
-        public static string rtp_ordernumber { get; set; }
-        public static string rtp_HeadCompany { get; set; }
-        public static string rtp_HeadAddress { get; set; }
-        public static string rtp_HeadPhone { get; set; }
-        public static string rtp_company { get; set; }
-        public static string rtp_product { get; set; }
-        public static string rtp_dateIn { get; set; }
-        public static string rtp_dateOut { get; set; }
-        public static string rtp_timeIn { get; set; }
-        public static string rtp_timeOut { get; set; }
-        public static string rtp_carnumber { get; set; }
-        public static string rtp_wghIn { get; set; }
-        public static string rtp_wghOut { get; set; }
-        public static string rtp_gross { get; set; }
+        //public static string rtp_ordernumber { get; set; }
+        //public static string rtp_station { get; set; }
+        //public static string rtp_HeadCompany { get; set; }
+        //public static string rtp_HeadAddress { get; set; }
+        //public static string rtp_HeadPhone { get; set; }
+        //public static string rtp_customer { get; set; }
+        //public static string rtp_product { get; set; }
+        //public static string rtp_dateIn { get; set; }
+        //public static string rtp_dateOut { get; set; }
+        //public static string rtp_timeIn { get; set; }
+        //public static string rtp_timeOut { get; set; }
+        //public static string rtp_carnumber { get; set; }
+        //public static string rtp_wghIn { get; set; }
+        //public static string rtp_wghOut { get; set; }
+        //public static string rtp_wghNet { get; set; }
+        //public static string rtp_gross { get; set; }
+        //public static string rtp_price { get; set; }
+        //public static string rtp_priceNet { get; set; }
 
-        public static string rtp_price { get; set; }
-        public static string rtp_priceNet { get; set; }
+        //// Prop Image LPR
+        //public static string pictureIn { get; set; }
+        //public static string pictureOut { get; set; }
+        //public static string piclicenseIn { get; set; }
+        //public static string piclicenseOut { get; set; }
 
 
+        static List<string> licensePicture = new List<string>();
+        static List<string> pictureFront = new List<string>();
+        static List<string> pictureBack = new List<string>();
+        static List<string> dates = new List<string>();
+        static List<string> Times = new List<string>();
+        static List<string> weigth = new List<string>();
+        static string jobOrder = "";
+        static string licenseHead = "";
+        static string licenseTail = "";
+        static string customerName = "";
+        static string productName = "";
+        static double productPrice = 0;
+        static double netWeight = 0;
+        static double huminityPercent = 0;
+        static double impurityPercent = 0;
+        static double powderPercent = 0;
+        static double priceNet = 0;
+        static string priceOther = "";
+        static double totalHuminity = 0;
+        static double weightProcess = 0;
+        static double weightHuminity = 0;
+        static double priceProcess = 0;
+        static string carNumber = "";
+        static byte[] qrCode = null;
 
 
-        public static void Report_have_price(ReportViewer reportViewer1)
+        static double huminityBase = 0;
+        static double huminityNet = 0;
+        static double impurityNet = 0;
+
+        public static void ReportLPR(ReportViewer reportViewer1)
         {
-            reportViewer1.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptHaveMoney.rdlc";
-
-            // สร้าง parameter ใหม่
-            ReportParameter rptCarnumber = new ReportParameter("rtp_carnumber", rtp_carnumber);
-            ReportParameter rptDateIn = new ReportParameter("rtp_dateIn", rtp_dateIn);
-            ReportParameter rptTimeIn = new ReportParameter("rtp_timeIn", rtp_timeIn);
-            ReportParameter rptDateOut = new ReportParameter("rtp_dateOut", rtp_dateOut);
-            ReportParameter rptTimeOut = new ReportParameter("rtp_timeOut", rtp_timeOut);
-            ReportParameter rptWghIn = new ReportParameter("rtp_wghIn", rtp_wghIn);
-            ReportParameter rptwghOut = new ReportParameter("rtp_wghOut", rtp_wghOut);
-            ReportParameter rptOrdernumber = new ReportParameter("rtp_ordernumber", rtp_ordernumber);
-            ReportParameter rptGross = new ReportParameter("rtp_gross", rtp_gross);
-            ReportParameter rptProduct = new ReportParameter("rtp_product", rtp_product);
-            ReportParameter rptPrice = new ReportParameter("rtp_pricePerKG", rtp_price);
-            ReportParameter rptPriceNet = new ReportParameter("rtp_priceNet", rtp_priceNet);
-            ReportParameter rptCompany = new ReportParameter("rtp_company", rtp_company);
-
-
-            // กำหนด ค่าให้กับ parameter ใน report
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptCarnumber });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptDateIn });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptTimeIn });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptDateOut });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptTimeOut });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptWghIn });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptwghOut });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptOrdernumber });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptGross });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptProduct });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptPrice });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptPriceNet });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptCompany });
-
-            DataSet1 dataSet1 = new DataSet1();
-            dataSet1.Tables["tbimg"].Rows.Clear();
-
-            // สร้าง QR Code
-            byte[] qrCode = Func_GenQrCode.GenerateQRCode($"{rtp_carnumber}|{rtp_dateOut}|{rtp_timeOut}|{rtp_gross}");
-            dataSet1.Tables["tbimg"].Rows.Add(qrCode);
-
-
-            // ดึงค่าจาก registry มาแสดงที่ report
-            rtp_HeadCompany = registy.tickets.company;
-            rtp_HeadAddress = registy.tickets.address;
-            rtp_HeadPhone = registy.tickets.phone;
-
-            ReportParameter rtpcompany = new ReportParameter("rtp_HeadCompany", rtp_HeadCompany);
-            ReportParameter rtpaddress = new ReportParameter("rtp_HeadAddress", rtp_HeadAddress);
-            ReportParameter rtpphone = new ReportParameter("rtp_HeadPhone", rtp_HeadPhone);
-
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpcompany });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpaddress });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpphone });
-
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", dataSet1.Tables["tbimg"]));
-
-
-            reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
-            reportViewer1.PageSetupDialog();
-            reportViewer1.RefreshReport();
+            reportViewer1.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptLPR.rdlc";
+            //DefineParameter("LPR", reportViewer1);
         }
 
-
-        public static void Report_no_price(ReportViewer reportViewer1)
+        static void DefineParameterOnReport(string table, DataSet dataSet, ReportViewer reportViewer)
         {
-            reportViewer1.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptNoMoney.rdlc";
+            ReportParameter rptCarnumber = new ReportParameter("rtpHeadCompany", registy.tickets.company);
+            ReportParameter rptDateIn = new ReportParameter("rtpHeadPhone", registy.tickets.address);
+            ReportParameter rptTimeIn = new ReportParameter("rtpHeadAddress", registy.tickets.phone);
+            ReportParameter rptDateOut = new ReportParameter("rtpDateIn", dates[0]);
+            ReportParameter rptTimeOut = new ReportParameter("rtpDateOut", dates[1]);
+            ReportParameter rptWghIn = new ReportParameter("rtpTimeIn", Times[0]);
+            ReportParameter rptwghOut = new ReportParameter("rtpTimeOut", Times[1]);
+            ReportParameter rptOrdernumber = new ReportParameter("rtpWeightIn", weigth[0]);
+            ReportParameter rptGross = new ReportParameter("rtpWeightOut", weigth[1]);
 
-            // สร้าง parameter ใหม่
-            ReportParameter rptCarnumber = new ReportParameter("rtp_carnumber", rtp_carnumber);
-            ReportParameter rptDateIn = new ReportParameter("rtp_DateIn", rtp_dateIn);
-            ReportParameter rptTimeIn = new ReportParameter("rtp_TimeIn", rtp_timeIn);
-            ReportParameter rptDateOut = new ReportParameter("rtp_DateOut", rtp_dateOut);
-            ReportParameter rptTimeOut = new ReportParameter("rtp_TimeOut", rtp_timeOut);
-            ReportParameter rptWghIn = new ReportParameter("rtp_wghIn", rtp_wghIn);
-            ReportParameter rptwghOut = new ReportParameter("rtp_wghOut", rtp_wghOut);
-            ReportParameter rptOrdernumber = new ReportParameter("rtp_ordernumber", rtp_ordernumber);
-            ReportParameter rptGross = new ReportParameter("rtp_gross", rtp_gross);
-            ReportParameter rptProduct = new ReportParameter("rtp_product", rtp_product);
+            reportViewer.LocalReport.SetParameters(new ReportParameter[] {
+                    rptCarnumber,rptDateIn,rptTimeIn,rptDateOut,rptTimeOut,
+                    rptWghIn, rptwghOut, rptOrdernumber, rptGross});
 
-            // กำหนด ค่าให้กับ parameter ใน report
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptCarnumber });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptDateIn });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptTimeIn });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptDateOut });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptTimeOut });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptWghIn });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptwghOut });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptOrdernumber });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptGross });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rptProduct });
+            reportViewer.LocalReport.DataSources.Clear();
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", dataSet.Tables[table]));
 
-            DataSet1 dataSet1 = new DataSet1();
-            dataSet1.Tables["tbimg"].Rows.Clear();
-
-            // สร้าง QR Code
-            byte[] qrCode = Func_GenQrCode.GenerateQRCode($"{rtp_carnumber}|{rtp_dateOut}|{rtp_timeOut}|{rtp_gross}");
-            dataSet1.Tables["tbimg"].Rows.Add(qrCode);
-
-            // ดึงค่าจาก registry มาแสดงที่ report
-            rtp_HeadCompany = registy.tickets.company;
-            rtp_HeadAddress = registy.tickets.address;
-            rtp_HeadPhone = registy.tickets.phone;
-
-            ReportParameter rtpcompany = new ReportParameter("rtp_company", rtp_HeadCompany);
-            ReportParameter rtpaddress = new ReportParameter("rtp_address", rtp_HeadAddress);
-            ReportParameter rtpphone = new ReportParameter("rtp_phone", rtp_HeadPhone);
-
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpcompany });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpaddress });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpphone });
-
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", dataSet1.Tables["tbimg"]));
-
-            reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
-            reportViewer1.PageSetupDialog();
-            reportViewer1.RefreshReport();
+            reportViewer.SetDisplayMode(DisplayMode.PrintLayout);
+            reportViewer.PageSetupDialog();
+            reportViewer.RefreshReport();
         }
 
-        public static void Report_hire_weight(ReportViewer reportViewer1)
+        static void GetDataFormDatabase()
         {
-            reportViewer1.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptHireWeigh.rdlc";
+            foreach (DataRow rw in job.tb.Rows)
+            {
+                // Main data
+                jobOrder = rw["jobOrder"].ToString();
+                licenseHead = rw["licenseHead"].ToString();
+                licenseTail = rw["licenseTail"].ToString();
+                customerName = rw["customerName"].ToString();
+                productName = rw["productName"].ToString();
+                productPrice = double.Parse(rw["productPrice"].ToString());
+                netWeight = double.Parse(rw["netWeight"].ToString());
+                powderPercent = double.Parse(rw["powderPercent"].ToString());
+                huminityPercent = double.Parse(rw["huminityPercent"].ToString());
+                impurityPercent = double.Parse(rw["impurityPercent"].ToString());
+                priceNet = double.Parse(rw["priceNet"].ToString());
+                priceOther = rw["priceOther"].ToString();
 
-            // สร้าง parameter ใหม่
-            ReportParameter rtpOrdernumber = new ReportParameter("rtp_ordernumber", rtp_ordernumber);
-            ReportParameter rtpCompany = new ReportParameter("rtp_company", rtp_company);
-            ReportParameter rtpDateIn = new ReportParameter("rtp_dateIn", rtp_dateIn);
-            ReportParameter rtpProduct = new ReportParameter("rtp_product", rtp_product);
-            ReportParameter rtpCarnumber = new ReportParameter("rtp_carnumber", rtp_carnumber);
-            ReportParameter rtpTimeIn = new ReportParameter("rtp_timeIn", rtp_timeIn);
-            ReportParameter rtpGross = new ReportParameter("rtp_wghIn", rtp_gross);
+                // Sub data
+                DateTime dateTime = DateTime.Parse(rw["dateTimes"].ToString());
+                dates.Add(dateTime.ToString("dd-MM-yyyy", System.Globalization.CultureInfo.CreateSpecificCulture("TH-th")));
+                Times.Add(dateTime.ToString("HH:mm:ss", System.Globalization.CultureInfo.CreateSpecificCulture("TH-th")));
+                weigth.Add(rw["weight"].ToString());
+            }
+        }
 
-
-            // กำหนด ค่าให้กับ parameter ใน report
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpCompany });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpDateIn });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpProduct });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpCarnumber });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpTimeIn });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpGross });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpOrdernumber });
-
+        public static void ReportManual(ReportViewer reportViewer, int id)
+        {
+            reportViewer.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptNoMoney.rdlc";
 
             DataSet1 dataSet1 = new DataSet1();
-            dataSet1.Tables["tbimg"].Rows.Clear();
 
-            // สร้าง QR Codre
-            byte[] qrCode = Func_GenQrCode.GenerateQRCode($"{rtp_carnumber}|{rtp_dateOut}|{rtp_timeOut}|{rtp_gross}");
-            dataSet1.Tables["tbimg"].Rows.Add(qrCode);
+            if (job.SelectId(id))
+            {
+                GetDataFormDatabase();
+                carNumber = $"{licenseHead}/{licenseTail}";
+                qrCode = Func_GenQrCode.GenerateQRCode($"{licenseHead}|{licenseHead}|{licenseHead}|{licenseHead}");
 
-            // ดึงค่าจาก registry มาแสดงที่ report
-            rtp_HeadCompany = registy.tickets.company;
-            rtp_HeadAddress = registy.tickets.address;
-            rtp_HeadPhone = registy.tickets.phone;
+                //dataSet1.Tables["tbimg"].Rows.Add(jobOrder, carNumber, powderPercent, productName, customerName, netWeight, qrCode);
+                dataSet1.Tables["tbWeight"].Rows.Add(jobOrder, carNumber, productName, customerName, netWeight, qrCode, huminityPercent, impurityPercent, powderPercent);
 
-            ReportParameter rtpcompany = new ReportParameter("rtp_HeadCompany", rtp_HeadCompany);
-            ReportParameter rtpaddress = new ReportParameter("rtp_HeadAddress", rtp_HeadAddress);
-            ReportParameter rtpphone = new ReportParameter("rtp_HeadPhone", rtp_HeadPhone);
+                DefineParameterOnReport("tbWeight", dataSet1, reportViewer);
 
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpcompany });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpaddress });
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rtpphone });
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", dataSet1.Tables["tbimg"]));
+            }
+        }
 
+        public static void ReportCassava(ReportViewer reportViewer1, int id)
+        {
+            reportViewer1.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptCassava.rdlc";
 
-            reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
-            reportViewer1.PageSetupDialog();
-            reportViewer1.RefreshReport();
+            DataSet1 dataSet1 = new DataSet1();
+
+            if (job.SelectId(id))
+            {
+                GetDataFormDatabase();
+                carNumber = $"{licenseHead}/{licenseTail}";
+                qrCode = Func_GenQrCode.GenerateQRCode($"{licenseHead}|{licenseHead}|{licenseHead}|{licenseHead}");
+
+                dataSet1.Tables["tbWeight"].Rows.Add(jobOrder, carNumber, powderPercent, productName, customerName, netWeight, qrCode);
+
+                DefineParameterOnReport("tbWeight", dataSet1, reportViewer1);
+            }
+        }
+
+        public static void ReportPaddy(ReportViewer reportViewer1, int id)
+        {
+            reportViewer1.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptPaddy.rdlc";
+            DataSet1 dataSet1 = new DataSet1();
+
+            if (job.SelectId(id))
+            {
+                GetDataFormDatabase();
+                qrCode = Func_GenQrCode.GenerateQRCode($"{licenseHead}|{licenseHead}|{licenseHead}|{licenseHead}");
+                dataSet1.Tables["tbWeight"].Rows.Add(jobOrder, carNumber, productName, customerName, netWeight, qrCode, huminityPercent, impurityPercent);
+                DefineParameterOnReport("tbWeight", dataSet1, reportViewer1);
+            }
+        }
+
+        public static void ReportCorn(ReportViewer reportViewer1, int id)
+        {
+            reportViewer1.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptCorn.rdlc";
+            DataSet1 dataSet1 = new DataSet1();
+
+            if (job.SelectId(id))
+            {
+                carNumber = $"{licenseHead}/{licenseTail}";
+                qrCode = Func_GenQrCode.GenerateQRCode($"{licenseHead}|{licenseHead}|{licenseHead}|{licenseHead}");
+                dataSet1.Tables["tbWeight"].Rows.Add(jobOrder, carNumber, productName, customerName, netWeight, qrCode, huminityPercent);
+                DefineParameterOnReport("tbWeight", dataSet1, reportViewer1);
+            }
         }
     }
 }
