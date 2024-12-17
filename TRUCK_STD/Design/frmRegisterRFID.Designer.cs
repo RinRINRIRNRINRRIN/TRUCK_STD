@@ -287,7 +287,7 @@
             this.pnProcess.Controls.Add(this.label6);
             this.pnProcess.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pnProcess.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnProcess.FillColor = System.Drawing.Color.Olive;
+            this.pnProcess.FillColor = System.Drawing.Color.Chocolate;
             this.pnProcess.FillColor2 = System.Drawing.Color.DarkSalmon;
             this.pnProcess.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             this.pnProcess.Location = new System.Drawing.Point(5, 45);
@@ -984,7 +984,7 @@
             // saRFID
             // 
             this.saRFID.BaudRate = 115200;
-            this.saRFID.PortName = "COM9";
+            this.saRFID.PortName = "COM2";
             this.saRFID.ReadBufferSize = 2048;
             // 
             // tmReadRfid

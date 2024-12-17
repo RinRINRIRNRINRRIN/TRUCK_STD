@@ -330,6 +330,7 @@ namespace TRUCK_STD.Design
                 saRFID.Read(bytes, 0, intBytes);
 
                 string hexString = BitConverter.ToString(bytes).Replace("-", " ");
+                Console.WriteLine(hexString);
                 // Read response
                 if (bytes.Length == 5) // ไม่พบเลขบัตร
                 {
@@ -678,6 +679,7 @@ namespace TRUCK_STD.Design
                 saRFID.Read(bytes, 0, intBytes);
 
                 string hexString = BitConverter.ToString(bytes).Replace("-", " ");
+                Console.WriteLine(hexString);
                 // Read response
                 if (bytes.Length == 5) // ไม่พบเลขบัตร
                 {
