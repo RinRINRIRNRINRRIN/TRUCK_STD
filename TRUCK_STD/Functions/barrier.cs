@@ -7,14 +7,27 @@ namespace TRUCK_STD.Functions
     {
         public static string COM
         {
-            get { return registy.plc.plcPort; }
+            get { return registy.function.BARRIERCOM; }
         }
 
-        public static int BAUDRATE
+        public static string BAUDRATE
         {
-            get { return registy.plc.plcBaudrate; }
+            get { return registy.function.BARRIERBaudrate; }
         }
         public static string ERR { get; set; }
+
+
+
+        public static bool ChcekPort()
+        {
+            if (COM == "" || BAUDRATE == "")
+            {
+                return false;
+            }
+            else
+                return true;
+        }
+
         /// <summary>
         /// For connect port
         /// </summary>
@@ -25,7 +38,7 @@ namespace TRUCK_STD.Functions
             try
             {
                 sa.PortName = COM;
-                sa.BaudRate = BAUDRATE;
+                sa.BaudRate = int.Parse(BAUDRATE);
                 sa.Open();
                 if (!sa.IsOpen)
                 {
@@ -70,7 +83,6 @@ namespace TRUCK_STD.Functions
                     ERR = "สั่งงานไม้กั้นไม่สำเร็จ";
                     return false;
                 }
-
             }
             catch (System.Exception ex)
             {
