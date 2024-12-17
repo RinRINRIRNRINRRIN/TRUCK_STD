@@ -13,9 +13,6 @@ namespace TRUCK_STD.Functions
 
         public class function
         {
-            public static string LINEState { get; set; }
-            public static string LINEKey { get; set; }
-            public static string LINE_TOKEN { get; set; }
             public static string PRICE { get; set; }
             public static string RFIDState { get; set; }
             public static string RFIDKey { get; set; }
@@ -27,6 +24,8 @@ namespace TRUCK_STD.Functions
             public static string LPRKey { get; set; }
             public static string BARRIERState { get; set; }
             public static string BARRIERKey { get; set; }
+            public static string BARRIERCOM { get; set; }
+            public static string BARRIERBaudrate { get; set; }
         }
 
         public class db
@@ -79,16 +78,6 @@ namespace TRUCK_STD.Functions
             public static int scaleBaudrate { get; set; }
         }
 
-        public class plc
-        {
-            public static string plcState { get; set; }
-            public static string plcKey { get; set; }
-            public static string plcPort { get; set; }
-            public static int plcBaudrate { get; set; }
-            public static string slave { get; set; }
-            public static string command1 { get; set; }
-            public static string command2 { get; set; }
-        }
 
         public static bool CreateKey()
         {
@@ -104,14 +93,6 @@ namespace TRUCK_STD.Functions
                     Patch.SetValue("key_scalePort", "");
                     Patch.SetValue("key_scaleBaudrate", "9600");
 
-                    // plc
-                    Patch.SetValue("key_plcState", "");
-                    Patch.SetValue("key_plcKey", "");
-                    Patch.SetValue("key_plcPort", "");
-                    Patch.SetValue("key_plcBaudrate", "9600");
-                    Patch.SetValue("key_plcSlave", "");
-                    Patch.SetValue("key_plcCommand1", "");
-                    Patch.SetValue("key_plcCommand2", "");
 
                     // system
                     Patch.SetValue("key_systemBussinessType", "");
@@ -147,12 +128,11 @@ namespace TRUCK_STD.Functions
                     Patch.SetValue("key_functionCAMERAKey", "");
                     Patch.SetValue("key_functionLPRState", "");
                     Patch.SetValue("key_functionLPRKey", "");
-                    Patch.SetValue("key_functionLINEState", "");
-                    Patch.SetValue("key_functionLINEKey", "");
-                    Patch.SetValue("key_functionLineToken", "");
                     Patch.SetValue("key_functionPrice", "");
                     Patch.SetValue("key_functionBarrierState", "");
                     Patch.SetValue("key_functionBarrierKey", "");
+                    Patch.SetValue("key_functionBarrierCOM", "");
+                    Patch.SetValue("key_functionBarrierBaudrate", "");
 
                     // tickets
                     Patch.SetValue("key_ticketAddress", "");
@@ -191,12 +171,7 @@ namespace TRUCK_STD.Functions
                     Patch.SetValue("key_scaleName", scale.scaleName);
                     Patch.SetValue("key_scalePort", scale.scalePort);
                     Patch.SetValue("key_scaleBaudrate", scale.scaleBaudrate.ToString());
-                    // plc
-                    Patch.SetValue("key_plcPort", plc.plcPort);
-                    Patch.SetValue("key_plcBaudrate", plc.plcBaudrate.ToString());
-                    Patch.SetValue("key_plcSlave", plc.slave);
-                    Patch.SetValue("key_plcCommand1", plc.command1);
-                    Patch.SetValue("key_plcCommand2", plc.command2);
+
                     // system
                     Patch.SetValue("key_systemBussinessType", system.bussinessType);
                     Patch.SetValue("key_systemDate", system.date);
@@ -229,12 +204,11 @@ namespace TRUCK_STD.Functions
                     Patch.SetValue("key_functionCAMERAKey", function.CAMERAKey);
                     Patch.SetValue("key_functionLPRState", function.LPRState);
                     Patch.SetValue("key_functionLPRKey", function.LPRKey);
-                    Patch.SetValue("key_functionLINEState", function.LINEState);
-                    Patch.SetValue("key_functionLINEKey", function.LINEKey);
-                    Patch.SetValue("key_functionLineToken", function.LINE_TOKEN);
                     Patch.SetValue("key_functionPrice", function.PRICE);
                     Patch.SetValue("key_functionBarrierState", function.BARRIERState);
                     Patch.SetValue("key_functionBarrierKey", function.BARRIERKey);
+                    Patch.SetValue("key_functionBarrierCOM", function.BARRIERCOM);
+                    Patch.SetValue("key_functionBarrierBaudrate", function.BARRIERBaudrate);
                     // tickets
                     Patch.SetValue("key_ticketAddress", tickets.address);
                     Patch.SetValue("key_ticketCompany", tickets.company);
@@ -269,14 +243,6 @@ namespace TRUCK_STD.Functions
                     scale.scaleName = Convert.ToString(Patch.GetValue("key_scaleName"));
                     scale.scalePort = Convert.ToString(Patch.GetValue("key_scalePort"));
                     scale.scaleBaudrate = Convert.ToInt16(Patch.GetValue("key_scaleBaudrate"));
-                    // plc
-                    plc.plcState = Convert.ToString(Patch.GetValue("key_plcState"));
-                    plc.plcKey = Convert.ToString(Patch.GetValue("key_plcKey"));
-                    plc.plcPort = Convert.ToString(Patch.GetValue("key_plcPort"));
-                    plc.plcBaudrate = Convert.ToInt16(Patch.GetValue("key_plcBaudrate"));
-                    plc.slave = Convert.ToString(Patch.GetValue("key_plcSlave"));
-                    plc.command1 = Convert.ToString(Patch.GetValue("key_plcCommand1"));
-                    plc.command2 = Convert.ToString(Patch.GetValue("key_plcCommand2"));
 
                     // system
                     system.bussinessType = Convert.ToString(Patch.GetValue("key_systemBussinessType"));
@@ -310,12 +276,11 @@ namespace TRUCK_STD.Functions
                     function.CAMERAKey = Convert.ToString(Patch.GetValue("key_functionCAMERAKey"));
                     function.LPRState = Convert.ToString(Patch.GetValue("key_functionLPRState"));
                     function.LPRKey = Convert.ToString(Patch.GetValue("key_functionLPRKey"));
-                    function.LINEState = Convert.ToString(Patch.GetValue("key_functionLINEState"));
-                    function.LINEKey = Convert.ToString(Patch.GetValue("key_functionLINEKey"));
-                    function.LINE_TOKEN = Convert.ToString(Patch.GetValue("key_functionLinetoken"));
                     function.PRICE = Convert.ToString(Patch.GetValue("key_functionPRICE"));
                     function.BARRIERState = Convert.ToString(Patch.GetValue("key_functionBarrierState"));
                     function.BARRIERKey = Convert.ToString(Patch.GetValue("key_functionBarrierKey"));
+                    function.BARRIERCOM = Convert.ToString(Patch.GetValue("key_functionBarrierCOM"));
+                    function.BARRIERBaudrate = Convert.ToString(Patch.GetValue("key_functionBarrierBaudrate"));
                     // tickets
                     tickets.address = Convert.ToString(Patch.GetValue("key_ticketAddress"));
                     tickets.company = Convert.ToString(Patch.GetValue("key_ticketCompany"));
