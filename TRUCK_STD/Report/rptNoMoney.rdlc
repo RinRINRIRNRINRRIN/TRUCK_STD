@@ -17,15 +17,47 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="QRCodeImage">
-          <DataField>QRCodeImage</DataField>
+        <Field Name="jobId">
+          <DataField>jobId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="carNumber">
+          <DataField>carNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="productName">
+          <DataField>productName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="customerName">
+          <DataField>customerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="weightNet">
+          <DataField>weightNet</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="imgQR">
+          <DataField>imgQR</DataField>
           <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="huminityPercent">
+          <DataField>huminityPercent</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="impurityPercent">
+          <DataField>impurityPercent</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="powderPercent">
+          <DataField>powderPercent</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>D:\Project\โปรแกรม รถบรรทุก\C#_โปรแกรมรถบรรทุก standard 6.0.0 (WGH_IN_OUT)\Desktop application\TRUCK_STD beta 6.0.7\TRUCK_STD\DataSet1.xsd</rd:SchemaPath>
-        <rd:TableName>tbimg</rd:TableName>
+        <rd:SchemaPath>D:\Project\Project-TruckScale\Program-Standard\Desktop application\beta 6.0.8\TRUCK_STD\DataSet1.xsd</rd:SchemaPath>
+        <rd:TableName>tbWeight</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -36,41 +68,6 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Textbox Name="Textbox7">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>วันที่ชั่ง</Value>
-                    <Style>
-                      <FontFamily>Angsana New</FontFamily>
-                      <FontSize>16pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Right</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>4.93889cm</Top>
-            <Left>1.93047cm</Left>
-            <Height>0.74cm</Height>
-            <Width>1.6505cm</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="Textbox8">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
