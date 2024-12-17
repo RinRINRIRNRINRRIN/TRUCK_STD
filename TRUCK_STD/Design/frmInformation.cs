@@ -45,7 +45,6 @@ namespace TRUCK_STD.Design
                 linkLabel1.Visible = true;
             }
 
-            CheckFunction(lblLine, registy.function.LINEState);
             CheckFunction(lblRFID, registy.function.RFIDState);
             CheckFunction(lblCAMERA, registy.function.CAMERAState);
             CheckFunction(lblLPR, registy.function.LPRState);
