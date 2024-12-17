@@ -379,8 +379,6 @@ namespace TRUCK_STD.Design
 
                     #region บันทึกการตั้งค่า
                     // Save funcstion
-                    registy.function.LINEState = systemLine.ToString().ToUpper();
-                    registy.function.LINE_TOKEN = "";
                     registy.function.CAMERAState = systemCamera.ToString().ToUpper();
                     registy.function.BARRIERState = systemBARRIER.ToString().ToUpper();
                     if (station == "จุดลงทะเบียน")
@@ -466,12 +464,7 @@ namespace TRUCK_STD.Design
                     registy.scale.scaleName = cbbIndicator.Text;
                     registy.scale.scalePort = "";
                     registy.scale.scaleBaudrate = 9600;
-                    // Set plc
-                    registy.plc.plcPort = "";
-                    registy.plc.plcBaudrate = 0;
-                    registy.plc.slave = "";
-                    registy.plc.command1 = "";
-                    registy.plc.command2 = "";
+
 
                     // ทำการ SET ค่าให้กับ registry 
                     if (registy.Set())

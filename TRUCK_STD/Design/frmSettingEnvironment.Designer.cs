@@ -149,10 +149,7 @@ namespace TRUCK_STD.Design
             this.label57 = new System.Windows.Forms.Label();
             this.tgsCamera = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.label49 = new System.Windows.Forms.Label();
-            this.tgsLine = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label52 = new System.Windows.Forms.Label();
             this.tgsPrice = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label51 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.gbStation = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -2227,10 +2224,7 @@ namespace TRUCK_STD.Design
             this.gbFunction.Controls.Add(this.label57);
             this.gbFunction.Controls.Add(this.tgsCamera);
             this.gbFunction.Controls.Add(this.label49);
-            this.gbFunction.Controls.Add(this.tgsLine);
-            this.gbFunction.Controls.Add(this.label52);
             this.gbFunction.Controls.Add(this.tgsPrice);
-            this.gbFunction.Controls.Add(this.label51);
             this.gbFunction.Controls.Add(this.label45);
             this.gbFunction.Controls.Add(this.label44);
             this.gbFunction.CustomBorderColor = System.Drawing.Color.Navy;
@@ -2239,7 +2233,7 @@ namespace TRUCK_STD.Design
             this.gbFunction.ForeColor = System.Drawing.Color.White;
             this.gbFunction.Location = new System.Drawing.Point(149, 6);
             this.gbFunction.Name = "gbFunction";
-            this.gbFunction.Size = new System.Drawing.Size(806, 459);
+            this.gbFunction.Size = new System.Drawing.Size(806, 397);
             this.gbFunction.TabIndex = 25;
             this.gbFunction.Text = "ฟังชั่นโปรแกรม";
             // 
@@ -2253,7 +2247,7 @@ namespace TRUCK_STD.Design
             this.tgsBarrier.CheckedState.InnerBorderRadius = 13;
             this.tgsBarrier.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2Transition1.SetDecoration(this.tgsBarrier, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.tgsBarrier.Location = new System.Drawing.Point(125, 400);
+            this.tgsBarrier.Location = new System.Drawing.Point(125, 334);
             this.tgsBarrier.Name = "tgsBarrier";
             this.tgsBarrier.Size = new System.Drawing.Size(81, 34);
             this.tgsBarrier.TabIndex = 48;
@@ -2272,7 +2266,7 @@ namespace TRUCK_STD.Design
             this.guna2Transition1.SetDecoration(this.label64, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label64.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label64.ForeColor = System.Drawing.Color.Black;
-            this.label64.Location = new System.Drawing.Point(16, 372);
+            this.label64.Location = new System.Drawing.Point(16, 306);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(66, 25);
             this.label64.TabIndex = 47;
@@ -2288,7 +2282,7 @@ namespace TRUCK_STD.Design
             this.tgsRFID.CheckedState.InnerBorderRadius = 13;
             this.tgsRFID.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2Transition1.SetDecoration(this.tgsRFID, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.tgsRFID.Location = new System.Drawing.Point(125, 338);
+            this.tgsRFID.Location = new System.Drawing.Point(125, 272);
             this.tgsRFID.Name = "tgsRFID";
             this.tgsRFID.Size = new System.Drawing.Size(81, 34);
             this.tgsRFID.TabIndex = 46;
@@ -2307,7 +2301,7 @@ namespace TRUCK_STD.Design
             this.guna2Transition1.SetDecoration(this.label58, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label58.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label58.ForeColor = System.Drawing.Color.Black;
-            this.label58.Location = new System.Drawing.Point(16, 310);
+            this.label58.Location = new System.Drawing.Point(16, 244);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(116, 25);
             this.label58.TabIndex = 45;
@@ -2323,7 +2317,7 @@ namespace TRUCK_STD.Design
             this.tgsLPR.CheckedState.InnerBorderRadius = 13;
             this.tgsLPR.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2Transition1.SetDecoration(this.tgsLPR, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.tgsLPR.Location = new System.Drawing.Point(125, 273);
+            this.tgsLPR.Location = new System.Drawing.Point(125, 207);
             this.tgsLPR.Name = "tgsLPR";
             this.tgsLPR.Size = new System.Drawing.Size(81, 34);
             this.tgsLPR.TabIndex = 44;
@@ -2342,7 +2336,7 @@ namespace TRUCK_STD.Design
             this.guna2Transition1.SetDecoration(this.label57, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label57.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label57.ForeColor = System.Drawing.Color.Black;
-            this.label57.Location = new System.Drawing.Point(16, 245);
+            this.label57.Location = new System.Drawing.Point(16, 179);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(109, 25);
             this.label57.TabIndex = 43;
@@ -2358,7 +2352,7 @@ namespace TRUCK_STD.Design
             this.tgsCamera.CheckedState.InnerBorderRadius = 13;
             this.tgsCamera.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2Transition1.SetDecoration(this.tgsCamera, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.tgsCamera.Location = new System.Drawing.Point(125, 208);
+            this.tgsCamera.Location = new System.Drawing.Point(125, 142);
             this.tgsCamera.Name = "tgsCamera";
             this.tgsCamera.Size = new System.Drawing.Size(81, 34);
             this.tgsCamera.TabIndex = 42;
@@ -2377,46 +2371,11 @@ namespace TRUCK_STD.Design
             this.guna2Transition1.SetDecoration(this.label49, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label49.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label49.ForeColor = System.Drawing.Color.Black;
-            this.label49.Location = new System.Drawing.Point(16, 180);
+            this.label49.Location = new System.Drawing.Point(16, 114);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(76, 25);
             this.label49.TabIndex = 41;
             this.label49.Text = "CAMERA";
-            // 
-            // tgsLine
-            // 
-            this.tgsLine.Animated = true;
-            this.tgsLine.CheckedState.BorderColor = System.Drawing.Color.Green;
-            this.tgsLine.CheckedState.BorderRadius = 15;
-            this.tgsLine.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.tgsLine.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tgsLine.CheckedState.InnerBorderRadius = 13;
-            this.tgsLine.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2Transition1.SetDecoration(this.tgsLine, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.tgsLine.Location = new System.Drawing.Point(125, 143);
-            this.tgsLine.Name = "tgsLine";
-            this.tgsLine.Size = new System.Drawing.Size(81, 34);
-            this.tgsLine.TabIndex = 40;
-            this.tgsLine.UncheckedState.BorderColor = System.Drawing.Color.Red;
-            this.tgsLine.UncheckedState.BorderRadius = 15;
-            this.tgsLine.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tgsLine.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tgsLine.UncheckedState.InnerBorderRadius = 13;
-            this.tgsLine.UncheckedState.InnerBorderThickness = 1;
-            this.tgsLine.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.tgsLine.Click += new System.EventHandler(this.tgsPrice_Click);
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.label52, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label52.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.ForeColor = System.Drawing.Color.Black;
-            this.label52.Location = new System.Drawing.Point(16, 115);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(94, 25);
-            this.label52.TabIndex = 39;
-            this.label52.Text = "Line notify";
             // 
             // tgsPrice
             // 
@@ -2440,18 +2399,6 @@ namespace TRUCK_STD.Design
             this.tgsPrice.UncheckedState.InnerBorderThickness = 1;
             this.tgsPrice.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.tgsPrice.Click += new System.EventHandler(this.tgsPrice_Click);
-            // 
-            // label51
-            // 
-            this.guna2Transition1.SetDecoration(this.label51, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label51.Font = new System.Drawing.Font("Athiti", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label51.ForeColor = System.Drawing.Color.Red;
-            this.label51.Location = new System.Drawing.Point(235, 143);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(554, 52);
-            this.label51.TabIndex = 28;
-            this.label51.Text = "** การใช้งานฟังชั่น Line notify จำเป็นต้องใช้อินเตอร์เน็ตทุกครั้ง ควรเป็น Deverlo" +
-    "p ของทางลูกค้า\r\n";
             // 
             // label45
             // 
@@ -2939,7 +2886,6 @@ namespace TRUCK_STD.Design
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2GroupBox gbFunction;
         private Guna.UI2.WinForms.Guna2ToggleSwitch tgsPrice;
-        private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label40;
@@ -2957,8 +2903,6 @@ namespace TRUCK_STD.Design
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
         private Guna.UI2.WinForms.Guna2ToggleSwitch tgsCamera;
         private System.Windows.Forms.Label label49;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch tgsLine;
-        private System.Windows.Forms.Label label52;
         private Guna.UI2.WinForms.Guna2ToggleSwitch tgsLPR;
         private System.Windows.Forms.Label label57;
         private Guna.UI2.WinForms.Guna2ToggleSwitch tgsRFID;
