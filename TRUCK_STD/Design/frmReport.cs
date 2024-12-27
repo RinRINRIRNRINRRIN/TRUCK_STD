@@ -12,6 +12,16 @@ namespace TRUCK_STD.Design
 
         public string reportType { get; set; }
         public string id { get; set; }
+
+
+        void ShowError()
+        {
+            msg.Icon = MessageDialogIcon.Error;
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Show($"Error show the report Order : {id}\n{jobDetail.ERR}", "Report error");
+            this.Close();
+        }
+
         private void frmReport_Load(object sender, EventArgs e)
         {
             switch (reportType)
@@ -20,19 +30,27 @@ namespace TRUCK_STD.Design
                     // Func_Report.Report_hire_weight(reportViewer1);
                     break;
                 case "Cassava":
-                    Func_Report.ReportCassava(reportViewer1, int.Parse(id));
+                    if (!Func_Report.ReportCassava())
+                        ShowError();
                     break;
                 case "Paddy":
-                    Func_Report.ReportPaddy(reportViewer1, int.Parse(id));
+                    if (!Func_Report.ReportPaddy())
+                        ShowError();
                     break;
                 case "Corn":
-                    Func_Report.ReportCorn(reportViewer1, int.Parse(id));
+                    if (!Func_Report.ReportCorn())
+                        ShowError();
                     break;
-                case "LPR":
-                    Func_Report.ReportLPR(reportViewer1);
-                    break;
+                //case "LPR":
+                //    Func_Report.ReportLPR(reportViewer1);
+                //    break;
                 case "MN":
-                    Func_Report.ReportManual(reportViewer1, int.Parse(id));
+                    if (!Func_Report.ReportManual())
+                        ShowError();
+                    break;
+                case "ReportAll":
+                    if (!Func_Report.ReportAllData(state))
+                        ShowError();
                     break;
             }
         }
