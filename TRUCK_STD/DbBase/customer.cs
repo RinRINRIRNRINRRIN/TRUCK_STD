@@ -1,12 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
-using TRUCK_STD.Models;
 
 namespace TRUCK_STD.DbBase
 {
     internal class customer
     {
-        public static string ERR { get; set; }
 
         static MySqlConnection con = DbConnect.con;
         static MySqlDataAdapter da = new MySqlDataAdapter();
@@ -14,6 +12,18 @@ namespace TRUCK_STD.DbBase
         public static DataTable tb = new DataTable();
         static string sql = "";
 
+        public static string ERR { get; set; }
+        public static string new_id { get; set; }
+        public static string old_id { get; set; }
+        public static string names { get; set; }
+
+
+        static void ClearProp()
+        {
+            new_id = null;
+            old_id = null;
+            names = null;
+        }
 
         public static bool Select()
         {
@@ -32,36 +42,22 @@ namespace TRUCK_STD.DbBase
 
             return true;
         }
-        public static bool SelectChar(customerModel customerModel)
-        {
-            try
-            {
-                sql = $"SELECT * FROM customer WHERE customerName LIKE '%{customerModel.names}%'";
-                da = new MySqlDataAdapter(sql, con);
-                tb = new DataTable();
-                da.Fill(tb);
-            }
-            catch (System.Exception ex)
-            {
-                ERR = ex.Message;
-                return false;
-            }
-
-            return true;
-        }
-
-        public static string SelectChar(string names)
+        public static string Select(string _name)
         {
             string result = "";
             try
             {
-                sql = $"SELECT * FROM customer WHERE customerName LIKE '%{names}%'";
+                sql = $"SELECT * FROM customer WHERE customerName LIKE '%{_name}%'";
                 da = new MySqlDataAdapter(sql, con);
                 tb = new DataTable();
                 da.Fill(tb);
+
+                if (tb.Rows.Count == 0)
+                    return "";
+
                 foreach (DataRow rw in tb.Rows)
                 {
-                    result = rw["id"].ToString();
+                    result = rw["names"].ToString();
                 }
 
             }
@@ -73,63 +69,68 @@ namespace TRUCK_STD.DbBase
 
             return result;
         }
-        public static bool Insert(customerModel customer)
+
+
+        public static bool Insert()
         {
             try
             {
-                sql = "INSERT INTO customer (id,names) " +
-                    "VALUES (@id,@names)";
+                sql = "INSERT INTO customer (customerId,customerName) " +
+                    "VALUES (@customerId,@customerName)";
 
                 cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.Add(new MySqlParameter("@id", customer.new_id));
-                cmd.Parameters.Add(new MySqlParameter("@names", customer.names));
+                cmd.Parameters.Add(new MySqlParameter("@customerId", new_id));
+                cmd.Parameters.Add(new MySqlParameter("@customerName", names));
                 cmd.ExecuteNonQuery();
             }
             catch (System.Exception ex)
             {
                 ERR = ex.Message;
+                ClearProp();
                 return false;
             }
-
+            ClearProp();
             return true;
         }
-        public static bool Update(customerModel customer)
+        public static bool Update()
         {
             try
             {
                 sql = "UPDATE customer " +
-                    "SET id = @new_id," +
-                    "names = @names " +
-                    "WHERE id = @old_id";
+                    "SET customerId = @new_id," +
+                    "customerName = @customerName " +
+                    "WHERE customerId = @old_id";
 
                 cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.Add(new MySqlParameter("@new_id", customer.new_id));
-                cmd.Parameters.Add(new MySqlParameter("@names", customer.names));
-                cmd.Parameters.Add(new MySqlParameter("@old_id", customer.old_id));
+                cmd.Parameters.Add(new MySqlParameter("@new_id", new_id));
+                cmd.Parameters.Add(new MySqlParameter("@customerName", names));
+                cmd.Parameters.Add(new MySqlParameter("@old_id", old_id));
                 cmd.ExecuteNonQuery();
             }
             catch (System.Exception ex)
             {
                 ERR = ex.Message;
+                ClearProp();
                 return false;
             }
-
+            ClearProp();
             return true;
         }
-        public static bool Delete(customerModel customer)
+        public static bool Delete()
         {
             try
             {
-                sql = $"DELETE FROM customer WHERE id = '{customer.old_id}'";
+                sql = $"DELETE FROM customer WHERE customerId = '{old_id}'";
                 cmd = new MySqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
             }
             catch (System.Exception ex)
             {
                 ERR = ex.Message;
+                ClearProp();
                 return false;
             }
-
+            ClearProp();
             return true;
         }
 
