@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
-using TRUCK_STD.Models;
 
 namespace TRUCK_STD.DbBase
 {
@@ -15,6 +14,26 @@ namespace TRUCK_STD.DbBase
         static string sql = "";
 
 
+        public static string new_ProductId { get; set; }
+        public static string old_ProductId { get; set; }
+        public static string ProductName { get; set; }
+        public static string ProductType { get; set; }
+        public static double ProductPrice { get; set; }
+
+
+        static void ClearProp()
+        {
+            new_ProductId = null;
+            old_ProductId = null;
+            ProductName = null;
+            ProductType = null;
+            ProductPrice = 0;
+        }
+
+        /// <summary>
+        /// สำหรับแสดงข้อมูลรายการสินค้าทั้งหมด
+        /// </summary>
+        /// <returns></returns>
         public static bool Select()
         {
             try
@@ -32,11 +51,18 @@ namespace TRUCK_STD.DbBase
 
             return true;
         }
-        public static bool SelectChar(productModel productModel)
+
+
+        /// <summary>
+        /// ค้นหาข้อมูลรายการสินค้าเฉพาะตัวอักษร
+        /// </summary>
+        /// <param name="_ProductName">ชื่อรายการสินค้าทีต้องการค้นหา</param>
+        /// <returns></returns>
+        public static bool SelectChar(string _ProductName)
         {
             try
             {
-                sql = $"SELECT * FROM product WHERE productName LIKE '%{productModel.names}%'";
+                sql = $"SELECT * FROM product WHERE productName LIKE '%{_ProductName}%'";
                 da = new MySqlDataAdapter(sql, con);
                 tb = new DataTable();
                 da.Fill(tb);
@@ -49,35 +75,14 @@ namespace TRUCK_STD.DbBase
 
             return true;
         }
-        public static string SelectChar(string names)
-        {
-            string result = "";
-            try
-            {
-                sql = $"SELECT * FROM product WHERE productName LIKE '%{names}%'";
-                da = new MySqlDataAdapter(sql, con);
-                tb = new DataTable();
-                da.Fill(tb);
-                foreach (DataRow rw in tb.Rows)
-                {
-                    result = rw["id"].ToString();
-                }
 
-            }
-            catch (System.Exception ex)
-            {
-                ERR = ex.Message;
-                return "";
-            }
 
-            return result;
-        }
 
-        public static DataTable SelectId(int id)
+        public static DataTable SelectId(string _productId)
         {
             try
             {
-                sql = $"SELECT * FROM product WHERE id = {id}";
+                sql = $"SELECT * FROM product WHERE productId = '{_productId}'";
                 da = new MySqlDataAdapter(sql, con);
                 tb = new DataTable();
                 da.Fill(tb);
@@ -85,62 +90,67 @@ namespace TRUCK_STD.DbBase
             catch (System.Exception ex)
             {
                 ERR = ex.Message;
-
+                return null;
             }
 
             return tb;
         }
-        public static bool Insert(productModel product)
+        public static bool Insert()
         {
             try
             {
-                sql = "INSERT INTO product (id,names,price) " +
-                    "VALUES (@id,@names,@price)";
+                sql = "INSERT INTO product (productId,productName,productType,productPrice) " +
+                    "VALUES (@productId,@productName,@productType,@productPrice)";
 
                 cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.Add(new MySqlParameter("@id", product.new_id));
-                cmd.Parameters.Add(new MySqlParameter("@names", product.names));
-                cmd.Parameters.Add(new MySqlParameter("@price", product.price));
+                cmd.Parameters.Add(new MySqlParameter("@productId", new_ProductId));
+                cmd.Parameters.Add(new MySqlParameter("@productName", ProductName));
+                cmd.Parameters.Add(new MySqlParameter("@productType", ProductType));
+                cmd.Parameters.Add(new MySqlParameter("@productPrice", ProductPrice));
                 cmd.ExecuteNonQuery();
             }
             catch (System.Exception ex)
             {
                 ERR = ex.Message;
+                ClearProp();
                 return false;
             }
-
+            ClearProp();
             return true;
         }
-        public static bool Update(productModel product)
+        public static bool Update()
         {
             try
             {
                 sql = "UPDATE product " +
-                    "SET id = @new_id," +
-                    "names = @names," +
-                    "price = @price " +
-                    "WHERE id = @old_id";
+                    "SET productId = @new_productId," +
+                    "productName = @productName," +
+                    "productType = @productType," +
+                    "productPrice = @productPrice " +
+                    "WHERE productId = @old_productId";
 
                 cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.Add(new MySqlParameter("@new_id", product.new_id));
-                cmd.Parameters.Add(new MySqlParameter("@names", product.names));
-                cmd.Parameters.Add(new MySqlParameter("@price", product.price));
-                cmd.Parameters.Add(new MySqlParameter("@old_id", product.old_id));
+                cmd.Parameters.Add(new MySqlParameter("@new_productId", new_ProductId));
+                cmd.Parameters.Add(new MySqlParameter("@productName", ProductName));
+                cmd.Parameters.Add(new MySqlParameter("@productType", ProductType));
+                cmd.Parameters.Add(new MySqlParameter("@productPrice", ProductPrice));
+                cmd.Parameters.Add(new MySqlParameter("@old_productId", old_ProductId));
                 cmd.ExecuteNonQuery();
             }
             catch (System.Exception ex)
             {
                 ERR = ex.Message;
+                ClearProp();
                 return false;
             }
-
+            ClearProp();
             return true;
         }
-        public static bool Delete(productModel product)
+        public static bool Delete(string id)
         {
             try
             {
-                sql = $"DELETE FROM product WHERE id = '{product.old_id}'";
+                sql = $"DELETE FROM product WHERE productId = '{id}'";
                 cmd = new MySqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
             }
@@ -149,7 +159,6 @@ namespace TRUCK_STD.DbBase
                 ERR = ex.Message;
                 return false;
             }
-
             return true;
         }
 
