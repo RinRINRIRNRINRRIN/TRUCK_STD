@@ -3,7 +3,6 @@ using Guna.UI2.WinForms;
 using Serilog;
 using System;
 using System.IO.Ports;
-using System.Linq;
 using System.Windows.Forms;
 using TRUCK_STD.Function;
 using TRUCK_STD.Functions;
@@ -187,7 +186,7 @@ namespace TRUCK_STD.Design
             if (tgsBarrier.Checked == true)
             {
                 // เช็คว่ามีฟังชั่นมีแต่แรกหรือไม่
-                if (registy.function.BARRIERState == "TRUE")
+                if (registy.function.BARRIERKey != "")
                 {
                     pnComPLC.Enabled = true;
                 }
@@ -285,52 +284,71 @@ namespace TRUCK_STD.Design
         {
             try
             {
-                #region ตรวจสอบค่าว่าง
-
-                // ตรวจสอบ ค่าว่าง cbb
-                foreach (Guna.UI2.WinForms.Guna2ComboBox cbb in panel1.Controls.OfType<Guna.UI2.WinForms.Guna2ComboBox>())
+                #region ตรวจสอบเครื่องชั่ง
+                if (cbbWGH_COM.Text.Contains("--") || cbbWGH_BUADRATE.Text.Contains("--"))
                 {
-                    if (cbb.Text.Contains('-'))
-                    {
-                        msg.Show(this, "กรุณากรอกข้อมูลในส่วนของการเชื่อมต่อเครื่องชั่ง!!", BunifuSnackbar.MessageTypes.Warning, 3000, "OK", BunifuSnackbar.Positions.TopCenter);
-                        return;
-                    }
+                    sb.Show(this, "กรุณากรอกข้อมูลการเชื่อมต่อเครื่องชั่งก่อนการบันทึก", BunifuSnackbar.MessageTypes.Warning, 3000, "", BunifuSnackbar.Positions.TopCenter);
+                    return;
                 }
-
-                // หากมีการใช้งานฟังชั่น BARRIER ให้ตรวจสอบว่าผู้ใช้ได้ใช้งานหรือไม่
+                #endregion
+                #region ตรวจสอบฟังชั่น RFID,CCTV,CAM,BARRIER
+                // เช็คไม้กั้น
                 if (tgsBarrier.Checked == true)
-                {
-                    // เช็คว่าได้กำหนดค่าไม้กั้นหรือไม่
-                    if (cbbPLC_BAUDRATE.Text == "" || cbbPLC_COM.Text == "")
+                    if (cbbPLC_COM.Text.Contains("--") || cbbPLC_BAUDRATE.Text.Contains("--"))
                     {
-                        msg.Show(this, "กรุณากำหนดค่าการเชื่อมต่อกับไม้กั้นก่อนการบันทึก", BunifuSnackbar.MessageTypes.Warning, 3000, "", BunifuSnackbar.Positions.TopCenter);
+                        sb.Show(this, "กรุณากรอกข้อมูลการเชื่อมต่อไม้กั้นก่อนการบันทึก", BunifuSnackbar.MessageTypes.Warning, 3000, "", BunifuSnackbar.Positions.TopCenter);
                         return;
                     }
-                }
-
-                // 
-
-
-
-
-                // กำหนดค่าว่างของ หัวตั๋ว 
-                if (txtTickPhone.Enabled == true)
-                {
+                // เช็ค RFID
+                if (tgsRFID.Checked == true)
+                    if (cbbComRFID.Text.Contains("--") || cbbBardrateRFID.Text.Contains("--"))
+                    {
+                        sb.Show(this, "กรุณากรอกข้อมูลการเชื่อมต่อ RFID ก่อนการบันทึก", BunifuSnackbar.MessageTypes.Warning, 3000, "", BunifuSnackbar.Positions.TopCenter);
+                        return;
+                    }
+                #endregion
+                #region เช็คตั๋วว่าได้บันทึกหรือไม่
+                if (gbTickPass.Visible == false)
                     if (txtTickPhone.Text == "" || txtTicTax.Text == "")
                     {
-                        msg.Show(this, "กรุณากรอกข้อมูลตั๋วให้ครบก่อนทำการบันทึก", BunifuSnackbar.MessageTypes.Warning, 3000, "OK", BunifuSnackbar.Positions.TopCenter);
+                        sb.Show(this, "กรุณากรอกข้อมูลตั๋วก่อนการบันทึก", BunifuSnackbar.MessageTypes.Warning, 3000, "", BunifuSnackbar.Positions.TopCenter);
                         return;
                     }
-                }
-                // กำหนดค่าส่วนเครื่องชั่ง
-                registy.scale.scalePort = cbbWGH_COM.Text;
-                registy.scale.scaleBaudrate = int.Parse(cbbWGH_BUADRATE.Text);
-
-
-                registy.Set();
-                MessageBox.Show("บันทึกรายการสำเร็จ โปรแกรมจะปิดกรุณาเปิดใหม่", "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Application.Exit();
                 #endregion
+
+                DialogResult dialogResult = MessageBox.Show("ยืนยันการบันทึกข้อมูลหรือไม่?\nเมื่อบันทึกแล้วโปรแกรมจะปิดตัวเองกรุณาเปิดโปรแกรมใหม่อีกครั้ง", "บันทึกข้อมูล", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    #region บันทึกค่าที่ registry
+                    // SAVE Scale
+                    registy.scale.scalePort = cbbWGH_COM.Text;
+                    registy.scale.scaleBaudrate = int.Parse(cbbWGH_BUADRATE.Text);
+                    // SAVE Rfid
+                    if (!cbbComRFID.Text.Contains("--"))
+                        registy.function.RFID_COM = cbbComRFID.Text;
+                    if (!cbbBardrateRFID.Text.Contains("--"))
+                        registy.function.RFID_BAUDRATE = cbbBardrateRFID.Text;
+                    // SAVE Barrier
+                    if (!cbbPLC_COM.Text.Contains("--"))
+                        registy.function.BARRIERCOM = cbbPLC_COM.Text;
+                    if (!cbbPLC_BAUDRATE.Text.Contains("--"))
+                        registy.function.BARRIERBaudrate = cbbPLC_BAUDRATE.Text;
+                    registy.function.RFIDState = tgsRFID.Checked.ToString();
+                    // SAVE CCTV
+                    registy.function.CAMERAState = tgsCCTV.Checked.ToString();
+                    // SAVE LPR
+                    registy.function.LPRState = tgsLPR.Checked.ToString();
+                    // SAVE TICKET
+                    if (gbTickPass.Visible == false)
+                    {
+                        registy.tickets.phone = txtTickPhone.Text;
+                        registy.tickets.tax = txtTicTax.Text;
+                    }
+                    #endregion
+                    registy.Set();
+                    MessageBox.Show("บันทึกรายการสำเร็จ โปรแกรมจะปิดกรุณาเปิดใหม่", "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
+                }
             }
             catch (Exception ex)
             {
