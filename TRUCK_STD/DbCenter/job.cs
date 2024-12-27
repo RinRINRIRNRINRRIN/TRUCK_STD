@@ -16,6 +16,8 @@ namespace TRUCK_STD.DbCenter
         static string sql = "";
 
 
+
+
         /// <summary>
         /// สำหรับแสดงข้อมูลในวันนั้นๆ 
         /// </summary>
@@ -63,7 +65,6 @@ namespace TRUCK_STD.DbCenter
             }
             return true;
         }
-
 
 
         /// <summary>
