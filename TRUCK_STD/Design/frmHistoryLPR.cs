@@ -90,7 +90,23 @@ namespace TRUCK_STD.Design
                     case "cl_del":
                         msg.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
                         msg.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
-                        msg.Show($"do you want delete the data \n เลขที่การชั่ง {jobId}", "Delete data");
+                        DialogResult result = msg.Show($"Do you want delete the data \n JobOrder : {jobId}", "Delete data");
+
+                        if (result == DialogResult.Yes)
+                        {
+                            // ปรับสถานะเป็น ยกเลิก
+                            if (!job.updateStataWhenDelete(jobId))
+                            {
+                                msg.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                                msg.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                                msg.Show($"Error delete order : {jobId}\n{job.ERR}", "Error delete");
+                                return;
+                            }
+                            msg.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+                            msg.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                            msg.Show($"Delete order success \nJobOrder : {jobId}", "Error delete");
+                            ShowDataOnGrid();
+                        }
                         break;
                     case "cl_print":
                         if (cbbWeightType.Text == "กำลังดำเนินการ")
