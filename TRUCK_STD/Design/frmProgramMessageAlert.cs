@@ -113,7 +113,7 @@ namespace TRUCK_STD.Design
 
             if (keyMD5 == txtPassUnlock.Text)
             {
-                Log.Warning("ปลดล็อคโปรแกรมสำเร็จ (Unlock)");
+
                 switch (extension)
                 {
                     case "CAMERA":
@@ -128,9 +128,9 @@ namespace TRUCK_STD.Design
                         registy.function.RFIDState = "TRUE";
                         registy.function.RFIDKey = txtPassUnlock.Text;
                         break;
-                    case "PRICE":
-                        registy.function.PRICE = "TRUE";
-                        break;
+                    //case "PRICE":
+                    //    registy.function.PRICE = "TRUE";
+                    //break;
                     case "BARRIER":
                         registy.function.BARRIERState = "TRUE";
                         registy.function.BARRIERKey = txtPassUnlock.Text;
@@ -143,6 +143,12 @@ namespace TRUCK_STD.Design
                 Log.Error("รหัสไม่ถูกต้อง : " + txtPassUnlock.Text);
                 return false;
             }
+
+            if (!registy.Set())
+            {
+                return false;
+            }
+            Log.Warning("ปลดล็อคโปรแกรมสำเร็จ (Unlock)");
             return true;
         }
         #endregion
@@ -153,7 +159,7 @@ namespace TRUCK_STD.Design
             lbProgramNumber.Text = registy.system.id;
         }
 
-        private void btnUnlock_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             if (txtPassUnlock.Text == "")
             {
@@ -176,7 +182,7 @@ namespace TRUCK_STD.Design
                             return;
                         }
                         break;
-                    case 2: // โปรแกรมฟังชั่นการใช้งาน LINE API
+                    case 2: // โปรแกรมฟังชั่นการใช้งาน  API,CCTV,LPR
                         if (!CHECK_PASSWORD_EXTENSION())
                         {
                             return;
