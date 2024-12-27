@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRUCK_STD.DbBase;
 using TRUCK_STD.Functions;
-using TRUCK_STD.Models;
 
 namespace TRUCK_STD.Design
 {
@@ -21,7 +20,7 @@ namespace TRUCK_STD.Design
         string old_ip = "";
 
 
-        void ClearForm()
+        async void ClearForm()
         {
             // Clear
             foreach (Guna2TextBox txt in gb.Controls.OfType<Guna2TextBox>())
@@ -33,7 +32,7 @@ namespace TRUCK_STD.Design
             txtoption.Text = ":network-caching=0\r\n:file-caching=100";
 
             old_ip = "";
-            cctv.Stop(vlcControl1);
+            await cctv.Stop(vlcControl1);
             btnTest.Text = "เริ่มทดสอบ";
         }
 
@@ -58,21 +57,20 @@ namespace TRUCK_STD.Design
             }
 
             // กำหนดค่า
-            cctvModels cctvModels = new cctvModels
-            {
-                new_ip = txtIP.Text,
-                old_ip = old_ip,
-                port = txtPort.Text,
-                user = txtUser.Text,
-                pass = txtPass.Text,
-                position = txtPosition.Text
-            };
+
+            cctvs.new_ip = txtIP.Text;
+            cctvs.old_ip = old_ip;
+            cctvs.port = int.Parse(txtPort.Text);
+            cctvs.user = txtUser.Text;
+            cctvs.pass = txtPass.Text;
+            cctvs.position = txtPosition.Text;
+
 
             // Check Insert or Update
             if (old_ip == "") // Insert
             {
                 // บันทึกข้อมูล
-                if (!cctvs.Insert(cctvModels))
+                if (!cctvs.Insert())
                 {
                     sb.Show(this, "เกิดข้อผิดผลาด " + cctvs.ERR, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
                     return;
@@ -80,7 +78,7 @@ namespace TRUCK_STD.Design
             }
             else // Update
             {
-                if (!cctvs.Update(cctvModels))
+                if (!cctvs.Update())
                 {
                     sb.Show(this, "เกิดข้อผิดผลาด " + cctvs.ERR, Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
                     return;
@@ -143,12 +141,11 @@ namespace TRUCK_STD.Design
                         if (dr == DialogResult.Yes)
                         {
                             // กำหนดค่า
-                            cctvModels cctvModels = new cctvModels
-                            {
-                                old_ip = dgv.Rows[e.RowIndex].Cells["cl_ip"].Value.ToString()
-                            };
+
+                            cctvs.old_ip = dgv.Rows[e.RowIndex].Cells["cl_ip"].Value.ToString();
+
                             // delete
-                            if (cctvs.Delete(cctvModels))
+                            if (cctvs.Delete())
                             {
                                 sb.Show(this, "ลบข้อมูลสำเร็จ", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
                                 if (cctvs.Select())
@@ -219,12 +216,6 @@ namespace TRUCK_STD.Design
             btnTest.Text = "เริ่มทดสอบ";
             gb.Enabled = true;
             gbConnect.Visible = false;
-            tmConnect.Stop();
-        }
-
-        private void tmConnect_Tick(object sender, EventArgs e)
-        {
-            Console.WriteLine(vlcControl1.State);
         }
 
         private void btnTake_Click(object sender, EventArgs e)
