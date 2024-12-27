@@ -117,8 +117,25 @@ namespace TRUCK_STD.Design
                             return;
                         }
                         frmReport frmReport = new frmReport();
-                        frmReport.reportType = "LPR";
-                        frmReport.id = id;
+
+                        switch (registy.system.bussinessType)
+                        {
+                            case "ทั่วไป":
+                                frmReport.reportType = "MN";
+                                break;
+                            case "หัวมันสด":
+                                frmReport.reportType = "Cassava";
+                                break;
+                            case "ข้าวเปลือก":
+                                frmReport.reportType = "Paddy";
+                                break;
+                            case "ข้าวโพดเลี้ยงสัตว์":
+                                frmReport.reportType = "Corn";
+                                break;
+
+                        }
+
+                        frmReport.id = jobId;
                         frmReport.ShowDialog();
                         break;
                 }
