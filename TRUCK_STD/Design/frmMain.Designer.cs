@@ -30,22 +30,22 @@ namespace TRUCK_STD.Design
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges16 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges18 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges19 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges20 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges22 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges23 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges24 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges25 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges26 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges27 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges28 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAbout = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -77,6 +77,7 @@ namespace TRUCK_STD.Design
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.tmDateEXP = new System.Windows.Forms.Timer(this.components);
+            this.msg = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -148,11 +149,11 @@ namespace TRUCK_STD.Design
             this.btnAbout.ColorContrastOnClick = 45;
             this.btnAbout.ColorContrastOnHover = 45;
             this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnAbout.CustomizableEdges = borderEdges1;
+            borderEdges15.BottomLeft = true;
+            borderEdges15.BottomRight = true;
+            borderEdges15.TopLeft = true;
+            borderEdges15.TopRight = true;
+            this.btnAbout.CustomizableEdges = borderEdges15;
             this.guna2Transition1.SetDecoration(this.btnAbout, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnAbout.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAbout.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -218,7 +219,6 @@ namespace TRUCK_STD.Design
             this.btnAbout.TextMarginLeft = 0;
             this.btnAbout.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnAbout.UseDefaultRadiusAndThickness = true;
-            this.btnAbout.Visible = false;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // btnRFID
@@ -241,11 +241,11 @@ namespace TRUCK_STD.Design
             this.btnRFID.ColorContrastOnClick = 45;
             this.btnRFID.ColorContrastOnHover = 45;
             this.btnRFID.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnRFID.CustomizableEdges = borderEdges2;
+            borderEdges16.BottomLeft = true;
+            borderEdges16.BottomRight = true;
+            borderEdges16.TopLeft = true;
+            borderEdges16.TopRight = true;
+            this.btnRFID.CustomizableEdges = borderEdges16;
             this.guna2Transition1.SetDecoration(this.btnRFID, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnRFID.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRFID.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -312,7 +312,6 @@ namespace TRUCK_STD.Design
             this.btnRFID.TextMarginLeft = 0;
             this.btnRFID.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnRFID.UseDefaultRadiusAndThickness = true;
-            this.btnRFID.Visible = false;
             this.btnRFID.Click += new System.EventHandler(this.btnRFID_Click);
             // 
             // btnCCTV
@@ -335,11 +334,11 @@ namespace TRUCK_STD.Design
             this.btnCCTV.ColorContrastOnClick = 45;
             this.btnCCTV.ColorContrastOnHover = 45;
             this.btnCCTV.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnCCTV.CustomizableEdges = borderEdges3;
+            borderEdges17.BottomLeft = true;
+            borderEdges17.BottomRight = true;
+            borderEdges17.TopLeft = true;
+            borderEdges17.TopRight = true;
+            this.btnCCTV.CustomizableEdges = borderEdges17;
             this.guna2Transition1.SetDecoration(this.btnCCTV, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnCCTV.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCCTV.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -406,7 +405,6 @@ namespace TRUCK_STD.Design
             this.btnCCTV.TextMarginLeft = 0;
             this.btnCCTV.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnCCTV.UseDefaultRadiusAndThickness = true;
-            this.btnCCTV.Visible = false;
             this.btnCCTV.Click += new System.EventHandler(this.btnCCTV_Click);
             // 
             // btnLPR
@@ -429,11 +427,11 @@ namespace TRUCK_STD.Design
             this.btnLPR.ColorContrastOnClick = 45;
             this.btnLPR.ColorContrastOnHover = 45;
             this.btnLPR.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnLPR.CustomizableEdges = borderEdges4;
+            borderEdges18.BottomLeft = true;
+            borderEdges18.BottomRight = true;
+            borderEdges18.TopLeft = true;
+            borderEdges18.TopRight = true;
+            this.btnLPR.CustomizableEdges = borderEdges18;
             this.guna2Transition1.SetDecoration(this.btnLPR, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnLPR.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnLPR.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -500,7 +498,6 @@ namespace TRUCK_STD.Design
             this.btnLPR.TextMarginLeft = 0;
             this.btnLPR.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnLPR.UseDefaultRadiusAndThickness = true;
-            this.btnLPR.Visible = false;
             this.btnLPR.Click += new System.EventHandler(this.btnLPR_Click);
             // 
             // btnHireWeitgh
@@ -523,11 +520,11 @@ namespace TRUCK_STD.Design
             this.btnHireWeitgh.ColorContrastOnClick = 45;
             this.btnHireWeitgh.ColorContrastOnHover = 45;
             this.btnHireWeitgh.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.btnHireWeitgh.CustomizableEdges = borderEdges5;
+            borderEdges19.BottomLeft = true;
+            borderEdges19.BottomRight = true;
+            borderEdges19.TopLeft = true;
+            borderEdges19.TopRight = true;
+            this.btnHireWeitgh.CustomizableEdges = borderEdges19;
             this.guna2Transition1.SetDecoration(this.btnHireWeitgh, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnHireWeitgh.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnHireWeitgh.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -594,7 +591,6 @@ namespace TRUCK_STD.Design
             this.btnHireWeitgh.TextMarginLeft = 0;
             this.btnHireWeitgh.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnHireWeitgh.UseDefaultRadiusAndThickness = true;
-            this.btnHireWeitgh.Visible = false;
             this.btnHireWeitgh.Click += new System.EventHandler(this.btnHireWeitgh_Click);
             // 
             // btnChangeUsername
@@ -617,11 +613,11 @@ namespace TRUCK_STD.Design
             this.btnChangeUsername.ColorContrastOnClick = 45;
             this.btnChangeUsername.ColorContrastOnHover = 45;
             this.btnChangeUsername.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.btnChangeUsername.CustomizableEdges = borderEdges6;
+            borderEdges20.BottomLeft = true;
+            borderEdges20.BottomRight = true;
+            borderEdges20.TopLeft = true;
+            borderEdges20.TopRight = true;
+            this.btnChangeUsername.CustomizableEdges = borderEdges20;
             this.guna2Transition1.SetDecoration(this.btnChangeUsername, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnChangeUsername.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnChangeUsername.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -687,7 +683,6 @@ namespace TRUCK_STD.Design
             this.btnChangeUsername.TextMarginLeft = 0;
             this.btnChangeUsername.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnChangeUsername.UseDefaultRadiusAndThickness = true;
-            this.btnChangeUsername.Visible = false;
             this.btnChangeUsername.Click += new System.EventHandler(this.btnChangeUsername_Click);
             // 
             // lbUsername
@@ -738,11 +733,11 @@ namespace TRUCK_STD.Design
             this.btnSupport.ColorContrastOnClick = 45;
             this.btnSupport.ColorContrastOnHover = 45;
             this.btnSupport.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges7.BottomLeft = true;
-            borderEdges7.BottomRight = true;
-            borderEdges7.TopLeft = true;
-            borderEdges7.TopRight = true;
-            this.btnSupport.CustomizableEdges = borderEdges7;
+            borderEdges21.BottomLeft = true;
+            borderEdges21.BottomRight = true;
+            borderEdges21.TopLeft = true;
+            borderEdges21.TopRight = true;
+            this.btnSupport.CustomizableEdges = borderEdges21;
             this.guna2Transition1.SetDecoration(this.btnSupport, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnSupport.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSupport.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -808,7 +803,6 @@ namespace TRUCK_STD.Design
             this.btnSupport.TextMarginLeft = 0;
             this.btnSupport.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSupport.UseDefaultRadiusAndThickness = true;
-            this.btnSupport.Visible = false;
             this.btnSupport.Click += new System.EventHandler(this.btnSupport_Click);
             // 
             // label5
@@ -857,11 +851,11 @@ namespace TRUCK_STD.Design
             this.btnCustomer.ColorContrastOnClick = 45;
             this.btnCustomer.ColorContrastOnHover = 45;
             this.btnCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges8.BottomLeft = true;
-            borderEdges8.BottomRight = true;
-            borderEdges8.TopLeft = true;
-            borderEdges8.TopRight = true;
-            this.btnCustomer.CustomizableEdges = borderEdges8;
+            borderEdges22.BottomLeft = true;
+            borderEdges22.BottomRight = true;
+            borderEdges22.TopLeft = true;
+            borderEdges22.TopRight = true;
+            this.btnCustomer.CustomizableEdges = borderEdges22;
             this.guna2Transition1.SetDecoration(this.btnCustomer, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnCustomer.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCustomer.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -928,7 +922,6 @@ namespace TRUCK_STD.Design
             this.btnCustomer.TextMarginLeft = 0;
             this.btnCustomer.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnCustomer.UseDefaultRadiusAndThickness = true;
-            this.btnCustomer.Visible = false;
             this.btnCustomer.Click += new System.EventHandler(this.bunifuButton2_Click);
             // 
             // btnEmployee
@@ -951,11 +944,11 @@ namespace TRUCK_STD.Design
             this.btnEmployee.ColorContrastOnClick = 45;
             this.btnEmployee.ColorContrastOnHover = 45;
             this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges9.BottomLeft = true;
-            borderEdges9.BottomRight = true;
-            borderEdges9.TopLeft = true;
-            borderEdges9.TopRight = true;
-            this.btnEmployee.CustomizableEdges = borderEdges9;
+            borderEdges23.BottomLeft = true;
+            borderEdges23.BottomRight = true;
+            borderEdges23.TopLeft = true;
+            borderEdges23.TopRight = true;
+            this.btnEmployee.CustomizableEdges = borderEdges23;
             this.guna2Transition1.SetDecoration(this.btnEmployee, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnEmployee.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnEmployee.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1022,7 +1015,6 @@ namespace TRUCK_STD.Design
             this.btnEmployee.TextMarginLeft = 0;
             this.btnEmployee.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnEmployee.UseDefaultRadiusAndThickness = true;
-            this.btnEmployee.Visible = false;
             this.btnEmployee.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
             // btnWeight
@@ -1045,11 +1037,11 @@ namespace TRUCK_STD.Design
             this.btnWeight.ColorContrastOnClick = 45;
             this.btnWeight.ColorContrastOnHover = 45;
             this.btnWeight.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges10.BottomLeft = true;
-            borderEdges10.BottomRight = true;
-            borderEdges10.TopLeft = true;
-            borderEdges10.TopRight = true;
-            this.btnWeight.CustomizableEdges = borderEdges10;
+            borderEdges24.BottomLeft = true;
+            borderEdges24.BottomRight = true;
+            borderEdges24.TopLeft = true;
+            borderEdges24.TopRight = true;
+            this.btnWeight.CustomizableEdges = borderEdges24;
             this.guna2Transition1.SetDecoration(this.btnWeight, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnWeight.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnWeight.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1116,7 +1108,6 @@ namespace TRUCK_STD.Design
             this.btnWeight.TextMarginLeft = 0;
             this.btnWeight.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnWeight.UseDefaultRadiusAndThickness = true;
-            this.btnWeight.Visible = false;
             this.btnWeight.Click += new System.EventHandler(this.bunifuButton5_Click);
             // 
             // btnSetting
@@ -1139,11 +1130,11 @@ namespace TRUCK_STD.Design
             this.btnSetting.ColorContrastOnClick = 45;
             this.btnSetting.ColorContrastOnHover = 45;
             this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges11.BottomLeft = true;
-            borderEdges11.BottomRight = true;
-            borderEdges11.TopLeft = true;
-            borderEdges11.TopRight = true;
-            this.btnSetting.CustomizableEdges = borderEdges11;
+            borderEdges25.BottomLeft = true;
+            borderEdges25.BottomRight = true;
+            borderEdges25.TopLeft = true;
+            borderEdges25.TopRight = true;
+            this.btnSetting.CustomizableEdges = borderEdges25;
             this.guna2Transition1.SetDecoration(this.btnSetting, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnSetting.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSetting.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1210,7 +1201,6 @@ namespace TRUCK_STD.Design
             this.btnSetting.TextMarginLeft = 0;
             this.btnSetting.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSetting.UseDefaultRadiusAndThickness = true;
-            this.btnSetting.Visible = false;
             this.btnSetting.Click += new System.EventHandler(this.bunifuButton4_Click);
             // 
             // btnHistory
@@ -1233,11 +1223,11 @@ namespace TRUCK_STD.Design
             this.btnHistory.ColorContrastOnClick = 45;
             this.btnHistory.ColorContrastOnHover = 45;
             this.btnHistory.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges12.BottomLeft = true;
-            borderEdges12.BottomRight = true;
-            borderEdges12.TopLeft = true;
-            borderEdges12.TopRight = true;
-            this.btnHistory.CustomizableEdges = borderEdges12;
+            borderEdges26.BottomLeft = true;
+            borderEdges26.BottomRight = true;
+            borderEdges26.TopLeft = true;
+            borderEdges26.TopRight = true;
+            this.btnHistory.CustomizableEdges = borderEdges26;
             this.guna2Transition1.SetDecoration(this.btnHistory, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnHistory.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnHistory.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1304,7 +1294,6 @@ namespace TRUCK_STD.Design
             this.btnHistory.TextMarginLeft = 0;
             this.btnHistory.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnHistory.UseDefaultRadiusAndThickness = true;
-            this.btnHistory.Visible = false;
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // pictureBox2
@@ -1339,11 +1328,11 @@ namespace TRUCK_STD.Design
             this.btnProduct.ColorContrastOnClick = 45;
             this.btnProduct.ColorContrastOnHover = 45;
             this.btnProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges13.BottomLeft = true;
-            borderEdges13.BottomRight = true;
-            borderEdges13.TopLeft = true;
-            borderEdges13.TopRight = true;
-            this.btnProduct.CustomizableEdges = borderEdges13;
+            borderEdges27.BottomLeft = true;
+            borderEdges27.BottomRight = true;
+            borderEdges27.TopLeft = true;
+            borderEdges27.TopRight = true;
+            this.btnProduct.CustomizableEdges = borderEdges27;
             this.guna2Transition1.SetDecoration(this.btnProduct, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnProduct.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnProduct.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1410,7 +1399,6 @@ namespace TRUCK_STD.Design
             this.btnProduct.TextMarginLeft = 0;
             this.btnProduct.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnProduct.UseDefaultRadiusAndThickness = true;
-            this.btnProduct.Visible = false;
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // pictureBox1
@@ -1470,11 +1458,11 @@ namespace TRUCK_STD.Design
             this.btnPrivilage.ColorContrastOnClick = 45;
             this.btnPrivilage.ColorContrastOnHover = 45;
             this.btnPrivilage.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges14.BottomLeft = true;
-            borderEdges14.BottomRight = true;
-            borderEdges14.TopLeft = true;
-            borderEdges14.TopRight = true;
-            this.btnPrivilage.CustomizableEdges = borderEdges14;
+            borderEdges28.BottomLeft = true;
+            borderEdges28.BottomRight = true;
+            borderEdges28.TopLeft = true;
+            borderEdges28.TopRight = true;
+            this.btnPrivilage.CustomizableEdges = borderEdges28;
             this.guna2Transition1.SetDecoration(this.btnPrivilage, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnPrivilage.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnPrivilage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1541,7 +1529,6 @@ namespace TRUCK_STD.Design
             this.btnPrivilage.TextMarginLeft = 0;
             this.btnPrivilage.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnPrivilage.UseDefaultRadiusAndThickness = true;
-            this.btnPrivilage.Visible = false;
             this.btnPrivilage.Click += new System.EventHandler(this.bunifuButton6_Click);
             // 
             // guna2ControlBox1
@@ -1602,28 +1589,37 @@ namespace TRUCK_STD.Design
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Scale;
             this.guna2Transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation2;
             this.guna2Transition1.TimeStep = 0.06F;
             // 
             // tmDateEXP
             // 
             this.tmDateEXP.Interval = 1000;
             this.tmDateEXP.Tick += new System.EventHandler(this.tmDateEXP_Tick);
+            // 
+            // msg
+            // 
+            this.msg.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.msg.Caption = null;
+            this.msg.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.msg.Parent = this;
+            this.msg.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.msg.Text = null;
             // 
             // frmMain
             // 
@@ -1688,5 +1684,6 @@ namespace TRUCK_STD.Design
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCCTV;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton btnLPR;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAbout;
+        private Guna.UI2.WinForms.Guna2MessageDialog msg;
     }
 }
