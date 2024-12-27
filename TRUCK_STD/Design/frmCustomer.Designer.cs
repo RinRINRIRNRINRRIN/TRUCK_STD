@@ -630,7 +630,7 @@ namespace TRUCK_STD.Design
             // 
             // cl_id
             // 
-            this.cl_id.DataPropertyName = "customer_id";
+            this.cl_id.DataPropertyName = "customerId";
             this.cl_id.HeaderText = "รหัสลูกค้า";
             this.cl_id.Name = "cl_id";
             this.cl_id.ReadOnly = true;
