@@ -143,6 +143,10 @@ namespace TRUCK_STD.Design
             catch (System.Exception exx)
             {
 
+        private void frmHistoryLPR_Load(object sender, System.EventArgs e)
+        {
+            dtpStart.Value = DateTime.Now;
+            dtpEnd.Value = DateTime.Now;
 
             }
 
