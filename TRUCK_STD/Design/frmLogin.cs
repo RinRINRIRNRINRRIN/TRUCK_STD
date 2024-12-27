@@ -10,7 +10,7 @@ using TRUCK_STD.DbBase;
 using TRUCK_STD.Function;
 using TRUCK_STD.Functions;
 using TRUCK_STD.Models;
-using TRUCK_STD.MSACCESSCommand;
+
 namespace TRUCK_STD.Design
 {
     public partial class frmLogin : Form
@@ -18,11 +18,11 @@ namespace TRUCK_STD.Design
         public frmLogin()
         {
             InitializeComponent();
+            Console.WriteLine("===========================  Open frmLogin");
         }
 
 
         BunifuSnackbar msg = new BunifuSnackbar();
-        tbEMPLOYEE tbEMPLOYEE = new tbEMPLOYEE();
 
 
         #region"FUNCTION LOCAL"
@@ -50,13 +50,12 @@ namespace TRUCK_STD.Design
                 }));
 
                 // หากทำการเชื่อมต่อสำเร็จ ให้ทำการเช็คว่า มีการสร้างรหัส SA ในระบบหรือยังซึ้ง sa จะไม่สามารถลบได้
-                employeeModels employeeModels = new employeeModels
-                {
-                    new_username = "sa",
-                    password = "sa",
-                    names = "sa",
-                    state = "SA"
-                };
+
+                employee.new_username = "sa";
+                employee.password = "sa";
+                employee.names = "sa";
+                employee.state = "SA";
+
 
                 if (employee.Select())
                 {
@@ -71,12 +70,18 @@ namespace TRUCK_STD.Design
 
                     if (!isHave)
                     {
-                        if (!employee.Insert(employeeModels))
+                        if (!employee.Insert())
                         {
                             MessageBox.Show("เกิดข้อผิดผลาด " + employee.ERR, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("เกิดข้อผิดผลาดในการเชื่อมต่อฐานข้อมูล", "ERROR 01");
+                    Application.Exit();
+                    return;
                 }
 
                 BeginInvoke(new MethodInvoker(delegate ()
@@ -124,9 +129,16 @@ namespace TRUCK_STD.Design
                         string _name = rw["emp_names"].ToString();
                         string _state = rw["emp_state"].ToString();
 
-                        // เช็คว่าข้อมูลครบหรือไม่
+                        // เช็คข้อมูลครงกันหรือไม่
                         if (_user == txtUsername.Text && _pass == txtPassword.Text)
                         {
+                            // เช็คว่ารหัสถูกระงับการใช้งานหรือไม่
+                            if (_state == "Inactive")
+                            {
+                                MessageBox.Show("ข้อมูลผู้ใช้ถูกระงับการใช้งาน");
+                                return;
+                            }
+
                             Log.Information("เข้าสู่ระบบสำเร็จ");
                             // กำหนดค่า
                             accountModels.id = _id;
@@ -136,37 +148,11 @@ namespace TRUCK_STD.Design
                             accountModels.state = _state;
 
                             // Show log
-                            Console.WriteLine("===============================");
                             Console.WriteLine($"ID : {accountModels.id}");
                             Console.WriteLine($"User : {accountModels.user}");
                             Console.WriteLine($"Pass : {accountModels.pass}");
                             Console.WriteLine($"Names : {accountModels.names}");
                             Console.WriteLine($"state : {accountModels.state}");
-
-                            // เช็คสิทธิ์ของโปรแกรมและเมนู
-                            privilageModels privilageModels = new privilageModels
-                            {
-                                user_id = _id
-                            };
-                            if (privilage.Select(privilageModels))
-                            {
-                                foreach (DataRow rwprivi in privilage.tb.Rows)
-                                {
-                                    string _menu = rwprivi["menus"].ToString();
-                                    string _add = rwprivi["pr_add"].ToString();
-                                    string _del = rwprivi["pr_del"].ToString();
-                                    string _edit = rwprivi["pr_edit"].ToString();
-
-                                    // กำหนดสิทธิ์
-                                    menuModels.menuList.Add(_menu, new Tuple<string, string, string>(_add, _del, _edit));
-
-                                    Console.WriteLine("===============================");
-                                    Console.WriteLine($"menus : {_menu}");
-                                    Console.WriteLine($"add : {_add}");
-                                    Console.WriteLine($"del : {_del}");
-                                    Console.WriteLine($"edit : {_edit}");
-                                }
-                            }
 
                             // เครียค่า
                             txtPassword.Clear();
