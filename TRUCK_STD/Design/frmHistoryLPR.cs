@@ -147,7 +147,57 @@ namespace TRUCK_STD.Design
             }
         }
 
-        private void frmHistoryLPR_Load(object sender, System.EventArgs e)
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            // ตรวจสอบก่อนว่าเลือกข้อมูลหรือไม่
+            if (dgvdata.Rows.Count == 0)
+            {
+                msg.Icon = MessageDialogIcon.Warning;
+                msg.Buttons = MessageDialogButtons.OK;
+                msg.Show("Data is null ,Please search the data for export to excel", "Excel export");
+                return;
+            }
+            // ทำการสูตร Exxcel
+            using (SaveFileDialog sa = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+            {
+                if (sa.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (XLWorkbook el = new XLWorkbook())
+                        {
+                            DataTable tb = new DataTable();
+                            tb = (DataTable)dgvdata.DataSource;
+                            el.Worksheets.Add(tb, "Data export");
+                            el.SaveAs(sa.FileName);
+                        }
+                        msg.Icon = MessageDialogIcon.Information;
+                        msg.Buttons = MessageDialogButtons.OK;
+                        msg.Show("Export data success", "Excel export");
+                    }
+                    catch (Exception ex)
+                    {
+                        msg.Icon = MessageDialogIcon.Error;
+                        msg.Buttons = MessageDialogButtons.OK;
+                        msg.Show("Export data error\n" + ex.Message, "Excel error");
+                    }
+                }
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            // ตรวจสอบก่อนว่าเลือกข้อมูลหรือไม่
+            if (dgvdata.Rows.Count == 0)
+            {
+                msg.Icon = MessageDialogIcon.Warning;
+                msg.Buttons = MessageDialogButtons.OK;
+                msg.Show("Data is null ,Please search the data for print", "Print report");
+                return;
+            }
+
+            frmReport frmReport = new frmReport();
+            switch (cbbWeightType.Text)
         {
             job.SelectHistory();
             dgvdata.DataSource = job.tb;
