@@ -50,9 +50,10 @@ namespace TRUCK_STD.Design
         void CHECK_REGISTRY()
         {
 
-            if (registy.function.PRICE == "TRUE")
+            if (registy.system.bussinessType != "ทั่วไป")
             {
                 txtProdcutPrice.Visible = true;
+                txtProdcutPrice.Enabled = true;
                 dgvProduct.Columns["cl_price"].Visible = true;
             }
         }
@@ -122,8 +123,6 @@ namespace TRUCK_STD.Design
         private void btnSave_Click(object sender, EventArgs e)
         {
             bool chk = true;
-
-
             if (chk)
             {
                 // ตรวจสอบว่าเป็นการ INSERT or UPDATE
@@ -138,14 +137,12 @@ namespace TRUCK_STD.Design
                     }
 
                     // กำหนดค่า
-                    productModel products = new productModel
-                    {
-                        new_id = txtProductCode.Text,
-                        names = txtProdcutName.Text,
-                        price = decimal.Parse(txtProdcutPrice.Text)
-                    };
+                    product.new_ProductId = txtProductCode.Text;
+                    product.ProductName = txtProdcutName.Text;
+                    product.ProductType = txtProductType.Text;
+                    product.ProductPrice = double.Parse(txtProdcutPrice.Text);
                     // INSERT
-                    if (!product.Insert(products))
+                    if (!product.Insert())
                     {
                         msg.Show(this, "เกิดข้อผิดผลาดกรุณาตรวจสอบข้อมูล " + product.ERR, BunifuSnackbar.MessageTypes.Warning, 3000, "OK", BunifuSnackbar.Positions.TopCenter);
                         return;
@@ -161,15 +158,14 @@ namespace TRUCK_STD.Design
                     }
 
                     // กำหนดค่า
-                    productModel products = new productModel
-                    {
-                        new_id = txtProductCode.Text,
-                        old_id = prd_code,
-                        names = txtProdcutName.Text,
-                        price = decimal.Parse(txtProdcutPrice.Text)
-                    };
+                    product.new_ProductId = txtProductCode.Text;
+                    product.old_ProductId = prd_code;
+                    product.ProductType = txtProductType.Text;
+                    product.ProductName = txtProdcutName.Text;
+                    product.ProductPrice = double.Parse(txtProdcutPrice.Text);
+
                     // Update
-                    if (!product.Update(products))
+                    if (!product.Update())
                     {
                         msg.Show(this, "เกิดข้อผิดผลาดกรุณาตรวจสอบข้อมูล หรือมีข้อมูลซ้ำ", BunifuSnackbar.MessageTypes.Warning, 3000, "OK", BunifuSnackbar.Positions.TopCenter);
                         return;
@@ -199,13 +195,8 @@ namespace TRUCK_STD.Design
                 {
                     if (MessageBox.Show("คุณต้องการลบข้อมูลหรือไม่?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        // กำหนดค่า
-                        productModel productModel = new productModel
-                        {
-                            old_id = prd_code
-                        };
                         // Delete
-                        if (product.Delete(productModel))
+                        if (product.Delete(prd_code))
                         {
                             CLEAR_FROM();
                             if (product.Select())
@@ -223,6 +214,7 @@ namespace TRUCK_STD.Design
                 else if (dgvProduct.Columns[e.ColumnIndex].Name == "cl_edit")
                 {
                     txtProductCode.Text = prd_code;
+                    txtProductType.Text = Convert.ToString(dgvProduct.Rows[e.RowIndex].Cells["cl_productType"].Value);
                     txtProdcutName.Text = Convert.ToString(dgvProduct.Rows[e.RowIndex].Cells["cl_names"].Value);
                     txtProdcutPrice.Text = Convert.ToString(dgvProduct.Rows[e.RowIndex].Cells["cl_price"].Value);
 
@@ -248,11 +240,7 @@ namespace TRUCK_STD.Design
             }
             else
             {
-                productModel productModel = new productModel
-                {
-                    names = txtSearch.Text
-                };
-                if (product.SelectChar(productModel))
+                if (product.SelectChar(txtSearch.Text))
                     dgvProduct.DataSource = product.tb;
             }
         }
