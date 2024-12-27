@@ -44,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.vlcControl1 = new Vlc.DotNet.Forms.VlcControl();
             this.gb = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtPosition = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnTake = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnTest = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -54,13 +55,6 @@
             this.txtPort = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtIP = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgv = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.sb = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
-            this.tmConnect = new System.Windows.Forms.Timer(this.components);
-            this.gbConnect = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.btnCancelConnect = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.txtPosition = new Guna.UI2.WinForms.Guna2TextBox();
             this.cl_del = new System.Windows.Forms.DataGridViewImageColumn();
             this.cl_edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.cl_ip = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +62,11 @@
             this.cl_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_pass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sb = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
+            this.gbConnect = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.btnCancelConnect = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl1)).BeginInit();
             this.gb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -149,6 +148,31 @@
             this.gb.Size = new System.Drawing.Size(629, 550);
             this.gb.TabIndex = 10;
             this.gb.Text = "รายละเอียดกล้อง";
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.BorderColor = System.Drawing.Color.Black;
+            this.txtPosition.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPosition.DefaultText = "";
+            this.txtPosition.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPosition.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPosition.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPosition.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPosition.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPosition.Font = new System.Drawing.Font("Athiti", 12F);
+            this.txtPosition.ForeColor = System.Drawing.Color.Black;
+            this.txtPosition.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPosition.Location = new System.Drawing.Point(8, 94);
+            this.txtPosition.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtPosition.MaxLength = 20;
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.PasswordChar = '\0';
+            this.txtPosition.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtPosition.PlaceholderText = "Position";
+            this.txtPosition.SelectedText = "";
+            this.txtPosition.Size = new System.Drawing.Size(287, 39);
+            this.txtPosition.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtPosition.TabIndex = 14;
             // 
             // btnTake
             // 
@@ -702,6 +726,64 @@
             this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
+            // cl_del
+            // 
+            this.cl_del.HeaderText = "";
+            this.cl_del.Image = ((System.Drawing.Image)(resources.GetObject("cl_del.Image")));
+            this.cl_del.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.cl_del.Name = "cl_del";
+            this.cl_del.ReadOnly = true;
+            this.cl_del.Width = 30;
+            // 
+            // cl_edit
+            // 
+            this.cl_edit.HeaderText = "";
+            this.cl_edit.Image = ((System.Drawing.Image)(resources.GetObject("cl_edit.Image")));
+            this.cl_edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.cl_edit.Name = "cl_edit";
+            this.cl_edit.ReadOnly = true;
+            this.cl_edit.Width = 30;
+            // 
+            // cl_ip
+            // 
+            this.cl_ip.DataPropertyName = "ip";
+            this.cl_ip.HeaderText = "IP";
+            this.cl_ip.Name = "cl_ip";
+            this.cl_ip.ReadOnly = true;
+            this.cl_ip.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cl_ip.Width = 150;
+            // 
+            // cl_port
+            // 
+            this.cl_port.DataPropertyName = "port";
+            this.cl_port.HeaderText = "PORT";
+            this.cl_port.Name = "cl_port";
+            this.cl_port.ReadOnly = true;
+            this.cl_port.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cl_user
+            // 
+            this.cl_user.DataPropertyName = "user";
+            this.cl_user.HeaderText = "user";
+            this.cl_user.Name = "cl_user";
+            this.cl_user.ReadOnly = true;
+            this.cl_user.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cl_pass
+            // 
+            this.cl_pass.DataPropertyName = "password";
+            this.cl_pass.HeaderText = "pass";
+            this.cl_pass.Name = "cl_pass";
+            this.cl_pass.ReadOnly = true;
+            this.cl_pass.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cl_position
+            // 
+            this.cl_position.DataPropertyName = "position";
+            this.cl_position.HeaderText = "position";
+            this.cl_position.Name = "cl_position";
+            this.cl_position.ReadOnly = true;
+            // 
             // sb
             // 
             this.sb.AllowDragging = false;
@@ -770,12 +852,6 @@
             this.sb.WarningOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon3")));
             this.sb.WarningOptions.IconLeftMargin = 12;
             this.sb.ZoomCloseIcon = true;
-            // 
-            // tmConnect
-            // 
-            this.tmConnect.Enabled = true;
-            this.tmConnect.Interval = 1000;
-            this.tmConnect.Tick += new System.EventHandler(this.tmConnect_Tick);
             // 
             // gbConnect
             // 
@@ -918,89 +994,6 @@
             this.guna2CircleProgressBar1.Text = "guna2CircleProgressBar1";
             this.guna2CircleProgressBar1.Value = 50;
             // 
-            // txtPosition
-            // 
-            this.txtPosition.BorderColor = System.Drawing.Color.Black;
-            this.txtPosition.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPosition.DefaultText = "";
-            this.txtPosition.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPosition.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPosition.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPosition.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPosition.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPosition.Font = new System.Drawing.Font("Athiti", 12F);
-            this.txtPosition.ForeColor = System.Drawing.Color.Black;
-            this.txtPosition.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPosition.Location = new System.Drawing.Point(8, 94);
-            this.txtPosition.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtPosition.MaxLength = 20;
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.PasswordChar = '\0';
-            this.txtPosition.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtPosition.PlaceholderText = "Position";
-            this.txtPosition.SelectedText = "";
-            this.txtPosition.Size = new System.Drawing.Size(287, 39);
-            this.txtPosition.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtPosition.TabIndex = 14;
-            // 
-            // cl_del
-            // 
-            this.cl_del.HeaderText = "";
-            this.cl_del.Image = ((System.Drawing.Image)(resources.GetObject("cl_del.Image")));
-            this.cl_del.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.cl_del.Name = "cl_del";
-            this.cl_del.ReadOnly = true;
-            this.cl_del.Width = 30;
-            // 
-            // cl_edit
-            // 
-            this.cl_edit.HeaderText = "";
-            this.cl_edit.Image = ((System.Drawing.Image)(resources.GetObject("cl_edit.Image")));
-            this.cl_edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.cl_edit.Name = "cl_edit";
-            this.cl_edit.ReadOnly = true;
-            this.cl_edit.Width = 30;
-            // 
-            // cl_ip
-            // 
-            this.cl_ip.DataPropertyName = "ip";
-            this.cl_ip.HeaderText = "IP";
-            this.cl_ip.Name = "cl_ip";
-            this.cl_ip.ReadOnly = true;
-            this.cl_ip.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cl_ip.Width = 150;
-            // 
-            // cl_port
-            // 
-            this.cl_port.DataPropertyName = "port";
-            this.cl_port.HeaderText = "PORT";
-            this.cl_port.Name = "cl_port";
-            this.cl_port.ReadOnly = true;
-            this.cl_port.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cl_user
-            // 
-            this.cl_user.DataPropertyName = "user";
-            this.cl_user.HeaderText = "user";
-            this.cl_user.Name = "cl_user";
-            this.cl_user.ReadOnly = true;
-            this.cl_user.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cl_pass
-            // 
-            this.cl_pass.DataPropertyName = "password";
-            this.cl_pass.HeaderText = "pass";
-            this.cl_pass.Name = "cl_pass";
-            this.cl_pass.ReadOnly = true;
-            this.cl_pass.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cl_position
-            // 
-            this.cl_position.DataPropertyName = "position";
-            this.cl_position.HeaderText = "position";
-            this.cl_position.Name = "cl_position";
-            this.cl_position.ReadOnly = true;
-            // 
             // frmCCTV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
@@ -1048,7 +1041,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnTest;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCancel;
         private Bunifu.UI.WinForms.BunifuSnackbar sb;
-        private System.Windows.Forms.Timer tmConnect;
         private Guna.UI2.WinForms.Guna2GroupBox gbConnect;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
