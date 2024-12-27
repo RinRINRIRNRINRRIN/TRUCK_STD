@@ -139,13 +139,10 @@ namespace TRUCK_STD.Design
                 if (COMPCODE == "") // INSERT INTO
                 {
                     // กำหนดค่า
-                    customerModel customerModel = new customerModel
-                    {
-                        new_id = txtCOMPCODE.Text,
-                        names = txtCOMPDESC.Text
-                    };
+                    customer.new_id = txtCOMPCODE.Text;
+                    customer.names = txtCOMPDESC.Text;
                     // Insert
-                    if (!customer.Insert(customerModel))
+                    if (!customer.Insert())
                     {
                         bunifuSnackbar1.Show(this, "เกิดข้อผิดผลาดกรุณาตรวจสอบว่าถูกต้องหรือไม่ หรือมีข้อมูลซ้ำในระบบ", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, "OK", Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
                         return;
@@ -154,14 +151,13 @@ namespace TRUCK_STD.Design
                 else // UPDATE
                 {
                     // กำหนดค่า
-                    customerModel customerModel = new customerModel
-                    {
-                        new_id = txtCOMPCODE.Text,
-                        old_id = COMPCODE,
-                        names = txtCOMPDESC.Text
-                    };
+
+                    customer.new_id = txtCOMPCODE.Text;
+                    customer.old_id = COMPCODE;
+                    customer.names = txtCOMPDESC.Text;
+
                     // Update
-                    if (customer.Update(customerModel))
+                    if (customer.Update())
                     {
                         bunifuSnackbar1.Show(this, "เกิดข้อผิดผลาดกรุณาตรวจสอบว่าถูกต้องหรือไม่ หรือมีข้อมูลซ้ำในระบบ", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, "OK", Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
                         return;
@@ -202,11 +198,8 @@ namespace TRUCK_STD.Design
             }
             else
             {
-                customerModel customerModel = new customerModel
-                {
-                    names = txtCOMPDESC.Text
-                };
-                if (customer.SelectChar(customerModel))
+                customer.names = txtCOMPDESC.Text;
+                if (customer.Select())
                     dgvCustomer.DataSource = customer.tb;
 
             }
@@ -228,12 +221,11 @@ namespace TRUCK_STD.Design
                     if (dialogResult == DialogResult.Yes)
                     {
                         // กำหนดค่า
-                        customerModel customerModel = new customerModel
-                        {
-                            old_id = customer_id
-                        };
+
+                        customer.old_id = customer_id;
+
                         // Delete
-                        if (customer.Delete(customerModel))
+                        if (customer.Delete())
                             dgvCustomer.DataSource = customer.tb;
                     }
                 }
