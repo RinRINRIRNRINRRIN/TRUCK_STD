@@ -30,13 +30,25 @@ namespace TRUCK_STD.Design
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSettingEnvironment));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState16 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState17 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState18 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState19 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState20 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState21 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState22 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState23 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState24 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState25 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState26 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState27 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState28 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState29 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState30 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSettingEnvironment));
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.gbPasswordInstall = new Guna.UI2.WinForms.Guna2GroupBox();
             this.gbReadKey = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -46,10 +58,8 @@ namespace TRUCK_STD.Design
             this.btnRead = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtPassInstall = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnUnlock = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtSMSSSO = new Guna.UI2.WinForms.Guna2TextBox();
             this.msg = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
-            this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.tcMain = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pnTicket = new System.Windows.Forms.Panel();
@@ -141,20 +151,18 @@ namespace TRUCK_STD.Design
             this.cbbIndicator = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.gbFunction = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.tgsBarrier = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label64 = new System.Windows.Forms.Label();
-            this.tgsRFID = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label58 = new System.Windows.Forms.Label();
-            this.tgsLPR = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label57 = new System.Windows.Forms.Label();
-            this.tgsCamera = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label49 = new System.Windows.Forms.Label();
-            this.tgsPrice = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label45 = new System.Windows.Forms.Label();
+            this.tgsRFID = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.tgsBARRIER = new Bunifu.UI.WinForms.BunifuToggleSwitch();
             this.label44 = new System.Windows.Forms.Label();
+            this.tgsAPI = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.tgsLPR = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.tgsCCTV = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
             this.gbStation = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label61 = new System.Windows.Forms.Label();
-            this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label60 = new System.Windows.Forms.Label();
             this.txtStationName = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbbStationType = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -169,6 +177,14 @@ namespace TRUCK_STD.Design
             this.lblStationType = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtCapacity = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.txtPublicKey = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtKeyId = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnUnlock = new Guna.UI2.WinForms.Guna2GradientButton();
             this.gbPasswordInstall.SuspendLayout();
             this.gbReadKey.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -192,6 +208,7 @@ namespace TRUCK_STD.Design
             this.gbStation.SuspendLayout();
             this.pnStation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2DragControl1
@@ -202,11 +219,11 @@ namespace TRUCK_STD.Design
             // gbPasswordInstall
             // 
             this.gbPasswordInstall.BorderColor = System.Drawing.Color.Maroon;
+            this.gbPasswordInstall.Controls.Add(this.btnUnlock);
             this.gbPasswordInstall.Controls.Add(this.gbReadKey);
             this.gbPasswordInstall.Controls.Add(this.btnRead);
             this.gbPasswordInstall.Controls.Add(this.pictureBox2);
             this.gbPasswordInstall.Controls.Add(this.txtPassInstall);
-            this.gbPasswordInstall.Controls.Add(this.btnUnlock);
             this.gbPasswordInstall.Controls.Add(this.txtSMSSSO);
             this.gbPasswordInstall.CustomBorderColor = System.Drawing.Color.Maroon;
             this.guna2Transition1.SetDecoration(this.gbPasswordInstall, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -258,11 +275,11 @@ namespace TRUCK_STD.Design
             this.btnCancal.ColorContrastOnClick = 45;
             this.btnCancal.ColorContrastOnHover = 45;
             this.btnCancal.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnCancal.CustomizableEdges = borderEdges1;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnCancal.CustomizableEdges = borderEdges4;
             this.guna2Transition1.SetDecoration(this.btnCancal, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnCancal.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCancal.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -383,11 +400,11 @@ namespace TRUCK_STD.Design
             this.btnRead.ColorContrastOnClick = 45;
             this.btnRead.ColorContrastOnHover = 45;
             this.btnRead.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnRead.CustomizableEdges = borderEdges2;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnRead.CustomizableEdges = borderEdges3;
             this.guna2Transition1.SetDecoration(this.btnRead, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnRead.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRead.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -453,6 +470,7 @@ namespace TRUCK_STD.Design
             this.btnRead.TextMarginLeft = 0;
             this.btnRead.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnRead.UseDefaultRadiusAndThickness = true;
+            this.btnRead.Visible = false;
             this.btnRead.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
             // pictureBox2
@@ -491,97 +509,6 @@ namespace TRUCK_STD.Design
             this.txtPassInstall.Size = new System.Drawing.Size(286, 40);
             this.txtPassInstall.TabIndex = 6;
             this.txtPassInstall.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnUnlock
-            // 
-            this.btnUnlock.AllowAnimations = true;
-            this.btnUnlock.AllowMouseEffects = true;
-            this.btnUnlock.AllowToggling = false;
-            this.btnUnlock.AnimationSpeed = 200;
-            this.btnUnlock.AutoGenerateColors = false;
-            this.btnUnlock.AutoRoundBorders = false;
-            this.btnUnlock.AutoSizeLeftIcon = true;
-            this.btnUnlock.AutoSizeRightIcon = true;
-            this.btnUnlock.BackColor = System.Drawing.Color.Transparent;
-            this.btnUnlock.BackColor1 = System.Drawing.Color.White;
-            this.btnUnlock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUnlock.BackgroundImage")));
-            this.btnUnlock.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnUnlock.ButtonText = "ปลดล็อคโปรแกรม";
-            this.btnUnlock.ButtonTextMarginLeft = 0;
-            this.btnUnlock.ColorContrastOnClick = 45;
-            this.btnUnlock.ColorContrastOnHover = 45;
-            this.btnUnlock.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnUnlock.CustomizableEdges = borderEdges3;
-            this.guna2Transition1.SetDecoration(this.btnUnlock, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnUnlock.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnUnlock.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnUnlock.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnUnlock.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnUnlock.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnUnlock.Font = new System.Drawing.Font("Athiti", 12F);
-            this.btnUnlock.ForeColor = System.Drawing.Color.Green;
-            this.btnUnlock.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUnlock.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnUnlock.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnUnlock.IconMarginLeft = 11;
-            this.btnUnlock.IconPadding = 10;
-            this.btnUnlock.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUnlock.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnUnlock.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnUnlock.IconSize = 25;
-            this.btnUnlock.IdleBorderColor = System.Drawing.Color.Green;
-            this.btnUnlock.IdleBorderRadius = 6;
-            this.btnUnlock.IdleBorderThickness = 1;
-            this.btnUnlock.IdleFillColor = System.Drawing.Color.White;
-            this.btnUnlock.IdleIconLeftImage = null;
-            this.btnUnlock.IdleIconRightImage = null;
-            this.btnUnlock.IndicateFocus = false;
-            this.btnUnlock.Location = new System.Drawing.Point(144, 268);
-            this.btnUnlock.Name = "btnUnlock";
-            this.btnUnlock.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnUnlock.OnDisabledState.BorderRadius = 6;
-            this.btnUnlock.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnUnlock.OnDisabledState.BorderThickness = 1;
-            this.btnUnlock.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnUnlock.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnUnlock.OnDisabledState.IconLeftImage = null;
-            this.btnUnlock.OnDisabledState.IconRightImage = null;
-            this.btnUnlock.onHoverState.BorderColor = System.Drawing.Color.Green;
-            this.btnUnlock.onHoverState.BorderRadius = 6;
-            this.btnUnlock.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnUnlock.onHoverState.BorderThickness = 1;
-            this.btnUnlock.onHoverState.FillColor = System.Drawing.Color.Green;
-            this.btnUnlock.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnUnlock.onHoverState.IconLeftImage = null;
-            this.btnUnlock.onHoverState.IconRightImage = null;
-            this.btnUnlock.OnIdleState.BorderColor = System.Drawing.Color.Green;
-            this.btnUnlock.OnIdleState.BorderRadius = 6;
-            this.btnUnlock.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnUnlock.OnIdleState.BorderThickness = 1;
-            this.btnUnlock.OnIdleState.FillColor = System.Drawing.Color.White;
-            this.btnUnlock.OnIdleState.ForeColor = System.Drawing.Color.Green;
-            this.btnUnlock.OnIdleState.IconLeftImage = null;
-            this.btnUnlock.OnIdleState.IconRightImage = null;
-            this.btnUnlock.OnPressedState.BorderColor = System.Drawing.Color.Green;
-            this.btnUnlock.OnPressedState.BorderRadius = 6;
-            this.btnUnlock.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnUnlock.OnPressedState.BorderThickness = 1;
-            this.btnUnlock.OnPressedState.FillColor = System.Drawing.Color.White;
-            this.btnUnlock.OnPressedState.ForeColor = System.Drawing.Color.Green;
-            this.btnUnlock.OnPressedState.IconLeftImage = null;
-            this.btnUnlock.OnPressedState.IconRightImage = null;
-            this.btnUnlock.Size = new System.Drawing.Size(155, 36);
-            this.btnUnlock.TabIndex = 5;
-            this.btnUnlock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnUnlock.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnUnlock.TextMarginLeft = 0;
-            this.btnUnlock.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnUnlock.UseDefaultRadiusAndThickness = true;
-            this.btnUnlock.Click += new System.EventHandler(this.btnUnlock_Click);
             // 
             // txtSMSSSO
             // 
@@ -676,97 +603,6 @@ namespace TRUCK_STD.Design
             this.msg.WarningOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon3")));
             this.msg.WarningOptions.IconLeftMargin = 12;
             this.msg.ZoomCloseIcon = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.AllowAnimations = true;
-            this.btnSave.AllowMouseEffects = true;
-            this.btnSave.AllowToggling = false;
-            this.btnSave.AnimationSpeed = 200;
-            this.btnSave.AutoGenerateColors = false;
-            this.btnSave.AutoRoundBorders = false;
-            this.btnSave.AutoSizeLeftIcon = true;
-            this.btnSave.AutoSizeRightIcon = true;
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
-            this.btnSave.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.ButtonText = "บันทึก การตั้งค่า";
-            this.btnSave.ButtonTextMarginLeft = 0;
-            this.btnSave.ColorContrastOnClick = 45;
-            this.btnSave.ColorContrastOnHover = 45;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnSave.CustomizableEdges = borderEdges4;
-            this.guna2Transition1.SetDecoration(this.btnSave, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSave.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSave.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnSave.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnSave.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnSave.Font = new System.Drawing.Font("Athiti", 12F);
-            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSave.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnSave.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnSave.IconMarginLeft = 11;
-            this.btnSave.IconPadding = 10;
-            this.btnSave.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnSave.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnSave.IconSize = 25;
-            this.btnSave.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSave.IdleBorderRadius = 6;
-            this.btnSave.IdleBorderThickness = 1;
-            this.btnSave.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSave.IdleIconLeftImage = null;
-            this.btnSave.IdleIconRightImage = null;
-            this.btnSave.IndicateFocus = false;
-            this.btnSave.Location = new System.Drawing.Point(1136, 772);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSave.OnDisabledState.BorderRadius = 6;
-            this.btnSave.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.OnDisabledState.BorderThickness = 1;
-            this.btnSave.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnSave.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnSave.OnDisabledState.IconLeftImage = null;
-            this.btnSave.OnDisabledState.IconRightImage = null;
-            this.btnSave.onHoverState.BorderColor = System.Drawing.Color.Green;
-            this.btnSave.onHoverState.BorderRadius = 6;
-            this.btnSave.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.onHoverState.BorderThickness = 1;
-            this.btnSave.onHoverState.FillColor = System.Drawing.Color.Green;
-            this.btnSave.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnSave.onHoverState.IconLeftImage = null;
-            this.btnSave.onHoverState.IconRightImage = null;
-            this.btnSave.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSave.OnIdleState.BorderRadius = 6;
-            this.btnSave.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.OnIdleState.BorderThickness = 1;
-            this.btnSave.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSave.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSave.OnIdleState.IconLeftImage = null;
-            this.btnSave.OnIdleState.IconRightImage = null;
-            this.btnSave.OnPressedState.BorderColor = System.Drawing.Color.Green;
-            this.btnSave.OnPressedState.BorderRadius = 6;
-            this.btnSave.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSave.OnPressedState.BorderThickness = 1;
-            this.btnSave.OnPressedState.FillColor = System.Drawing.Color.White;
-            this.btnSave.OnPressedState.ForeColor = System.Drawing.Color.Green;
-            this.btnSave.OnPressedState.IconLeftImage = null;
-            this.btnSave.OnPressedState.IconRightImage = null;
-            this.btnSave.Size = new System.Drawing.Size(150, 36);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSave.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSave.TextMarginLeft = 0;
-            this.btnSave.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnSave.UseDefaultRadiusAndThickness = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tcMain
             // 
@@ -1512,6 +1348,7 @@ namespace TRUCK_STD.Design
             this.flowLayoutPanel1.Controls.Add(this.gbDatabase);
             this.flowLayoutPanel1.Controls.Add(this.gbDate);
             this.flowLayoutPanel1.Controls.Add(this.gbIndicator);
+            this.flowLayoutPanel1.Controls.Add(this.guna2GroupBox1);
             this.guna2Transition1.SetDecoration(this.flowLayoutPanel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
@@ -2088,8 +1925,8 @@ namespace TRUCK_STD.Design
             // gbIndicator
             // 
             this.gbIndicator.BorderColor = System.Drawing.Color.Navy;
-            this.gbIndicator.Controls.Add(this.label50);
-            this.gbIndicator.Controls.Add(this.cbbBusinessType);
+            this.gbIndicator.Controls.Add(this.label45);
+            this.gbIndicator.Controls.Add(this.txtCapacity);
             this.gbIndicator.Controls.Add(this.label48);
             this.gbIndicator.Controls.Add(this.label2);
             this.gbIndicator.Controls.Add(this.cbbIndicator);
@@ -2109,7 +1946,7 @@ namespace TRUCK_STD.Design
             this.guna2Transition1.SetDecoration(this.label50, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label50.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label50.ForeColor = System.Drawing.Color.Black;
-            this.label50.Location = new System.Drawing.Point(355, 52);
+            this.label50.Location = new System.Drawing.Point(572, 42);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(101, 25);
             this.label50.TabIndex = 40;
@@ -2129,10 +1966,12 @@ namespace TRUCK_STD.Design
             this.cbbBusinessType.ItemHeight = 30;
             this.cbbBusinessType.Items.AddRange(new object[] {
             "ทั่วไป",
-            "เกษตร"});
-            this.cbbBusinessType.Location = new System.Drawing.Point(355, 80);
+            "หัวมันสด",
+            "ข้าวเปลือก",
+            "ข้าวโพดเลี้ยงสัตว์"});
+            this.cbbBusinessType.Location = new System.Drawing.Point(577, 67);
             this.cbbBusinessType.Name = "cbbBusinessType";
-            this.cbbBusinessType.Size = new System.Drawing.Size(177, 36);
+            this.cbbBusinessType.Size = new System.Drawing.Size(197, 36);
             this.cbbBusinessType.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbbBusinessType.TabIndex = 39;
             this.cbbBusinessType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2216,201 +2055,115 @@ namespace TRUCK_STD.Design
             // gbFunction
             // 
             this.gbFunction.BorderColor = System.Drawing.Color.Navy;
-            this.gbFunction.Controls.Add(this.tgsBarrier);
-            this.gbFunction.Controls.Add(this.label64);
             this.gbFunction.Controls.Add(this.tgsRFID);
-            this.gbFunction.Controls.Add(this.label58);
-            this.gbFunction.Controls.Add(this.tgsLPR);
-            this.gbFunction.Controls.Add(this.label57);
-            this.gbFunction.Controls.Add(this.tgsCamera);
-            this.gbFunction.Controls.Add(this.label49);
-            this.gbFunction.Controls.Add(this.tgsPrice);
-            this.gbFunction.Controls.Add(this.label45);
+            this.gbFunction.Controls.Add(this.tgsBARRIER);
             this.gbFunction.Controls.Add(this.label44);
+            this.gbFunction.Controls.Add(this.tgsAPI);
+            this.gbFunction.Controls.Add(this.tgsLPR);
+            this.gbFunction.Controls.Add(this.tgsCCTV);
+            this.gbFunction.Controls.Add(this.label64);
+            this.gbFunction.Controls.Add(this.label58);
+            this.gbFunction.Controls.Add(this.label57);
+            this.gbFunction.Controls.Add(this.label49);
             this.gbFunction.CustomBorderColor = System.Drawing.Color.Navy;
             this.guna2Transition1.SetDecoration(this.gbFunction, Guna.UI2.AnimatorNS.DecorationType.None);
             this.gbFunction.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbFunction.ForeColor = System.Drawing.Color.White;
-            this.gbFunction.Location = new System.Drawing.Point(149, 6);
+            this.gbFunction.Location = new System.Drawing.Point(367, 9);
             this.gbFunction.Name = "gbFunction";
-            this.gbFunction.Size = new System.Drawing.Size(806, 397);
+            this.gbFunction.Size = new System.Drawing.Size(248, 296);
             this.gbFunction.TabIndex = 25;
             this.gbFunction.Text = "ฟังชั่นโปรแกรม";
             // 
-            // tgsBarrier
-            // 
-            this.tgsBarrier.Animated = true;
-            this.tgsBarrier.CheckedState.BorderColor = System.Drawing.Color.Green;
-            this.tgsBarrier.CheckedState.BorderRadius = 15;
-            this.tgsBarrier.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.tgsBarrier.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tgsBarrier.CheckedState.InnerBorderRadius = 13;
-            this.tgsBarrier.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2Transition1.SetDecoration(this.tgsBarrier, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.tgsBarrier.Location = new System.Drawing.Point(125, 334);
-            this.tgsBarrier.Name = "tgsBarrier";
-            this.tgsBarrier.Size = new System.Drawing.Size(81, 34);
-            this.tgsBarrier.TabIndex = 48;
-            this.tgsBarrier.UncheckedState.BorderColor = System.Drawing.Color.Red;
-            this.tgsBarrier.UncheckedState.BorderRadius = 15;
-            this.tgsBarrier.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tgsBarrier.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tgsBarrier.UncheckedState.InnerBorderRadius = 13;
-            this.tgsBarrier.UncheckedState.InnerBorderThickness = 1;
-            this.tgsBarrier.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.tgsBarrier.Click += new System.EventHandler(this.tgsPrice_Click);
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.label64, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label64.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.ForeColor = System.Drawing.Color.Black;
-            this.label64.Location = new System.Drawing.Point(16, 306);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(66, 25);
-            this.label64.TabIndex = 47;
-            this.label64.Text = "Barrier";
-            // 
             // tgsRFID
             // 
-            this.tgsRFID.Animated = true;
-            this.tgsRFID.CheckedState.BorderColor = System.Drawing.Color.Green;
-            this.tgsRFID.CheckedState.BorderRadius = 15;
-            this.tgsRFID.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.tgsRFID.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tgsRFID.CheckedState.InnerBorderRadius = 13;
-            this.tgsRFID.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.tgsRFID.Animation = 5;
+            this.tgsRFID.BackColor = System.Drawing.Color.Transparent;
+            this.tgsRFID.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tgsRFID.BackgroundImage")));
+            this.tgsRFID.Checked = false;
+            this.tgsRFID.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Transition1.SetDecoration(this.tgsRFID, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.tgsRFID.Location = new System.Drawing.Point(125, 272);
+            this.tgsRFID.InnerCirclePadding = 3;
+            this.tgsRFID.Location = new System.Drawing.Point(161, 192);
+            this.tgsRFID.Margin = new System.Windows.Forms.Padding(68, 477, 68, 477);
             this.tgsRFID.Name = "tgsRFID";
-            this.tgsRFID.Size = new System.Drawing.Size(81, 34);
-            this.tgsRFID.TabIndex = 46;
-            this.tgsRFID.UncheckedState.BorderColor = System.Drawing.Color.Red;
-            this.tgsRFID.UncheckedState.BorderRadius = 15;
-            this.tgsRFID.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tgsRFID.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tgsRFID.UncheckedState.InnerBorderRadius = 13;
-            this.tgsRFID.UncheckedState.InnerBorderThickness = 1;
-            this.tgsRFID.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.tgsRFID.Click += new System.EventHandler(this.tgsPrice_Click);
+            this.tgsRFID.Size = new System.Drawing.Size(69, 37);
+            this.tgsRFID.TabIndex = 59;
+            this.tgsRFID.ThumbMargin = 3;
+            toggleState16.BackColor = System.Drawing.Color.DarkGray;
+            toggleState16.BackColorInner = System.Drawing.Color.White;
+            toggleState16.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState16.BorderColorInner = System.Drawing.Color.White;
+            toggleState16.BorderRadius = 17;
+            toggleState16.BorderRadiusInner = 11;
+            toggleState16.BorderThickness = 1;
+            toggleState16.BorderThicknessInner = 1;
+            this.tgsRFID.ToggleStateDisabled = toggleState16;
+            toggleState17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState17.BackColorInner = System.Drawing.Color.White;
+            toggleState17.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState17.BorderColorInner = System.Drawing.Color.White;
+            toggleState17.BorderRadius = 17;
+            toggleState17.BorderRadiusInner = 11;
+            toggleState17.BorderThickness = 1;
+            toggleState17.BorderThicknessInner = 1;
+            this.tgsRFID.ToggleStateOff = toggleState17;
+            toggleState18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState18.BackColorInner = System.Drawing.Color.White;
+            toggleState18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState18.BorderColorInner = System.Drawing.Color.White;
+            toggleState18.BorderRadius = 17;
+            toggleState18.BorderRadiusInner = 11;
+            toggleState18.BorderThickness = 1;
+            toggleState18.BorderThicknessInner = 1;
+            this.tgsRFID.ToggleStateOn = toggleState18;
+            this.tgsRFID.Value = false;
+            this.tgsRFID.Click += new System.EventHandler(this.tgs_Click);
             // 
-            // label58
+            // tgsBARRIER
             // 
-            this.label58.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.label58, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label58.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.ForeColor = System.Drawing.Color.Black;
-            this.label58.Location = new System.Drawing.Point(16, 244);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(116, 25);
-            this.label58.TabIndex = 45;
-            this.label58.Text = "CAMERA RFID";
-            // 
-            // tgsLPR
-            // 
-            this.tgsLPR.Animated = true;
-            this.tgsLPR.CheckedState.BorderColor = System.Drawing.Color.Green;
-            this.tgsLPR.CheckedState.BorderRadius = 15;
-            this.tgsLPR.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.tgsLPR.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tgsLPR.CheckedState.InnerBorderRadius = 13;
-            this.tgsLPR.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2Transition1.SetDecoration(this.tgsLPR, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.tgsLPR.Location = new System.Drawing.Point(125, 207);
-            this.tgsLPR.Name = "tgsLPR";
-            this.tgsLPR.Size = new System.Drawing.Size(81, 34);
-            this.tgsLPR.TabIndex = 44;
-            this.tgsLPR.UncheckedState.BorderColor = System.Drawing.Color.Red;
-            this.tgsLPR.UncheckedState.BorderRadius = 15;
-            this.tgsLPR.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tgsLPR.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tgsLPR.UncheckedState.InnerBorderRadius = 13;
-            this.tgsLPR.UncheckedState.InnerBorderThickness = 1;
-            this.tgsLPR.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.tgsLPR.Click += new System.EventHandler(this.tgsPrice_Click);
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.label57, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label57.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.ForeColor = System.Drawing.Color.Black;
-            this.label57.Location = new System.Drawing.Point(16, 179);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(109, 25);
-            this.label57.TabIndex = 43;
-            this.label57.Text = "CAMERA LPR";
-            // 
-            // tgsCamera
-            // 
-            this.tgsCamera.Animated = true;
-            this.tgsCamera.CheckedState.BorderColor = System.Drawing.Color.Green;
-            this.tgsCamera.CheckedState.BorderRadius = 15;
-            this.tgsCamera.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.tgsCamera.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tgsCamera.CheckedState.InnerBorderRadius = 13;
-            this.tgsCamera.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2Transition1.SetDecoration(this.tgsCamera, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.tgsCamera.Location = new System.Drawing.Point(125, 142);
-            this.tgsCamera.Name = "tgsCamera";
-            this.tgsCamera.Size = new System.Drawing.Size(81, 34);
-            this.tgsCamera.TabIndex = 42;
-            this.tgsCamera.UncheckedState.BorderColor = System.Drawing.Color.Red;
-            this.tgsCamera.UncheckedState.BorderRadius = 15;
-            this.tgsCamera.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tgsCamera.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tgsCamera.UncheckedState.InnerBorderRadius = 13;
-            this.tgsCamera.UncheckedState.InnerBorderThickness = 1;
-            this.tgsCamera.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.tgsCamera.Click += new System.EventHandler(this.tgsPrice_Click);
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.label49, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label49.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.ForeColor = System.Drawing.Color.Black;
-            this.label49.Location = new System.Drawing.Point(16, 114);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(76, 25);
-            this.label49.TabIndex = 41;
-            this.label49.Text = "CAMERA";
-            // 
-            // tgsPrice
-            // 
-            this.tgsPrice.Animated = true;
-            this.tgsPrice.CheckedState.BorderColor = System.Drawing.Color.Green;
-            this.tgsPrice.CheckedState.BorderRadius = 15;
-            this.tgsPrice.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.tgsPrice.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tgsPrice.CheckedState.InnerBorderRadius = 13;
-            this.tgsPrice.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2Transition1.SetDecoration(this.tgsPrice, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.tgsPrice.Location = new System.Drawing.Point(125, 78);
-            this.tgsPrice.Name = "tgsPrice";
-            this.tgsPrice.Size = new System.Drawing.Size(81, 34);
-            this.tgsPrice.TabIndex = 35;
-            this.tgsPrice.UncheckedState.BorderColor = System.Drawing.Color.Red;
-            this.tgsPrice.UncheckedState.BorderRadius = 15;
-            this.tgsPrice.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tgsPrice.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tgsPrice.UncheckedState.InnerBorderRadius = 13;
-            this.tgsPrice.UncheckedState.InnerBorderThickness = 1;
-            this.tgsPrice.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.tgsPrice.Click += new System.EventHandler(this.tgsPrice_Click);
-            // 
-            // label45
-            // 
-            this.guna2Transition1.SetDecoration(this.label45, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label45.Font = new System.Drawing.Font("Athiti", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label45.ForeColor = System.Drawing.Color.Red;
-            this.label45.Location = new System.Drawing.Point(235, 78);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(554, 52);
-            this.label45.TabIndex = 23;
-            this.label45.Text = "** การใช้งานฟังชั่น คำนวนราคา เมื่อมีการชั่งระบบจำเป็นต้องให้ผู้ใช้ คีย์ราคาต่อกิ" +
-    "โลกลัมทุกครั้ง";
+            this.tgsBARRIER.Animation = 5;
+            this.tgsBARRIER.BackColor = System.Drawing.Color.Transparent;
+            this.tgsBARRIER.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tgsBARRIER.BackgroundImage")));
+            this.tgsBARRIER.Checked = false;
+            this.tgsBARRIER.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.tgsBARRIER, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.tgsBARRIER.InnerCirclePadding = 3;
+            this.tgsBARRIER.Location = new System.Drawing.Point(161, 241);
+            this.tgsBARRIER.Margin = new System.Windows.Forms.Padding(68, 477, 68, 477);
+            this.tgsBARRIER.Name = "tgsBARRIER";
+            this.tgsBARRIER.Size = new System.Drawing.Size(69, 37);
+            this.tgsBARRIER.TabIndex = 58;
+            this.tgsBARRIER.ThumbMargin = 3;
+            toggleState19.BackColor = System.Drawing.Color.DarkGray;
+            toggleState19.BackColorInner = System.Drawing.Color.White;
+            toggleState19.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState19.BorderColorInner = System.Drawing.Color.White;
+            toggleState19.BorderRadius = 17;
+            toggleState19.BorderRadiusInner = 11;
+            toggleState19.BorderThickness = 1;
+            toggleState19.BorderThicknessInner = 1;
+            this.tgsBARRIER.ToggleStateDisabled = toggleState19;
+            toggleState20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState20.BackColorInner = System.Drawing.Color.White;
+            toggleState20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState20.BorderColorInner = System.Drawing.Color.White;
+            toggleState20.BorderRadius = 17;
+            toggleState20.BorderRadiusInner = 11;
+            toggleState20.BorderThickness = 1;
+            toggleState20.BorderThicknessInner = 1;
+            this.tgsBARRIER.ToggleStateOff = toggleState20;
+            toggleState21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState21.BackColorInner = System.Drawing.Color.White;
+            toggleState21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState21.BorderColorInner = System.Drawing.Color.White;
+            toggleState21.BorderRadius = 17;
+            toggleState21.BorderRadiusInner = 11;
+            toggleState21.BorderThickness = 1;
+            toggleState21.BorderThicknessInner = 1;
+            this.tgsBARRIER.ToggleStateOn = toggleState21;
+            this.tgsBARRIER.Value = false;
+            this.tgsBARRIER.Click += new System.EventHandler(this.tgs_Click);
             // 
             // label44
             // 
@@ -2418,17 +2171,200 @@ namespace TRUCK_STD.Design
             this.guna2Transition1.SetDecoration(this.label44, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label44.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ForeColor = System.Drawing.Color.Black;
-            this.label44.Location = new System.Drawing.Point(16, 50);
+            this.label44.Location = new System.Drawing.Point(16, 105);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(190, 25);
-            this.label44.TabIndex = 22;
-            this.label44.Text = "ราคาสินค้าที่ใช้ในโปรแกรม";
+            this.label44.Size = new System.Drawing.Size(109, 25);
+            this.label44.TabIndex = 57;
+            this.label44.Text = "CAMERA LPR";
+            // 
+            // tgsAPI
+            // 
+            this.tgsAPI.Animation = 5;
+            this.tgsAPI.BackColor = System.Drawing.Color.Transparent;
+            this.tgsAPI.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tgsAPI.BackgroundImage")));
+            this.tgsAPI.Checked = false;
+            this.tgsAPI.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.tgsAPI, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.tgsAPI.InnerCirclePadding = 3;
+            this.tgsAPI.Location = new System.Drawing.Point(161, 144);
+            this.tgsAPI.Margin = new System.Windows.Forms.Padding(37, 188, 37, 188);
+            this.tgsAPI.Name = "tgsAPI";
+            this.tgsAPI.Size = new System.Drawing.Size(69, 37);
+            this.tgsAPI.TabIndex = 56;
+            this.tgsAPI.ThumbMargin = 3;
+            toggleState22.BackColor = System.Drawing.Color.DarkGray;
+            toggleState22.BackColorInner = System.Drawing.Color.White;
+            toggleState22.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState22.BorderColorInner = System.Drawing.Color.White;
+            toggleState22.BorderRadius = 17;
+            toggleState22.BorderRadiusInner = 11;
+            toggleState22.BorderThickness = 1;
+            toggleState22.BorderThicknessInner = 1;
+            this.tgsAPI.ToggleStateDisabled = toggleState22;
+            toggleState23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState23.BackColorInner = System.Drawing.Color.White;
+            toggleState23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState23.BorderColorInner = System.Drawing.Color.White;
+            toggleState23.BorderRadius = 17;
+            toggleState23.BorderRadiusInner = 11;
+            toggleState23.BorderThickness = 1;
+            toggleState23.BorderThicknessInner = 1;
+            this.tgsAPI.ToggleStateOff = toggleState23;
+            toggleState24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState24.BackColorInner = System.Drawing.Color.White;
+            toggleState24.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState24.BorderColorInner = System.Drawing.Color.White;
+            toggleState24.BorderRadius = 17;
+            toggleState24.BorderRadiusInner = 11;
+            toggleState24.BorderThickness = 1;
+            toggleState24.BorderThicknessInner = 1;
+            this.tgsAPI.ToggleStateOn = toggleState24;
+            this.tgsAPI.Value = false;
+            this.tgsAPI.Click += new System.EventHandler(this.tgs_Click);
+            // 
+            // tgsLPR
+            // 
+            this.tgsLPR.Animation = 5;
+            this.tgsLPR.BackColor = System.Drawing.Color.Transparent;
+            this.tgsLPR.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tgsLPR.BackgroundImage")));
+            this.tgsLPR.Checked = false;
+            this.tgsLPR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.tgsLPR, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.tgsLPR.InnerCirclePadding = 3;
+            this.tgsLPR.Location = new System.Drawing.Point(161, 96);
+            this.tgsLPR.Margin = new System.Windows.Forms.Padding(37, 188, 37, 188);
+            this.tgsLPR.Name = "tgsLPR";
+            this.tgsLPR.Size = new System.Drawing.Size(69, 37);
+            this.tgsLPR.TabIndex = 55;
+            this.tgsLPR.ThumbMargin = 3;
+            toggleState25.BackColor = System.Drawing.Color.DarkGray;
+            toggleState25.BackColorInner = System.Drawing.Color.White;
+            toggleState25.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState25.BorderColorInner = System.Drawing.Color.White;
+            toggleState25.BorderRadius = 17;
+            toggleState25.BorderRadiusInner = 11;
+            toggleState25.BorderThickness = 1;
+            toggleState25.BorderThicknessInner = 1;
+            this.tgsLPR.ToggleStateDisabled = toggleState25;
+            toggleState26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState26.BackColorInner = System.Drawing.Color.White;
+            toggleState26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState26.BorderColorInner = System.Drawing.Color.White;
+            toggleState26.BorderRadius = 17;
+            toggleState26.BorderRadiusInner = 11;
+            toggleState26.BorderThickness = 1;
+            toggleState26.BorderThicknessInner = 1;
+            this.tgsLPR.ToggleStateOff = toggleState26;
+            toggleState27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState27.BackColorInner = System.Drawing.Color.White;
+            toggleState27.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState27.BorderColorInner = System.Drawing.Color.White;
+            toggleState27.BorderRadius = 17;
+            toggleState27.BorderRadiusInner = 11;
+            toggleState27.BorderThickness = 1;
+            toggleState27.BorderThicknessInner = 1;
+            this.tgsLPR.ToggleStateOn = toggleState27;
+            this.tgsLPR.Value = false;
+            this.tgsLPR.Click += new System.EventHandler(this.tgs_Click);
+            // 
+            // tgsCCTV
+            // 
+            this.tgsCCTV.Animation = 5;
+            this.tgsCCTV.BackColor = System.Drawing.Color.Transparent;
+            this.tgsCCTV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tgsCCTV.BackgroundImage")));
+            this.tgsCCTV.Checked = false;
+            this.tgsCCTV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.tgsCCTV, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.tgsCCTV.InnerCirclePadding = 3;
+            this.tgsCCTV.Location = new System.Drawing.Point(161, 52);
+            this.tgsCCTV.Margin = new System.Windows.Forms.Padding(20, 74, 20, 74);
+            this.tgsCCTV.Name = "tgsCCTV";
+            this.tgsCCTV.Size = new System.Drawing.Size(69, 34);
+            this.tgsCCTV.TabIndex = 54;
+            this.tgsCCTV.ThumbMargin = 3;
+            toggleState28.BackColor = System.Drawing.Color.DarkGray;
+            toggleState28.BackColorInner = System.Drawing.Color.White;
+            toggleState28.BorderColor = System.Drawing.Color.DarkGray;
+            toggleState28.BorderColorInner = System.Drawing.Color.White;
+            toggleState28.BorderRadius = 17;
+            toggleState28.BorderRadiusInner = 11;
+            toggleState28.BorderThickness = 1;
+            toggleState28.BorderThicknessInner = 1;
+            this.tgsCCTV.ToggleStateDisabled = toggleState28;
+            toggleState29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState29.BackColorInner = System.Drawing.Color.White;
+            toggleState29.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            toggleState29.BorderColorInner = System.Drawing.Color.White;
+            toggleState29.BorderRadius = 17;
+            toggleState29.BorderRadiusInner = 11;
+            toggleState29.BorderThickness = 1;
+            toggleState29.BorderThicknessInner = 1;
+            this.tgsCCTV.ToggleStateOff = toggleState29;
+            toggleState30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState30.BackColorInner = System.Drawing.Color.White;
+            toggleState30.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(62)))), ((int)(((byte)(135)))));
+            toggleState30.BorderColorInner = System.Drawing.Color.White;
+            toggleState30.BorderRadius = 17;
+            toggleState30.BorderRadiusInner = 11;
+            toggleState30.BorderThickness = 1;
+            toggleState30.BorderThicknessInner = 1;
+            this.tgsCCTV.ToggleStateOn = toggleState30;
+            this.tgsCCTV.Value = false;
+            this.tgsCCTV.Click += new System.EventHandler(this.tgs_Click);
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.label64, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label64.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.ForeColor = System.Drawing.Color.Black;
+            this.label64.Location = new System.Drawing.Point(59, 247);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(66, 25);
+            this.label64.TabIndex = 47;
+            this.label64.Text = "Barrier";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.label58, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label58.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.ForeColor = System.Drawing.Color.Black;
+            this.label58.Location = new System.Drawing.Point(79, 199);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(46, 25);
+            this.label58.TabIndex = 45;
+            this.label58.Text = "RFID";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.label57, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label57.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.ForeColor = System.Drawing.Color.Black;
+            this.label57.Location = new System.Drawing.Point(88, 150);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(37, 25);
+            this.label57.TabIndex = 43;
+            this.label57.Text = "API";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.label49, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label49.Font = new System.Drawing.Font("Athiti Medium", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.Color.Black;
+            this.label49.Location = new System.Drawing.Point(3, 53);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(122, 25);
+            this.label49.TabIndex = 41;
+            this.label49.Text = "CAMERA CCTV";
             // 
             // gbStation
             // 
             this.gbStation.BorderColor = System.Drawing.Color.Navy;
+            this.gbStation.Controls.Add(this.guna2GradientButton1);
             this.gbStation.Controls.Add(this.label61);
-            this.gbStation.Controls.Add(this.bunifuButton1);
             this.gbStation.Controls.Add(this.label60);
             this.gbStation.Controls.Add(this.txtStationName);
             this.gbStation.Controls.Add(this.cbbStationType);
@@ -2436,7 +2372,7 @@ namespace TRUCK_STD.Design
             this.guna2Transition1.SetDecoration(this.gbStation, Guna.UI2.AnimatorNS.DecorationType.None);
             this.gbStation.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbStation.ForeColor = System.Drawing.Color.White;
-            this.gbStation.Location = new System.Drawing.Point(1136, 35);
+            this.gbStation.Location = new System.Drawing.Point(895, 25);
             this.gbStation.Name = "gbStation";
             this.gbStation.Size = new System.Drawing.Size(225, 232);
             this.gbStation.TabIndex = 36;
@@ -2454,97 +2390,6 @@ namespace TRUCK_STD.Design
             this.label61.Size = new System.Drawing.Size(114, 21);
             this.label61.TabIndex = 38;
             this.label61.Text = "ชื่อสถานที 5 ตัวอักษร";
-            // 
-            // bunifuButton1
-            // 
-            this.bunifuButton1.AllowAnimations = true;
-            this.bunifuButton1.AllowMouseEffects = true;
-            this.bunifuButton1.AllowToggling = false;
-            this.bunifuButton1.AnimationSpeed = 200;
-            this.bunifuButton1.AutoGenerateColors = false;
-            this.bunifuButton1.AutoRoundBorders = false;
-            this.bunifuButton1.AutoSizeLeftIcon = true;
-            this.bunifuButton1.AutoSizeRightIcon = true;
-            this.bunifuButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton1.BackColor1 = System.Drawing.Color.White;
-            this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
-            this.bunifuButton1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton1.ButtonText = "ยืนยันสถานี";
-            this.bunifuButton1.ButtonTextMarginLeft = 0;
-            this.bunifuButton1.ColorContrastOnClick = 45;
-            this.bunifuButton1.ColorContrastOnHover = 45;
-            this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.bunifuButton1.CustomizableEdges = borderEdges5;
-            this.guna2Transition1.SetDecoration(this.bunifuButton1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton1.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton1.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton1.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton1.Font = new System.Drawing.Font("Athiti", 12F);
-            this.bunifuButton1.ForeColor = System.Drawing.Color.Green;
-            this.bunifuButton1.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuButton1.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton1.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.bunifuButton1.IconMarginLeft = 11;
-            this.bunifuButton1.IconPadding = 10;
-            this.bunifuButton1.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bunifuButton1.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton1.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.bunifuButton1.IconSize = 25;
-            this.bunifuButton1.IdleBorderColor = System.Drawing.Color.Green;
-            this.bunifuButton1.IdleBorderRadius = 6;
-            this.bunifuButton1.IdleBorderThickness = 1;
-            this.bunifuButton1.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuButton1.IdleIconLeftImage = null;
-            this.bunifuButton1.IdleIconRightImage = null;
-            this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(35, 187);
-            this.bunifuButton1.Name = "bunifuButton1";
-            this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton1.OnDisabledState.BorderRadius = 6;
-            this.bunifuButton1.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton1.OnDisabledState.BorderThickness = 1;
-            this.bunifuButton1.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton1.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton1.OnDisabledState.IconLeftImage = null;
-            this.bunifuButton1.OnDisabledState.IconRightImage = null;
-            this.bunifuButton1.onHoverState.BorderColor = System.Drawing.Color.Green;
-            this.bunifuButton1.onHoverState.BorderRadius = 6;
-            this.bunifuButton1.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton1.onHoverState.BorderThickness = 1;
-            this.bunifuButton1.onHoverState.FillColor = System.Drawing.Color.Green;
-            this.bunifuButton1.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton1.onHoverState.IconLeftImage = null;
-            this.bunifuButton1.onHoverState.IconRightImage = null;
-            this.bunifuButton1.OnIdleState.BorderColor = System.Drawing.Color.Green;
-            this.bunifuButton1.OnIdleState.BorderRadius = 6;
-            this.bunifuButton1.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton1.OnIdleState.BorderThickness = 1;
-            this.bunifuButton1.OnIdleState.FillColor = System.Drawing.Color.White;
-            this.bunifuButton1.OnIdleState.ForeColor = System.Drawing.Color.Green;
-            this.bunifuButton1.OnIdleState.IconLeftImage = null;
-            this.bunifuButton1.OnIdleState.IconRightImage = null;
-            this.bunifuButton1.OnPressedState.BorderColor = System.Drawing.Color.Green;
-            this.bunifuButton1.OnPressedState.BorderRadius = 6;
-            this.bunifuButton1.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton1.OnPressedState.BorderThickness = 1;
-            this.bunifuButton1.OnPressedState.FillColor = System.Drawing.Color.White;
-            this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.Green;
-            this.bunifuButton1.OnPressedState.IconLeftImage = null;
-            this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(155, 36);
-            this.bunifuButton1.TabIndex = 37;
-            this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bunifuButton1.TextMarginLeft = 0;
-            this.bunifuButton1.TextPadding = new System.Windows.Forms.Padding(0);
-            this.bunifuButton1.UseDefaultRadiusAndThickness = true;
-            this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click_1);
             // 
             // label60
             // 
@@ -2611,22 +2456,22 @@ namespace TRUCK_STD.Design
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Scale;
             this.guna2Transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation2;
             // 
             // label62
             // 
@@ -2742,18 +2587,202 @@ namespace TRUCK_STD.Design
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // guna2GroupBox1
+            // 
+            this.guna2GroupBox1.BorderColor = System.Drawing.Color.Navy;
+            this.guna2GroupBox1.Controls.Add(this.txtKeyId);
+            this.guna2GroupBox1.Controls.Add(this.txtPublicKey);
+            this.guna2GroupBox1.Controls.Add(this.label50);
+            this.guna2GroupBox1.Controls.Add(this.cbbBusinessType);
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Navy;
+            this.guna2Transition1.SetDecoration(this.guna2GroupBox1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Athiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
+            this.guna2GroupBox1.Location = new System.Drawing.Point(153, 976);
+            this.guna2GroupBox1.Name = "guna2GroupBox1";
+            this.guna2GroupBox1.Size = new System.Drawing.Size(784, 260);
+            this.guna2GroupBox1.TabIndex = 41;
+            this.guna2GroupBox1.Text = "ระบบ";
+            // 
+            // txtCapacity
+            // 
+            this.txtCapacity.Animated = true;
+            this.txtCapacity.BorderColor = System.Drawing.Color.Black;
+            this.txtCapacity.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2Transition1.SetDecoration(this.txtCapacity, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtCapacity.DefaultText = "";
+            this.txtCapacity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCapacity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCapacity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCapacity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCapacity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCapacity.Font = new System.Drawing.Font("Athiti", 12F);
+            this.txtCapacity.ForeColor = System.Drawing.Color.Black;
+            this.txtCapacity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCapacity.Location = new System.Drawing.Point(556, 77);
+            this.txtCapacity.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtCapacity.Name = "txtCapacity";
+            this.txtCapacity.PasswordChar = '\0';
+            this.txtCapacity.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtCapacity.PlaceholderText = "พิกัดสูงสุดเครื่อง";
+            this.txtCapacity.SelectedText = "";
+            this.txtCapacity.Size = new System.Drawing.Size(223, 41);
+            this.txtCapacity.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtCapacity.TabIndex = 26;
+            this.txtCapacity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.label45, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label45.Font = new System.Drawing.Font("Athiti SemiBold", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label45.ForeColor = System.Drawing.Color.Black;
+            this.label45.Location = new System.Drawing.Point(556, 54);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(81, 25);
+            this.label45.TabIndex = 27;
+            this.label45.Text = "พิกัดเครื่อง";
+            // 
+            // txtPublicKey
+            // 
+            this.txtPublicKey.Animated = true;
+            this.txtPublicKey.BorderColor = System.Drawing.Color.Black;
+            this.txtPublicKey.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2Transition1.SetDecoration(this.txtPublicKey, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtPublicKey.DefaultText = "";
+            this.txtPublicKey.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPublicKey.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPublicKey.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPublicKey.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPublicKey.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPublicKey.Font = new System.Drawing.Font("Athiti", 12F);
+            this.txtPublicKey.ForeColor = System.Drawing.Color.Black;
+            this.txtPublicKey.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPublicKey.Location = new System.Drawing.Point(8, 107);
+            this.txtPublicKey.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtPublicKey.Multiline = true;
+            this.txtPublicKey.Name = "txtPublicKey";
+            this.txtPublicKey.PasswordChar = '\0';
+            this.txtPublicKey.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtPublicKey.PlaceholderText = "public key";
+            this.txtPublicKey.SelectedText = "";
+            this.txtPublicKey.Size = new System.Drawing.Size(771, 148);
+            this.txtPublicKey.TabIndex = 26;
+            // 
+            // txtKeyId
+            // 
+            this.txtKeyId.Animated = true;
+            this.txtKeyId.BorderColor = System.Drawing.Color.Black;
+            this.txtKeyId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2Transition1.SetDecoration(this.txtKeyId, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtKeyId.DefaultText = "";
+            this.txtKeyId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtKeyId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtKeyId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtKeyId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtKeyId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtKeyId.Font = new System.Drawing.Font("Athiti", 12F);
+            this.txtKeyId.ForeColor = System.Drawing.Color.Black;
+            this.txtKeyId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtKeyId.Location = new System.Drawing.Point(8, 61);
+            this.txtKeyId.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtKeyId.Name = "txtKeyId";
+            this.txtKeyId.PasswordChar = '\0';
+            this.txtKeyId.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtKeyId.PlaceholderText = "Key ID";
+            this.txtKeyId.SelectedText = "";
+            this.txtKeyId.Size = new System.Drawing.Size(563, 41);
+            this.txtKeyId.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtKeyId.TabIndex = 41;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Animated = true;
+            this.btnSave.BorderRadius = 2;
+            this.guna2Transition1.SetDecoration(this.btnSave, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.Color.PaleGreen;
+            this.btnSave.FillColor2 = System.Drawing.Color.MidnightBlue;
+            this.btnSave.Font = new System.Drawing.Font("Athiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.btnSave.HoverState.FillColor = System.Drawing.Color.MidnightBlue;
+            this.btnSave.HoverState.FillColor2 = System.Drawing.Color.PaleGreen;
+            this.btnSave.Location = new System.Drawing.Point(1086, 772);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(196, 36);
+            this.btnSave.TabIndex = 40;
+            this.btnSave.Text = "บันทึก การตั้งค่า";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GradientButton1.Animated = true;
+            this.guna2GradientButton1.BorderRadius = 2;
+            this.guna2Transition1.SetDecoration(this.guna2GradientButton1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.PaleGreen;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.MidnightBlue;
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Athiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.guna2GradientButton1.HoverState.FillColor = System.Drawing.Color.MidnightBlue;
+            this.guna2GradientButton1.HoverState.FillColor2 = System.Drawing.Color.PaleGreen;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(15, 188);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(196, 36);
+            this.guna2GradientButton1.TabIndex = 40;
+            this.guna2GradientButton1.Text = "ยืนยันสถานี";
+            this.guna2GradientButton1.Click += new System.EventHandler(this.bunifuButton1_Click_1);
+            // 
+            // btnUnlock
+            // 
+            this.btnUnlock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUnlock.Animated = true;
+            this.btnUnlock.BorderRadius = 2;
+            this.guna2Transition1.SetDecoration(this.btnUnlock, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnUnlock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUnlock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUnlock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUnlock.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUnlock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUnlock.FillColor = System.Drawing.Color.PaleGreen;
+            this.btnUnlock.FillColor2 = System.Drawing.Color.MidnightBlue;
+            this.btnUnlock.Font = new System.Drawing.Font("Athiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUnlock.ForeColor = System.Drawing.Color.White;
+            this.btnUnlock.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.btnUnlock.HoverState.FillColor = System.Drawing.Color.MidnightBlue;
+            this.btnUnlock.HoverState.FillColor2 = System.Drawing.Color.PaleGreen;
+            this.btnUnlock.Location = new System.Drawing.Point(144, 268);
+            this.btnUnlock.Name = "btnUnlock";
+            this.btnUnlock.Size = new System.Drawing.Size(155, 36);
+            this.btnUnlock.TabIndex = 40;
+            this.btnUnlock.Text = "ปลดล็อคโปรแกรม";
+            this.btnUnlock.Click += new System.EventHandler(this.btnUnlock_Click);
+            // 
             // frmSettingEnvironment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1298, 819);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.pnStation);
             this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.label62);
             this.Controls.Add(this.label63);
             this.Controls.Add(this.gbStation);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gbPasswordInstall);
             this.Controls.Add(this.tcMain);
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -2799,6 +2828,8 @@ namespace TRUCK_STD.Design
             this.pnStation.ResumeLayout(false);
             this.pnStation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2GroupBox1.ResumeLayout(false);
+            this.guna2GroupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2808,10 +2839,8 @@ namespace TRUCK_STD.Design
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2GroupBox gbPasswordInstall;
         private Guna.UI2.WinForms.Guna2TextBox txtSMSSSO;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnUnlock;
         private Bunifu.UI.WinForms.BunifuSnackbar msg;
         private Guna.UI2.WinForms.Guna2TextBox txtPassInstall;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSave;
         private Guna.UI2.WinForms.Guna2TabControl tcMain;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel2;
@@ -2885,9 +2914,6 @@ namespace TRUCK_STD.Design
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2GroupBox gbFunction;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch tgsPrice;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label43;
@@ -2901,11 +2927,8 @@ namespace TRUCK_STD.Design
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCancal;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch tgsCamera;
         private System.Windows.Forms.Label label49;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch tgsLPR;
         private System.Windows.Forms.Label label57;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch tgsRFID;
         private System.Windows.Forms.Label label58;
         private Guna.UI2.WinForms.Guna2CheckBox cbDbCenter;
         private System.Windows.Forms.Panel pnCenter;
@@ -2922,7 +2945,6 @@ namespace TRUCK_STD.Design
         private System.Windows.Forms.Label label50;
         private Guna.UI2.WinForms.Guna2ComboBox cbbBusinessType;
         private System.Windows.Forms.Panel pnLocal;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Panel pnTicket;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
@@ -2935,7 +2957,20 @@ namespace TRUCK_STD.Design
         private System.Windows.Forms.Label lblStationType;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch tgsBarrier;
         private System.Windows.Forms.Label label64;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch tgsAPI;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch tgsLPR;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch tgsCCTV;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch tgsRFID;
+        private Bunifu.UI.WinForms.BunifuToggleSwitch tgsBARRIER;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private Guna.UI2.WinForms.Guna2TextBox txtCapacity;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtKeyId;
+        private Guna.UI2.WinForms.Guna2TextBox txtPublicKey;
+        private Guna.UI2.WinForms.Guna2GradientButton btnSave;
+        private Guna.UI2.WinForms.Guna2GradientButton btnUnlock;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
     }
 }
