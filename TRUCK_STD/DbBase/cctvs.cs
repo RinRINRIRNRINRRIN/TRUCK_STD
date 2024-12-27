@@ -1,12 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
-using TRUCK_STD.Models;
 
 namespace TRUCK_STD.DbBase
 {
     internal class cctvs
     {
-        public static string ERR { get; set; }
 
         static MySqlConnection con = DbConnect.con;
         static MySqlDataAdapter da = new MySqlDataAdapter();
@@ -14,7 +12,23 @@ namespace TRUCK_STD.DbBase
         public static DataTable tb = new DataTable();
         static string sql = "";
 
+        public static string ERR { get; set; }
+        public static string new_ip { get; set; }
+        public static string old_ip { get; set; }
+        public static int port { get; set; }
+        public static string user { get; set; }
+        public static string pass { get; set; }
+        public static string position { get; set; }
 
+
+        private static void ClearProp()
+        {
+            new_ip = null;
+            port = 0;
+            user = null;
+            pass = null;
+            position = null;
+        }
         public static bool Select()
         {
             try
@@ -32,7 +46,7 @@ namespace TRUCK_STD.DbBase
 
             return true;
         }
-        public static bool Insert(cctvModels cctv)
+        public static bool Insert()
         {
             try
             {
@@ -40,22 +54,23 @@ namespace TRUCK_STD.DbBase
                     "VALUES (@ip,@port,@user,@password,@position)";
 
                 cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.Add(new MySqlParameter("@ip", cctv.new_ip));
-                cmd.Parameters.Add(new MySqlParameter("@port", cctv.port));
-                cmd.Parameters.Add(new MySqlParameter("@user", cctv.user));
-                cmd.Parameters.Add(new MySqlParameter("@password", cctv.pass));
-                cmd.Parameters.Add(new MySqlParameter("@position", cctv.position));
+                cmd.Parameters.Add(new MySqlParameter("@ip", new_ip));
+                cmd.Parameters.Add(new MySqlParameter("@port", port));
+                cmd.Parameters.Add(new MySqlParameter("@user", user));
+                cmd.Parameters.Add(new MySqlParameter("@password", pass));
+                cmd.Parameters.Add(new MySqlParameter("@position", position));
                 cmd.ExecuteNonQuery();
             }
             catch (System.Exception ex)
             {
                 ERR = ex.Message;
+                ClearProp();
                 return false;
             }
-
+            ClearProp();
             return true;
         }
-        public static bool Update(cctvModels cctv)
+        public static bool Update()
         {
             try
             {
@@ -68,39 +83,39 @@ namespace TRUCK_STD.DbBase
                     "WHERE ip = @old_ip";
 
                 cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.Add(new MySqlParameter("@new_ip", cctv.new_ip));
-                cmd.Parameters.Add(new MySqlParameter("@port", cctv.port));
-                cmd.Parameters.Add(new MySqlParameter("@user", cctv.user));
-                cmd.Parameters.Add(new MySqlParameter("@password", cctv.pass));
-                cmd.Parameters.Add(new MySqlParameter("@position", cctv.position));
-                cmd.Parameters.Add(new MySqlParameter("@old_ip", cctv.old_ip));
+                cmd.Parameters.Add(new MySqlParameter("@new_ip", new_ip));
+                cmd.Parameters.Add(new MySqlParameter("@port", port));
+                cmd.Parameters.Add(new MySqlParameter("@user", user));
+                cmd.Parameters.Add(new MySqlParameter("@password", pass));
+                cmd.Parameters.Add(new MySqlParameter("@position", position));
+                cmd.Parameters.Add(new MySqlParameter("@old_ip", old_ip));
                 cmd.ExecuteNonQuery();
             }
             catch (System.Exception ex)
             {
                 ERR = ex.Message;
+                ClearProp();
                 return false;
             }
-
+            ClearProp();
             return true;
         }
-        public static bool Delete(cctvModels cctv)
+        public static bool Delete()
         {
             try
             {
-                sql = $"DELETE FROM cctv WHERE ip = '{cctv.old_ip}'";
+                sql = $"DELETE FROM cctv WHERE ip = '{old_ip}'";
                 cmd = new MySqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
             }
             catch (System.Exception ex)
             {
                 ERR = ex.Message;
+                ClearProp();
                 return false;
             }
-
+            ClearProp();
             return true;
         }
-
-
     }
 }
