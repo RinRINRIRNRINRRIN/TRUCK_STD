@@ -10,7 +10,20 @@ namespace TRUCK_STD.Design
             InitializeComponent();
         }
 
+        /// <summary>
+        /// ประเภทของ report (MN,Cassava,Paddy,Corn,LPR,ReportAll) สำหรับการพิมพ์
+        /// </summary>
         public string reportType { get; set; }
+
+        /// <summary>
+        /// สถานะการชั่ง สำหรับการพิมพ์ค้นหาทั้งหมดที่หน้าประวัติการชั่ง
+        /// </summary>
+        public string state { get; set; }
+
+
+        /// <summary>
+        /// เลขที่ JobOrder
+        /// </summary>
         public string id { get; set; }
 
 
