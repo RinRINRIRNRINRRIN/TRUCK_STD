@@ -167,7 +167,6 @@ namespace TRUCK_STD.Design
             btnTest.Text = "เริ่มทดสอบ";
             gb.Enabled = true;
             gbConnect.Visible = false;
-            tmConnect.Stop();
         }
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -221,16 +220,6 @@ namespace TRUCK_STD.Design
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ClearForm();
-        }
-
-        private void gb_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vlcControl1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
