@@ -39,6 +39,7 @@ namespace TRUCK_STD.Design
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation1 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.gbProductDetail = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtProductType = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtProdcutName = new Guna.UI2.WinForms.Guna2TextBox();
@@ -53,11 +54,9 @@ namespace TRUCK_STD.Design
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.cl_del = new System.Windows.Forms.DataGridViewImageColumn();
             this.cl_edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.cl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_id2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_names = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_productType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -138,7 +137,7 @@ namespace TRUCK_STD.Design
             // 
             this.gbProductDetail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(43)))), ((int)(((byte)(28)))));
             this.gbProductDetail.BorderThickness = 2;
-            this.gbProductDetail.Controls.Add(this.guna2TextBox1);
+            this.gbProductDetail.Controls.Add(this.txtProductType);
             this.gbProductDetail.Controls.Add(this.btnCancel);
             this.gbProductDetail.Controls.Add(this.btnSave);
             this.gbProductDetail.Controls.Add(this.txtProdcutName);
@@ -155,6 +154,31 @@ namespace TRUCK_STD.Design
             this.gbProductDetail.Text = "เพิ่มข้อมูล";
             this.gbProductDetail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gbProductDetail.Visible = false;
+            // 
+            // txtProductType
+            // 
+            this.txtProductType.BorderColor = System.Drawing.Color.Black;
+            this.txtProductType.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTransition1.SetDecoration(this.txtProductType, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.txtProductType.DefaultText = "";
+            this.txtProductType.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtProductType.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtProductType.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProductType.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProductType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtProductType.Font = new System.Drawing.Font("Athiti", 12F);
+            this.txtProductType.ForeColor = System.Drawing.Color.Black;
+            this.txtProductType.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtProductType.Location = new System.Drawing.Point(10, 131);
+            this.txtProductType.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtProductType.Name = "txtProductType";
+            this.txtProductType.PasswordChar = '\0';
+            this.txtProductType.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtProductType.PlaceholderText = "ประเภทสินค้า (100 ตัวอักษร)";
+            this.txtProductType.SelectedText = "";
+            this.txtProductType.Size = new System.Drawing.Size(255, 39);
+            this.txtProductType.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtProductType.TabIndex = 7;
             // 
             // btnCancel
             // 
@@ -545,7 +569,6 @@ namespace TRUCK_STD.Design
             this.cl_del,
             this.cl_edit,
             this.cl_id,
-            this.cl_id2,
             this.cl_names,
             this.cl_productType,
             this.cl_price});
@@ -641,31 +664,6 @@ namespace TRUCK_STD.Design
             this.guna2BorderlessForm1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(43)))), ((int)(((byte)(28)))));
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTransition1.SetDecoration(this.guna2TextBox1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Athiti", 12F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(10, 131);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.PlaceholderText = "ประเภทสินค้า (100 ตัวอักษร)";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(255, 39);
-            this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox1.TabIndex = 7;
-            // 
             // cl_del
             // 
             this.cl_del.HeaderText = "";
@@ -693,14 +691,6 @@ namespace TRUCK_STD.Design
             this.cl_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.cl_id.Width = 200;
             // 
-            // cl_id2
-            // 
-            this.cl_id2.DataPropertyName = "id";
-            this.cl_id2.HeaderText = "id";
-            this.cl_id2.Name = "cl_id2";
-            this.cl_id2.ReadOnly = true;
-            this.cl_id2.Visible = false;
-            // 
             // cl_names
             // 
             this.cl_names.DataPropertyName = "productName";
@@ -719,7 +709,7 @@ namespace TRUCK_STD.Design
             // 
             // cl_price
             // 
-            this.cl_price.DataPropertyName = "price";
+            this.cl_price.DataPropertyName = "productPrice";
             this.cl_price.HeaderText = "ราคาสินค้า";
             this.cl_price.Name = "cl_price";
             this.cl_price.ReadOnly = true;
@@ -772,11 +762,10 @@ namespace TRUCK_STD.Design
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtProductType;
         private System.Windows.Forms.DataGridViewImageColumn cl_del;
         private System.Windows.Forms.DataGridViewImageColumn cl_edit;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_id2;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_names;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_productType;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_price;
