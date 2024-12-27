@@ -145,6 +145,35 @@ namespace TRUCK_STD.Design
 
 
             }
+
+        private void cbLicense_Click(object sender, EventArgs e)
+        {
+            Guna2CheckBox cbb = sender as Guna2CheckBox;
+            switch (cbb.Text)
+            {
+                case "ค้นหาจากวันที่":
+                    if (cbb.Checked)
+                    {
+                        dtpEnd.Enabled = true;
+                        dtpStart.Enabled = true;
+                    }
+                    else
+                    {
+                        dtpEnd.Enabled = false;
+                        dtpStart.Enabled = false;
+        }
+                    break;
+                case "ค้นหาจากทะเบียนรถ":
+                    if (cbb.Checked)
+                    {
+                        txtLicense.Enabled = true;
+                    }
+                    else
+                    {
+                        txtLicense.Enabled = false;
+                    }
+                    break;
+            }
         }
 
         private void btnExport_Click(object sender, EventArgs e)
