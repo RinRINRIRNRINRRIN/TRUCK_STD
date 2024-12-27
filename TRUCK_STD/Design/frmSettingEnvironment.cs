@@ -24,7 +24,7 @@ namespace TRUCK_STD.Design
         bool systemPrice = false;    //ไว้เก็บตัวแปร ว่าต้องการใช้งานฟังชั่น คำนวนราคา หรือไม่ , Default = false = not use;
         bool systemRFID = false;     // ไว้เก็บตัวแปร ว่าต้องการใช้งานฟังชั่น Api หรือไม่ , Default = false = not use;
         bool systemProgramType = false;  // สำหรับเก็บค่าว่าโปรแกรมเป็น demo or production โดยจะ default = false; ,false = demo , true = production
-
+        bool systemAPI = false;
 
         string systemProgramExprieDate = "";   // ใช้สำหรับเก็บค่าตอนถอดรหัสวันหมดอายุโปรแกรม
         string dateExpType = ""; // สำหรับเก็บว่าโปรแกรมต่ออายแบบไหน
@@ -135,11 +135,6 @@ namespace TRUCK_STD.Design
                 #endregion
             }
         }
-        private void guna2ControlBox1_Click(object sender, EventArgs e)
-        {
-            Log.Information("Exit program");
-            Application.ExitThread();
-        }
         private void txtPassExpireDate_KeyPress(object sender, KeyPressEventArgs e)
         {
             Func_Main.CHECK_CHARATER_KEY_NUMBER_ONLY(txtPassExpireDate, e, this);
@@ -230,6 +225,8 @@ namespace TRUCK_STD.Design
                                     txt.BorderColor = Color.Black;
                                 }
                             }
+                            #endregion
+
                             #region ตรวจสอบค่าว่าง TAB2
                             // ตรวจสอบ ค่าว่างของ systemProgramType 
                             if (!systemProgramType) // DEMO
@@ -286,7 +283,6 @@ namespace TRUCK_STD.Design
                                 msg.Show(this, "กรุณาเลือกกรอกรหัสติดต่อฐานข้อมูล", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, "OK", Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
                                 return;
                             }
-                            #endregion
                             #endregion
 
                             #region ตรวจสอบการเชื่อมต่อฐานข้อมูล                   
@@ -374,13 +370,43 @@ namespace TRUCK_STD.Design
                                 systemProgramExprieDate = cldDemo.SelectionStart.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.CreateSpecificCulture("th-TH"));
                             }
                             #endregion
+
+                            #region ตรวจสอบเครื่องชั่ง
+                            if (txtCapacity.Text == "")
+                            {
+                                msg.Show(this, "กรุณาใส่พิกัดสูงสุดของเครื่องชั่ง", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, "OK", Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
+                                return;
+                            }
+
+                            if (cbbIndicator.Text.Contains("--"))
+                            {
+                                msg.Show(this, "กรุณาเลือกเครื่องชั่งก่อนการบันทึก", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, "OK", Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
+                                return;
+                            }
+                            #endregion
+
+                            #region ตรวจสอบ key
+                            if (txtKeyId.Text == "" || txtPublicKey.Text == "")
+                            {
+                                msg.Show(this, "กรุณาใส่ Key ก่อนการบันทึก", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, "OK", Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
+                                return;
+                            }
+                            #endregion
                             break;
                     }
 
                     #region บันทึกการตั้งค่า
                     // Save funcstion
+                    registy.function.APIKey = "";
+                    registy.function.RFIDKey = "";
+                    registy.function.LPRKey = "";
+                    registy.function.CAMERAKey = "";
+                    registy.function.BARRIERKey = "";
+                    //------------------------------------------------------------------
                     registy.function.CAMERAState = systemCamera.ToString().ToUpper();
                     registy.function.BARRIERState = systemBARRIER.ToString().ToUpper();
+                    registy.function.APIState = systemAPI.ToString().ToUpper();
+
                     if (station == "จุดลงทะเบียน")
                     {
                         registy.function.LPRState = "TRUE";
@@ -391,7 +417,6 @@ namespace TRUCK_STD.Design
                         registy.function.LPRState = systemLPR.ToString().ToUpper();
                         registy.function.RFIDState = systemRFID.ToString().ToUpper();
                     }
-                    registy.function.PRICE = systemPrice.ToString().ToUpper();
 
                     // Save system
                     registy.system.date = DateTime.Now.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.CreateSpecificCulture("th-TH"));
@@ -402,13 +427,14 @@ namespace TRUCK_STD.Design
                     registy.system.bussinessType = cbbBusinessType.Text;
                     registy.system.stationName = lblStationName.Text;
                     registy.system.stationType = lblStationType.Text;
-                    registy.system.token = "";
+                    registy.system.keyID = txtKeyId.Text;
+                    registy.system.publicKey = txtPublicKey.Text;
 
                     // Save tickets
                     registy.tickets.address = txtAddress.Text;
                     registy.tickets.company = txtCompanyName.Text;
                     registy.tickets.phone = txtPhone.Text;
-                    registy.tickets.state = "FALSE";
+                    registy.tickets.state = "FALSE"; // กำหนดเป็น false = หมายถึงยังไม่มีการแก้ไข , 
                     registy.tickets.tax = txtTax.Text;
 
                     //Save dataBase
@@ -459,11 +485,17 @@ namespace TRUCK_STD.Design
                     // Set RFID Config
                     registy.function.RFID_COM = "";
                     registy.function.RFID_BAUDRATE = "";
+                    // Set Barrier Config
+                    registy.function.BARRIERCOM = "";
+                    registy.function.BARRIERBaudrate = "";
+
 
                     // Set scale 
                     registy.scale.scaleName = cbbIndicator.Text;
                     registy.scale.scalePort = "";
                     registy.scale.scaleBaudrate = 9600;
+                    registy.scale.scalecapacity = int.Parse(txtCapacity.Text);
+
 
 
                     // ทำการ SET ค่าให้กับ registry 
@@ -626,75 +658,17 @@ namespace TRUCK_STD.Design
         #endregion
 
         #region Tab3
-        private void tgsPrice_Click(object sender, EventArgs e)
+        private void tgs_Click(object sender, EventArgs e)
         {
             // รับ sender ของ togleswitch 
-            Guna.UI2.WinForms.Guna2ToggleSwitch tgs = sender as Guna.UI2.WinForms.Guna2ToggleSwitch;
+            Bunifu.UI.WinForms.BunifuToggleSwitch tgs = sender as Bunifu.UI.WinForms.BunifuToggleSwitch;
+            //Guna.UI2.WinForms.Guna2ToggleSwitch tgs = sender as Guna.UI2.WinForms.Guna2ToggleSwitch;
             frmProgramMessageAlert frm = new frmProgramMessageAlert();
             frm.alertLevel = 2;
             // ตรวจสอบว่าผู้ใช้ เลือก tgs ตัวไหนเข้ามา
             switch (tgs.Name)
             {
-
-                case "tgsPrice":
-                    if (tgs.Checked == true)
-                    {
-                        if (cbbBusinessType.Text == "เกษตร")
-                        {
-                            tgs.Checked = true;
-                            systemPrice = true;
-                        }
-                        else
-                        {
-                            frm.messageAlert = "รหัสปลดล็อคฟังชั่น คำนวนราคา";
-                            frm.extension = "PRICE";
-                            frm.ShowDialog();
-
-                            if (!frm.chckUnlock)
-                            {
-                                tgs.Checked = false;
-                            }
-                            else
-                            {
-                                systemPrice = true;
-                            }
-                        }
-                    }
-                    else if (tgs.Checked == false)
-                    {
-                        if (cbbBusinessType.Text == "เกษตร")
-                        {
-                            msg.Show(this, "หากเลือกธุรกิจ เกษตร จะไม่สามารถเอาฟังชั่คำนวนราคาออกได้", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, "OK", Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
-                            tgs.Checked = true;
-                            return;
-                        }
-                        else
-                        {
-                            systemPrice = false;
-                        }
-                    }
-                    break;
-                case "tgsLine":
-                    if (tgs.Checked == true)
-                    {
-                        frm.messageAlert = "รหัสปลดล็อคฟังชั่น LINE";
-                        frm.extension = "LINE";
-                        frm.ShowDialog();
-                        if (!frm.chckUnlock)
-                        {
-                            tgs.Checked = false;
-                        }
-                        else
-                        {
-                            systemLine = true;
-                        }
-                    }
-                    else if (tgs.Checked == false)
-                    {
-                        systemLine = false;
-                    }
-                    break;
-                case "tgsCamera":
+                case "tgsCCTV":
                     if (tgs.Checked == true)
                     {
                         frm.messageAlert = "รหัสปลดล็อคฟังชั่น กล้องวงจรปิด";
@@ -734,6 +708,26 @@ namespace TRUCK_STD.Design
                         systemLPR = false;
                     }
                     break;
+                case "tgsAPI":
+                    if (tgs.Checked == true)
+                    {
+                        frm.messageAlert = "รหัสปลดล็อคฟังชั่น API";
+                        frm.extension = "API";
+                        frm.ShowDialog();
+                        if (!frm.chckUnlock)
+                        {
+                            tgs.Checked = false;
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                    break;
                 case "tgsRFID":
                     if (tgs.Checked == true)
                     {
@@ -754,7 +748,7 @@ namespace TRUCK_STD.Design
                         systemRFID = false;
                     }
                     break;
-                case "tgsBarrier":
+                case "tgsBARRIER":
                     if (tgs.Checked == true)
                     {
                         frm.messageAlert = "รหัสปลดล็อคฟังชั่น Barrier";
@@ -779,14 +773,6 @@ namespace TRUCK_STD.Design
 
             Console.WriteLine($"CAMERA :{systemCamera}\nLINE : {systemLine}\nPRICE : {systemPrice}");
         }
-
-        private void cbbBusinessType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbBusinessType.Text == "เกษตร")
-            {
-                tgsPrice.Checked = true;
-            }
-        }
         #endregion
 
         private async void bunifuButton1_Click(object sender, EventArgs e)
@@ -798,8 +784,11 @@ namespace TRUCK_STD.Design
             await Task.Run(ReadDrive);
         }
 
+        // อ่านคีย์จาก Flash drive เพื่อทำการกำหนดค่า
         async Task ReadDrive()
         {
+            bool isFound = false;
+            // Read drive all computer
             while (isReadDrive)
             {
                 DriveInfo[] driveInfos = drives.Get();
@@ -808,9 +797,26 @@ namespace TRUCK_STD.Design
                 {
                     Console.WriteLine("Drive: {0}", drive.Name);
                     Console.WriteLine("Volume label: {0}", drive.VolumeLabel);
+                    if (drive.VolumeLabel == "TSC_KEYLOCK")
+                    {
+                        isFound = true;
+                        Console.WriteLine("======================= Found device");
+                        break;
+                    }
+                }
+
+                // check found it
+                if (isFound)
+                {
+                    break;
                 }
                 await Task.Delay(1000);
             }
+
+            //
+
+
+
         }
 
         private async void btnCancal_Click(object sender, EventArgs e)
@@ -888,10 +894,10 @@ namespace TRUCK_STD.Design
                 switch (cbbBusinessType.Text)
                 {
                     case "ทั่วไป":
-                        tgsPrice.Checked = false;
+                        //tgsPrice.Checked = false;
                         break;
                     case "เกษตร":
-                        tgsPrice.Checked = true;
+                        //tgsPrice.Checked = true;
                         break;
                 }
             }
