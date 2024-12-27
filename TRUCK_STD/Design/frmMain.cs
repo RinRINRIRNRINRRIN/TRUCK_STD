@@ -26,6 +26,27 @@ namespace TRUCK_STD.Design
         #endregion
 
         #region function local
+
+        void UnlockFunction(string message, string extenstion, string messageAlert)
+        {
+            // แต่หากไม่ได้มีการเปิดฟังชั่น line แต่แรกให้ถามผู้ใช้ก่อนว่าต้องการเปิดฟังชั่นหรือไม่
+            DialogResult dialogResult = MessageBox.Show(message, "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                frmProgramMessageAlert frmProgramMessageAlert = new frmProgramMessageAlert();
+                frmProgramMessageAlert.alertLevel = 2;
+                frmProgramMessageAlert.extension = extenstion;
+                frmProgramMessageAlert.messageAlert = messageAlert;
+                frmProgramMessageAlert.ShowDialog();
+                if (frmProgramMessageAlert.chckUnlock == true)
+                {
+                    MessageBox.Show("กรุณาเปิดโปรแกรมอีกครั้งเพื่อเรียกใช้งานฟังชั่นโปรแกรม", "Success");
+                    Application.Exit();
+                }
+            }
+        }
+
         /// <summary>
         /// สำหรับตรวจสอบสิทธิ์การใช้งานโปรแกรม
         /// </summary>
@@ -371,21 +392,7 @@ namespace TRUCK_STD.Design
             // Check functions
             if (registy.function.CAMERAKey == "")
             {
-                // แต่หากไม่ได้มีการเปิดฟังชั่น line แต่แรกให้ถามผู้ใช้ก่อนว่าต้องการเปิดฟังชั่นหรือไม่
-                DialogResult dialogResult = MessageBox.Show("แพ็คเกจคุณไม่ได้เปิดใช้งานฟังชั่น CAMERA (กล้อง) คุณต้องการเปิดการใช้งานฟังชั่นไลน์ CAMERA (กล้อง) หรือไม่", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    frmProgramMessageAlert frmProgramMessageAlert = new frmProgramMessageAlert();
-                    frmProgramMessageAlert.alertLevel = 2;
-                    frmProgramMessageAlert.extension = "CAMERA";
-                    frmProgramMessageAlert.messageAlert = "รหัสสำหรับเปิดฟังชั่น กล้อง";
-                    frmProgramMessageAlert.ShowDialog();
-                    if (frmProgramMessageAlert.chckUnlock == true)
-                    {
-                        Application.Exit();
-                    }
-                }
+                UnlockFunction("แพ็คเกจคุณไม่ได้เปิดใช้งานฟังชั่น CAMERA (กล้อง) คุณต้องการเปิดการใช้งานฟังชั่นไลน์ CAMERA (กล้อง) หรือไม่", "CAMERA", "รหัสสำหรับเปิดฟังชั่น กล้อง");
             }
             else
             {
@@ -400,21 +407,7 @@ namespace TRUCK_STD.Design
             // Check functions
             if (registy.function.LPRKey == "")
             {
-                // แต่หากไม่ได้มีการเปิดฟังชั่น line แต่แรกให้ถามผู้ใช้ก่อนว่าต้องการเปิดฟังชั่นหรือไม่
-                DialogResult dialogResult = MessageBox.Show("แพ็คเกจคุณไม่ได้เปิดใช้งานฟังชั่น LPR (กล้องอ่านทะเบียน) คุณต้องการเปิดการใช้งานฟังชั่นไลน์ LPR (กล้องอ่านทะเบียน) หรือไม่", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    frmProgramMessageAlert frmProgramMessageAlert = new frmProgramMessageAlert();
-                    frmProgramMessageAlert.alertLevel = 2;
-                    frmProgramMessageAlert.extension = "LPR";
-                    frmProgramMessageAlert.messageAlert = "รหัสสำหรับเปิดฟังชั่น กล้องอ่านทะเบียน";
-                    frmProgramMessageAlert.ShowDialog();
-                    if (frmProgramMessageAlert.chckUnlock == true)
-                    {
-                        Application.Exit();
-                    }
-                }
+                UnlockFunction("แพ็คเกจคุณไม่ได้เปิดใช้งานฟังชั่น LPR (กล้องอ่านทะเบียน) คุณต้องการเปิดการใช้งานฟังชั่นไลน์ LPR (กล้องอ่านทะเบียน) หรือไม่", "LPR", "รหัสสำหรับเปิดฟังชั่น กล้องอ่านทะเบียน");
             }
             else
             {
@@ -423,25 +416,13 @@ namespace TRUCK_STD.Design
             }
         }
 
+
+
         private void btnRFID_Click(object sender, EventArgs e)
         {
             if (registy.function.RFIDKey == "")
             {
-                // แต่หากไม่ได้มีการเปิดฟังชั่น line แต่แรกให้ถามผู้ใช้ก่อนว่าต้องการเปิดฟังชั่นหรือไม่
-                DialogResult dialogResult = MessageBox.Show("แพ็คเกจคุณไม่ได้เปิดใช้งานฟังชั่น RFID คุณต้องการเปิดการใช้งานฟังชั่นไลน์ RFID หรือไม่", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    frmProgramMessageAlert frmProgramMessageAlert = new frmProgramMessageAlert();
-                    frmProgramMessageAlert.alertLevel = 2;
-                    frmProgramMessageAlert.extension = "RFID";
-                    frmProgramMessageAlert.messageAlert = "รหัสสำหรับเปิดฟังชั่น RFID";
-                    frmProgramMessageAlert.ShowDialog();
-                    if (frmProgramMessageAlert.chckUnlock == true)
-                    {
-                        Application.Exit();
-                    }
-                }
+                UnlockFunction("แพ็คเกจคุณไม่ได้เปิดใช้งานฟังชั่น RFID คุณต้องการเปิดการใช้งานฟังชั่นไลน์ RFID หรือไม่", "RFID", "รหัสสำหรับเปิดฟังชั่น RFID");
             }
             else
             {
