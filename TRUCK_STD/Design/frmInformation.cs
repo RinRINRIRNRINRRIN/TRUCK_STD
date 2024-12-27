@@ -48,7 +48,7 @@ namespace TRUCK_STD.Design
             CheckFunction(lblRFID, registy.function.RFIDState);
             CheckFunction(lblCAMERA, registy.function.CAMERAState);
             CheckFunction(lblLPR, registy.function.LPRState);
-            CheckFunction(lblPRICE, registy.function.PRICE);
+            //CheckFunction(lblPRICE, registy.function.PRICE);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
