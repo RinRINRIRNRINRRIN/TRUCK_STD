@@ -30,6 +30,7 @@ namespace TRUCK_STD.Design
         private void InitializeComponent()
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.msg = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -40,6 +41,15 @@ namespace TRUCK_STD.Design
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // msg
+            // 
+            this.msg.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.msg.Caption = null;
+            this.msg.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.msg.Parent = this;
+            this.msg.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.msg.Text = null;
             // 
             // frmReport
             // 
@@ -59,5 +69,6 @@ namespace TRUCK_STD.Design
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Guna.UI2.WinForms.Guna2MessageDialog msg;
     }
 }

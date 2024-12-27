@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Windows.Forms;
+using TRUCK_STD.DbBase;
 using TRUCK_STD.Function;
 namespace TRUCK_STD.Design
 {
@@ -37,6 +39,8 @@ namespace TRUCK_STD.Design
 
         private void frmReport_Load(object sender, EventArgs e)
         {
+            Func_Report.ReportViewer = reportViewer1;
+            Func_Report.id = id;
             switch (reportType)
             {
                 case "HIRE":
