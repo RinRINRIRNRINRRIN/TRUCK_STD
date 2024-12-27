@@ -456,9 +456,9 @@ namespace TRUCK_STD.Design
             this.label7.ForeColor = System.Drawing.Color.DimGray;
             this.label7.Location = new System.Drawing.Point(184, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 25);
+            this.label7.Size = new System.Drawing.Size(81, 25);
             this.label7.TabIndex = 41;
-            this.label7.Text = "Baudrate  RFID";
+            this.label7.Text = "Baudrate";
             // 
             // label9
             // 
@@ -468,9 +468,9 @@ namespace TRUCK_STD.Design
             this.label9.ForeColor = System.Drawing.Color.DimGray;
             this.label9.Location = new System.Drawing.Point(2, 11);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(123, 25);
+            this.label9.Size = new System.Drawing.Size(77, 25);
             this.label9.TabIndex = 40;
-            this.label9.Text = "Comport  RFID";
+            this.label9.Text = "Comport";
             // 
             // cbbComRFID
             // 
@@ -544,9 +544,9 @@ namespace TRUCK_STD.Design
             this.label8.ForeColor = System.Drawing.Color.DimGray;
             this.label8.Location = new System.Drawing.Point(184, 11);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 25);
+            this.label8.Size = new System.Drawing.Size(81, 25);
             this.label8.TabIndex = 41;
-            this.label8.Text = "Baudrate  PLC\r\n";
+            this.label8.Text = "Baudrate";
             // 
             // label10
             // 
@@ -556,9 +556,9 @@ namespace TRUCK_STD.Design
             this.label10.ForeColor = System.Drawing.Color.DimGray;
             this.label10.Location = new System.Drawing.Point(2, 11);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(116, 25);
+            this.label10.Size = new System.Drawing.Size(83, 25);
             this.label10.TabIndex = 40;
-            this.label10.Text = "Comport  PLC";
+            this.label10.Text = "Comport ";
             // 
             // cbbPLC_COM
             // 
@@ -683,7 +683,7 @@ namespace TRUCK_STD.Design
             this.gbTickPass.CustomBorderColor = System.Drawing.Color.Navy;
             this.gbTickPass.Font = new System.Drawing.Font("Athiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTickPass.ForeColor = System.Drawing.Color.White;
-            this.gbTickPass.Location = new System.Drawing.Point(9, 220);
+            this.gbTickPass.Location = new System.Drawing.Point(9, 215);
             this.gbTickPass.Name = "gbTickPass";
             this.gbTickPass.Size = new System.Drawing.Size(540, 149);
             this.gbTickPass.TabIndex = 40;
