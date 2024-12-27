@@ -1,5 +1,4 @@
-﻿using Bunifu.UI.WinForms;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using Serilog;
 using System;
 using System.Data;
@@ -19,11 +18,8 @@ namespace TRUCK_STD.Design
         public frmMain()
         {
             InitializeComponent();
+            Console.WriteLine("===========================  Open frmMain");
         }
-
-        #region variable local
-        BunifuSnackbar msg = new BunifuSnackbar();
-        #endregion
 
         #region function local
 
@@ -63,7 +59,6 @@ namespace TRUCK_STD.Design
                     {
                         // สั่งเปิดทุกเมนู
                         btn.Enabled = true;
-                        btn.Visible = true;
                     }
 
                     // ปิดปุ่มที่เป็นฟังชั่นก่อน
@@ -73,39 +68,19 @@ namespace TRUCK_STD.Design
                 }
                 else
                 {
-                    // สิ่งปิด btn ทั้งหมดก่อนน
-                    foreach (Bunifu.UI.WinForms.BunifuButton.BunifuButton btn in panel1.Controls.OfType<Bunifu.UI.WinForms.BunifuButton.BunifuButton>())
-                    {
-                        btn.Visible = false;
-                    }
-
                     // นำ username ไปเช็คสิทธิ์
-                    privilageModels privilageModels = new privilageModels
-                    {
-                        user_id = accountModels.id
-                    };
-                    if (privilage.Select(privilageModels))
+                    if (privilage.SelectPrivilage(accountModels.user))
                     {
                         foreach (DataRow rw in privilage.tb.Rows)
                         {
                             foreach (Bunifu.UI.WinForms.BunifuButton.BunifuButton btn in panel1.Controls.OfType<Bunifu.UI.WinForms.BunifuButton.BunifuButton>())
                             {
-                                if (btn.Text == rw["menus"].ToString())
+                                if (btn.Text == rw["menu_id"].ToString())
                                 {
                                     btn.Enabled = true;
-                                    guna2Transition1.ShowSync(btn);
                                 }
                             }
                             await Task.Delay(100);
-                        }
-                        // สั่งแสดงปุ่มที่ disable ที่เหลือ
-                        foreach (Bunifu.UI.WinForms.BunifuButton.BunifuButton btn in panel1.Controls.OfType<Bunifu.UI.WinForms.BunifuButton.BunifuButton>())
-                        {
-                            if (btn.Enabled == false)
-                            {
-                                btn.Enabled = false;
-                                guna2Transition1.ShowSync(btn);
-                            }
                         }
                     }
                 }
@@ -115,53 +90,14 @@ namespace TRUCK_STD.Design
 
                 // สั่งเปิดเป็น Suport info
                 btnSupport.Enabled = true;
-                guna2Transition1.ShowSync(btnSupport);
                 // สั่งเปิด เปลี่ยข้อมูลผู้ใช้
                 btnChangeUsername.Enabled = true;
-                guna2Transition1.ShowSync(btnChangeUsername);
 
                 btnAbout.Enabled = true;
-                guna2Transition1.ShowSync(btnAbout);
                 btnRFID.Visible = false;
                 label4.Text = registy.system.id;
             }));
         }
-
-        //void CHECK_FUNCTION()
-        //{
-        //    // เช็คว่าระบบมีฟังชั่นกล้องหรือไม่
-        //    if (registy.function.CAMERA == "TRUE")
-        //        foreach (var item in menuModels.menuList)
-        //        {
-        //            if (btnCCTV.Text == item.Key)
-        //            {
-        //                btnCCTV.Enabled = true;
-        //                break;
-        //            }
-        //        }
-
-        //    // เช็คว่าระบบมีฟังชั่นLPR
-        //    if (registy.function.LPR == "TRUE")
-        //        foreach (var item in menuModels.menuList)
-        //        {
-        //            if (btnLPR.Text == item.Key)
-        //            {
-        //                btnLPR.Enabled = true;
-        //                break;
-        //            }
-        //        }
-
-        //    // เช็คว่าระบบมีฟังชั่นRFID
-        //    if (registy.function.RFID == "TRUE")
-        //        foreach (var item in menuModels.menuList)
-        //        {
-        //            if (btnRFID.Text == item.Key)
-        //            {
-        //                btnRFID.Enabled = true;
-        //                break;
-        //            }
-        //        }
-        //}
         #endregion
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -231,25 +167,6 @@ namespace TRUCK_STD.Design
 
             frmHistoryLPR frmHistoryLPR = new frmHistoryLPR();
             frmHistoryLPR.ShowDialog();
-
-            //// ตรวจสอบฟังชั่นโปรแกรม
-            //if (registy.function.RFIDState == "TRUE")
-            //{
-
-            //    return;
-            //}
-            //else if (registy.function.LPRState == "TRUE")
-            //{
-            //    frmHistoryLPR frmHistoryLPR = new frmHistoryLPR();
-            //    frmHistoryLPR.ShowDialog();
-            //    return;
-            //}
-            //else
-            //{
-            //    frmWeightingNoPrice frmWeightingNoPrice = new frmWeightingNoPrice();
-            //    frmWeightingNoPrice.ShowDialog();
-            //}
-
         }
 
         private void bunifuButton6_Click(object sender, EventArgs e)
@@ -354,9 +271,12 @@ namespace TRUCK_STD.Design
 
         private void btnChangeUsername_Click(object sender, EventArgs e)
         {
-            if (Func_Privilage.emp_usernmae == "sa")
+            if (accountModels.user == "sa")
             {
-                msg.Show(this, "ไม่สามารถเปลี่นแปลงสิทธิ์ sa ได้", BunifuSnackbar.MessageTypes.Warning, 3000, "OK", BunifuSnackbar.Positions.TopCenter);
+                msg.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+                msg.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                msg.Show("Can't change the user administrator", "Change account");
+                return;
             }
             else
             {
@@ -367,24 +287,27 @@ namespace TRUCK_STD.Design
 
         private void btnHireWeitgh_Click(object sender, EventArgs e)
         {
-            // ตรวจสอบฟังชั่นโปรแกรม
-            if (registy.function.RFIDState == "TRUE")
-            {
-                frmHireRFID frmWeightRFID = new frmHireRFID();
-                frmWeightRFID.ShowDialog();
-                return;
-            }
-            else if (registy.function.LPRState == "TRUE")
-            {
-                frmHireLPR frm = new frmHireLPR();
-                frm.ShowDialog();
-                return;
-            }
-            else
-            {
-                frmHireNormal frm = new frmHireNormal();
-                frm.ShowDialog();
-            }
+            msg.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            msg.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            msg.Show("Coming soon", "Hire weight");
+            //// ตรวจสอบฟังชั่นโปรแกรม
+            //if (registy.function.RFIDState == "TRUE")
+            //{
+            //    frmHireRFID frmWeightRFID = new frmHireRFID();
+            //    frmWeightRFID.ShowDialog();
+            //    return;
+            //}
+            //else if (registy.function.LPRState == "TRUE")
+            //{
+            //    frmHireLPR frm = new frmHireLPR();
+            //    frm.ShowDialog();
+            //    return;
+            //}
+            //else
+            //{
+            //    frmHireNormal frm = new frmHireNormal();
+            //    frm.ShowDialog();
+            //}
         }
 
         private void btnCCTV_Click(object sender, EventArgs e)
