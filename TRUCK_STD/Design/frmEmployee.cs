@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using TRUCK_STD.DbBase;
 using TRUCK_STD.Models;
-using TRUCK_STD.MSACCESSCommand;
+
 namespace TRUCK_STD.Design
 {
     public partial class frmEmployee : Form
@@ -18,8 +18,7 @@ namespace TRUCK_STD.Design
 
         #region variable local
         string emp_username = "";
-        tbEMPLOYEE tbEMPLOYEE = new tbEMPLOYEE();
-        tbPRIVIVRAGE tbPRIVIVRAGE = new tbPRIVIVRAGE();
+
         #endregion
 
 
@@ -149,23 +148,29 @@ namespace TRUCK_STD.Design
                         }
                     }
 
-                    // หากทำการตรวจสอบแล้วไม่พบว่า มีชื่อซ้ำกับในระบบให้ทำการเพ่ิมไปในฐานข้อมูลเลย
-                    employeeModels employees = new employeeModels
+                    // กำหนดค่า
+                    employee.new_username = txtUsername.Text;
+                    employee.password = txtPass.Text;
+                    employee.names = txtName.Text;
+                    employee.state = "Actice";
+
+                    // เพิ่มข้อมูล
+                    if (employee.Insert())
                     {
-                        new_username = txtUsername.Text,
-                        password = txtPass.Text,
-                        names = txtName.Text
-                    };
-
-                    if (employee.Insert(employees))
                         CLEAR_FROM();
+                        bunifuSnackbar1.Show(this,
+                       "บันทึกรายการสำเร็จ ",
+                       Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success,
+                       3000,
+                       "OK",
+                       Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
+                    }
+                    else
+                    {
+                        MessageBox.Show("เกิดข้อผิดผลาดขณะบันทึก");
+                        return;
+                    }
 
-                    bunifuSnackbar1.Show(this,
-                   "บันทึกรายการสำเร็จ ",
-                   Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success,
-                   3000,
-                   "OK",
-                   Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
                 }
                 //แต่หากเป็น update
                 else
@@ -200,18 +205,29 @@ namespace TRUCK_STD.Design
                         names = txtName.Text
                     };
 
+                    employee.new_username = txtUsername.Text;
+                    employee.old_username = emp_username;
+                    employee.password = txtPass.Text;
+                    employee.names = txtName.Text;
+
                     // Update
-                    if (employee.Update(employeeModels))
+                    if (employee.Update())
+                    {
                         // คืนค่า
                         CLEAR_FROM();
-                    dgvEmployee.Visible = true;
-                    bunifuSnackbar1.Show(this,
-                        "แก้ไขรายการสำเร็จ",
-                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success,
-                        3000,
-                        "OK",
-                        Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
-
+                        dgvEmployee.Visible = true;
+                        bunifuSnackbar1.Show(this,
+                            "แก้ไขรายการสำเร็จ",
+                            Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success,
+                            3000,
+                            "OK",
+                            Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopCenter);
+                    }
+                    else
+                    {
+                        MessageBox.Show("เกิดข้อผิดผลาดขณะบันทึก");
+                        return;
+                    }
                 }
 
                 // แสดงข้อมูล
@@ -252,20 +268,14 @@ namespace TRUCK_STD.Design
                     {
                         if (MessageBox.Show("คุณต้องการลบข้อมูลหรือไม่?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            // หากผู้ใช้ยืนยันที่จะลบข้อมูลให้ลบข้อมูลในตาราง PRIVIRAGE ก่อน
-                            privilageModels privilageModels = new privilageModels
+                            // หากผู้ใช้ยืนยันที่จะลบข้อมูลให้ลบข้อมูลในตาราง PRIVIRAGE ก่อ
+                            if (privilage.Delete(emp_username))
                             {
-                                user_id = user_i
-                            };
 
-                            if (privilage.Delete(privilageModels))
-                            {
-                                employeeModels employeeModels = new employeeModels
-                                {
-                                    old_username = emp_username
-                                };
+                                employee.old_username = emp_username;
+
                                 // และให้ลบข้อมูลในตาราง EMPLOYEE ต่อ
-                                if (employee.Delete(employeeModels))
+                                if (employee.Delete())
                                 {
                                     CLEAR_FROM();
                                     if (employee.Select())
@@ -358,7 +368,7 @@ namespace TRUCK_STD.Design
             }
             else
             {
-                dgvEmployee.DataSource = employee.SelectChar(txtSearch.Text);
+                dgvEmployee.DataSource = employee.Select(txtSearch.Text);
             }
         }
 
