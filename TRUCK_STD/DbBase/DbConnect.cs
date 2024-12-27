@@ -1,6 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using TRUCK_STD.Functions;
 namespace TRUCK_STD.DbBase
 {
     internal class DbConnect
@@ -18,9 +16,14 @@ namespace TRUCK_STD.DbBase
         {
             try
             {
-                con.Close();
-                Console.WriteLine(registy.db.host);
+                // เช็คว่ามีการเชื่อมต่ออยู่แล้วหรือไม่
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                // สร้างการเชื่อมต่อ
                 con.ConnectionString = $"Server={HOST};Port={PORT};Database={BASS};Uid={USER};Pwd={PASS};SslMode=none;charset=utf8;";
+                // เปิดการเชื่อมต่อ
                 con.Open();
             }
             catch (System.Exception ex)
