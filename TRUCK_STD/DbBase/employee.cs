@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
-using TRUCK_STD.Models;
 
 namespace TRUCK_STD.DbBase
 {
@@ -13,8 +12,25 @@ namespace TRUCK_STD.DbBase
         static string sql = "";
 
         public static string ERR { get; set; }
+        public static string new_username { get; set; }
+        public static string old_username { get; set; }
+        public static string password { get; set; }
+        public static string names { get; set; }
+        public static string state { get; set; }
 
+        private static void ClearProp()
+        {
+            new_username = null;
+            old_username = null;
+            password = null;
+            names = null;
+            state = null;
+        }
 
+        /// <summary>
+        /// ค้นหาข้อมูลทั้งหมดของผู้ใช้
+        /// </summary>
+        /// <returns></returns>
         public static bool Select()
         {
             try
@@ -33,12 +49,16 @@ namespace TRUCK_STD.DbBase
         }
 
 
-
-        public static DataTable SelectChar(string _names)
+        /// <summary>
+        /// ค้นหาข้อมูลผู้ใช้ตามตัวอักษร
+        /// </summary>
+        /// <param name="_names"></param>
+        /// <returns></returns>
+        public static DataTable Select(string _names)
         {
             try
             {
-                sql = $"SELECT * FROM employee WHERE emp_names LIKE '%{_names}%'";
+                sql = $"SELECT * FROM truckdata.employee WHERE emp_names LIKE '%{_names}%'";
                 da = new MySqlDataAdapter(sql, con);
                 tb = new DataTable();
                 da.Fill(tb);
@@ -50,7 +70,12 @@ namespace TRUCK_STD.DbBase
             return tb;
         }
 
-        public static bool Insert(employeeModels employeeModels)
+
+        /// <summary>
+        /// สำหรับเพิ่มผู้ใช้งานในระบบ
+        /// </summary>
+        /// <returns></returns>
+        public static bool Insert()
         {
             try
             {
@@ -58,22 +83,29 @@ namespace TRUCK_STD.DbBase
                     "VALUES (@emp_username,@emp_password,@emp_names,@emp_state)";
 
                 cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.Add(new MySqlParameter("@emp_username", employeeModels.new_username));
-                cmd.Parameters.Add(new MySqlParameter("@emp_password", employeeModels.password));
-                cmd.Parameters.Add(new MySqlParameter("@emp_names", employeeModels.names));
-                cmd.Parameters.Add(new MySqlParameter("@emp_state", employeeModels.state));
+                cmd.Parameters.Add(new MySqlParameter("@emp_username", new_username));
+                cmd.Parameters.Add(new MySqlParameter("@emp_password", password));
+                cmd.Parameters.Add(new MySqlParameter("@emp_names", names));
+                cmd.Parameters.Add(new MySqlParameter("@emp_state", state));
                 cmd.ExecuteNonQuery();
             }
             catch (System.Exception ex)
             {
                 ERR = ex.Message;
+                ClearProp();
                 return false;
             }
+            ClearProp();
             return true;
         }
 
 
-        public static bool Update(employeeModels employeeModels)
+
+        /// <summary>
+        /// สำหรับ แก้ไข user
+        /// </summary>
+        /// <returns></returns>
+        public static bool Update()
         {
             try
             {
@@ -83,26 +115,32 @@ namespace TRUCK_STD.DbBase
                     "emp_names = @emp_names " +
                     "WHERE emp_username = @old_username";
                 cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.Add(new MySqlParameter("@emp_username", employeeModels.new_username));
-                cmd.Parameters.Add(new MySqlParameter("@emp_password", employeeModels.password));
-                cmd.Parameters.Add(new MySqlParameter("@emp_names", employeeModels.names));
-                cmd.Parameters.Add(new MySqlParameter("@old_username", employeeModels.old_username));
+                cmd.Parameters.Add(new MySqlParameter("@emp_username", new_username));
+                cmd.Parameters.Add(new MySqlParameter("@emp_password", password));
+                cmd.Parameters.Add(new MySqlParameter("@emp_names", names));
+                cmd.Parameters.Add(new MySqlParameter("@old_username", old_username));
                 cmd.ExecuteNonQuery();
             }
             catch (System.Exception ex)
             {
                 ERR = ex.Message;
+                ClearProp();
                 return false;
             }
+            ClearProp();
             return true;
         }
 
 
-        public static bool Delete(employeeModels employeeModels)
+        /// <summary>
+        /// สำหรับลบ user ออกจากระบบ
+        /// </summary>
+        /// <returns></returns>
+        public static bool Delete()
         {
             try
             {
-                sql = $"DELETE FROM employee WHERE emp_username = '{employeeModels.old_username}'";
+                sql = $"DELETE FROM employee WHERE emp_username = '{old_username}'";
 
                 cmd = new MySqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
@@ -111,12 +149,11 @@ namespace TRUCK_STD.DbBase
             catch (System.Exception ex)
             {
                 ERR = ex.Message;
+                ClearProp();
                 return false;
             }
+            ClearProp();
             return true;
         }
-
-
-
     }
 }
