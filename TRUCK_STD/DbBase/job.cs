@@ -81,12 +81,12 @@ namespace TRUCK_STD.DbBase
                 string date = DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.CreateSpecificCulture("EN-en"));
                 sql = "SELECT * FROM truckdata.job a " +
                     "LEFT JOIN truckdata.jobdetail b " +
-                    "ON  b.jobId = a.id " +
+                    "ON b.jobOrder = a.jobOrder " +
                     "LEFT JOIN truckdata.customer c " +
-                    "ON c.id = a.customerId " +
+                    "ON c.customerName = a.customerName " +
                     "LEFT JOIN truckdata.product d " +
-                    "ON d.id = a.productId " +
-                    $"WHERE  state = 'Process' and dateRegistor BETWEEN '{date} 00:00:00' and '{date} 23:59:59' and stationName = '{registy.system.stationName}'";
+                    "ON d.productName = a.productName " +
+                    $"WHERE  a.state = 'Process' and a.dateRegistor BETWEEN '{date} 00:00:00' and '{date} 23:59:59' and stationName = '{registy.system.stationName}'";
 
                 da = new MySqlDataAdapter(sql, con);
                 tb = new DataTable();
@@ -95,7 +95,6 @@ namespace TRUCK_STD.DbBase
             catch (Exception ex)
             {
                 ERR = ex.Message;
-
                 return false;
             }
             return true;
@@ -113,8 +112,8 @@ namespace TRUCK_STD.DbBase
                 string date = DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.CreateSpecificCulture("EN-en"));
                 sql = "SELECT * FROM truckdata.job a " +
                     "LEFT JOIN truckdata.jobdetail b " +
-                    "ON a.id = b.jobId " +
-                    $"WHERE  state = 'Process' and dateRegistor BETWEEN '{date} 00:00:00' and '{date} 23:59:59' and stationName = '{registy.system.stationName}' and licenseHead = '{licensePlate}'";
+                    "ON a.jobOrder = b.jobOrder " +
+                    $"WHERE  a.state = 'Process' and a.dateRegistor BETWEEN '{date} 00:00:00' and '{date} 23:59:59' and a.stationName = '{registy.system.stationName}' and a.licenseHead = '{licensePlate}'";
 
                 da = new MySqlDataAdapter(sql, con);
                 tb = new DataTable();
@@ -122,7 +121,7 @@ namespace TRUCK_STD.DbBase
 
                 foreach (DataRow rw in tb.Rows)
                 {
-                    id = rw["id"].ToString();
+                    id = rw["jobOrder"].ToString();
                     break;
                 }
 
@@ -179,7 +178,7 @@ namespace TRUCK_STD.DbBase
                 string id = selectOrderProcessWithLicensePlate(licenseHead);
 
                 // AddNewJobDetail
-                if (!jobDetail.InsertNewOrderdetail(int.Parse(id), "ชั่งเข้า", int.Parse(weightIn)))
+                if (!jobDetail.InsertNewOrderdetail(id, "ชั่งเข้า", int.Parse(weightIn), "", "", ""))
                 {
                     return false;
                 }
@@ -215,8 +214,8 @@ namespace TRUCK_STD.DbBase
 
                 if (!string.IsNullOrWhiteSpace(orderJob))
                 {
-                    sql = "INSERT INTO truckdata.job (jobOrder,stationName,licenseHead,licenseTail,note,dateRegistor,state,customerId,productId,productPrice,netWeight)" +
-                                       "VALUES(@jobOrder,@stationName,@licenseHead,@licenseTail,@note,current_timestamp(),@state,@customerId,@productId,@productPrice,@netWeight)";
+                    sql = "INSERT INTO truckdata.job (jobOrder,stationName,licenseHead,licenseTail,note,dateRegistor,state,customerName,productName,productPrice,netWeight)" +
+                                       "VALUES(@jobOrder,@stationName,@licenseHead,@licenseTail,@note,current_timestamp(),@state,@customerName,@productName,@productPrice,@netWeight)";
 
                     cmd = new MySqlCommand(sql, con);
                     cmd.Parameters.Add(new MySqlParameter("@jobOrder", orderJob));
@@ -225,8 +224,8 @@ namespace TRUCK_STD.DbBase
                     cmd.Parameters.Add(new MySqlParameter("@licenseTail", licenseTail));
                     cmd.Parameters.Add(new MySqlParameter("@note", "-"));
                     cmd.Parameters.Add(new MySqlParameter("@state", "Process"));
-                    cmd.Parameters.Add(new MySqlParameter("@customerId", customerId));
-                    cmd.Parameters.Add(new MySqlParameter("@productId", productId));
+                    cmd.Parameters.Add(new MySqlParameter("@customerName", customerId));
+                    cmd.Parameters.Add(new MySqlParameter("@productName", productId));
                     cmd.Parameters.Add(new MySqlParameter("@productPrice", productPrice));
                     cmd.Parameters.Add(new MySqlParameter("@netWeight", "0"));
                     cmd.ExecuteNonQuery();
@@ -239,11 +238,12 @@ namespace TRUCK_STD.DbBase
 
                 #region Insert JobDetail
                 // SelectIdJob
-                string id = selectOrderProcessWithLicensePlate(licenseHead);
+                string _id = selectOrderProcessWithLicensePlate(licenseHead);
 
                 // AddNewJobDetail
-                if (!jobDetail.InsertNewOrderdetail(int.Parse(id), "ชั่งเข้า", int.Parse(weightIn)))
+                if (!jobDetail.InsertNewOrderdetail(_id, "ชั่งเข้า", int.Parse(weightIn), "", "", ""))
                 {
+                    ERR = jobDetail.ERR;
                     return false;
                 }
                 #endregion
@@ -303,7 +303,7 @@ namespace TRUCK_STD.DbBase
                 string id = selectOrderProcessWithLicensePlate(licenseHead);
 
                 // AddNewJobDetail
-                if (!jobDetail.InsertNewOrderdetail(int.Parse(id), "ชั่งเข้า", int.Parse(weightIn), pictureLicense, pictureCarFront, pictrueCarBack))
+                if (!jobDetail.InsertNewOrderdetail(id, "ชั่งเข้า", int.Parse(weightIn), pictureLicense, pictureCarFront, pictrueCarBack))
                 {
                     return false;
                 }
@@ -364,7 +364,7 @@ namespace TRUCK_STD.DbBase
                 string id = selectOrderProcessWithLicensePlate(licenseHead);
 
                 // AddNewJobDetail
-                if (!jobDetail.InsertNewOrderdetail(int.Parse(id), "ชั่งเข้า", int.Parse(weightIn), pictureLicense, pictureCarFront, pictrueCarBack))
+                if (!jobDetail.InsertNewOrderdetail(id, "ชั่งเข้า", int.Parse(weightIn), pictureLicense, pictureCarFront, pictrueCarBack))
                 {
                     return false;
                 }
@@ -452,7 +452,7 @@ namespace TRUCK_STD.DbBase
         /// <param name="id"></param>
         /// <param name="state">สถานะที่ต้องการอัพเดท</param>
         /// <returns></returns>
-        public static bool updateStatusWeightOut(int id, string state, double newWeith, double impurity, double huminity, double powder, string priceOther, double priceNet)
+        public static bool updateStatusWeightOut(string id, string state, double newWeith, double impurity, double huminity, double powder, string priceOther, double priceNet)
         {
             try
             {
@@ -464,7 +464,7 @@ namespace TRUCK_STD.DbBase
                    "huminityPercent = @huminityPercent, " +
                    "priceOther = @priceOther, " +
                    "priceNet = @priceNet " +
-                   "WHERE id = @id";
+                   "WHERE jobOrder = @id";
                 cmd = new MySqlCommand(sql, con);
                 cmd.Parameters.Add(new MySqlParameter("@state", state));
                 cmd.Parameters.Add(new MySqlParameter("@netWeight", newWeith));
@@ -485,6 +485,32 @@ namespace TRUCK_STD.DbBase
         }
 
 
+        /// <summary>
+        /// ปรับสถานะเป็นยกเลิกที่หน้าประวัติการชั่งเมื่อผู้ใช้กด ลบ
+        /// </summary>
+        /// <param name="id">เลขที่ออเดอร์ที่ต้องการจะยกเลิก</param>
+        /// <returns></returns>
+        public static bool updateStataWhenDelete(string id)
+        {
+            try
+            {
+                sql = $"UPDATE truckdata.job " +
+                    $"SET state = @state " +
+                    $"WHERE jobOrder = @jobOrder";
+                cmd = new MySqlCommand(sql, con);
+                cmd.Parameters.Add(new MySqlParameter("@state", "Cancel"));
+                cmd.Parameters.Add(new MySqlParameter("@jobOrder", id));
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                ERR = ex.Message;
+                return false;
+            }
+
+            return true;
+        }
+
 
 
 
@@ -496,7 +522,7 @@ namespace TRUCK_STD.DbBase
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static bool deleteOrdet(int id)
+        public static bool deleteOrdet(string id)
         {
             try
             {
@@ -506,7 +532,7 @@ namespace TRUCK_STD.DbBase
                     return false;
                 }
 
-                sql = $"DELETE FROM truckdata.job WHERE id = {id}";
+                sql = $"DELETE FROM truckdata.job WHERE jobOrder = '{id}'";
                 cmd = new MySqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
             }
