@@ -1,4 +1,7 @@
-﻿using System.Data;
+﻿using ClosedXML.Excel;
+using Guna.UI2.WinForms;
+using System;
+using System.Data;
 using System.Windows.Forms;
 using TRUCK_STD.DbBase;
 using TRUCK_STD.Functions;
@@ -12,7 +15,7 @@ namespace TRUCK_STD.Design
             InitializeComponent();
         }
 
-        private void btnSearch_Click(object sender, System.EventArgs e)
+        void ShowDataOnGrid()
         {
             string state = "";
             switch (cbbWeightType.Text)
@@ -27,7 +30,7 @@ namespace TRUCK_STD.Design
 
             string sql = "SELECT * FROM truckdata.job a " +
     "LEFT JOIN truckdata.jobdetail b " +
-    "ON  b.jobId = a.id " +
+    "ON  b.jobOrder = a.jobOrder " +
     $"WHERE  a.state = '{state}' and a.stationName = '{registy.system.stationName}' ";
 
             // เช็ค command เพิ่มเติม
@@ -41,11 +44,11 @@ namespace TRUCK_STD.Design
 
             if (cbLicense.Checked == true)
             {
-                sql += $" and b.licenseHead LIKE '%{txtLicense.Text}%'";
+                sql += $" and a.licenseHead LIKE '%{txtLicense.Text}%'";
             }
 
             // Get data 
-            if (job.SelectSearchQuery(sql))
+            if (jobDetail.SelectSearchQuery(sql))
             {
                 DataTable tb = new DataTable();
                 tb.Columns.Add("id");
@@ -57,7 +60,7 @@ namespace TRUCK_STD.Design
                 tb.Columns.Add("state");
 
                 string jobOld = "";
-                foreach (DataRow item in job.tb.Rows)
+                foreach (DataRow item in jobDetail.tb.Rows)
                 {
                     string _id = item["id"].ToString();
                     string _date = item["dateRegistor"].ToString();
@@ -76,6 +79,11 @@ namespace TRUCK_STD.Design
 
                 dgvdata.DataSource = tb;
             }
+        }
+
+        private void btnSearch_Click(object sender, System.EventArgs e)
+        {
+            ShowDataOnGrid();
         }
 
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -142,13 +150,16 @@ namespace TRUCK_STD.Design
             }
             catch (System.Exception exx)
             {
+                Console.WriteLine(exx.Message);
+            }
+        }
 
         private void frmHistoryLPR_Load(object sender, System.EventArgs e)
         {
             dtpStart.Value = DateTime.Now;
             dtpEnd.Value = DateTime.Now;
 
-            }
+        }
 
         private void cbLicense_Click(object sender, EventArgs e)
         {
@@ -165,7 +176,7 @@ namespace TRUCK_STD.Design
                     {
                         dtpEnd.Enabled = false;
                         dtpStart.Enabled = false;
-        }
+                    }
                     break;
                 case "ค้นหาจากทะเบียนรถ":
                     if (cbb.Checked)
@@ -231,7 +242,7 @@ namespace TRUCK_STD.Design
 
             frmReport frmReport = new frmReport();
             switch (cbbWeightType.Text)
-        {
+            {
                 case "ดำเนินการสำเร็จ":
                     frmReport.state = "Success";
                     break;
@@ -241,6 +252,7 @@ namespace TRUCK_STD.Design
             }
             frmReport.reportType = "ReportAll";
 
+            frmReport.ShowDialog();
         }
     }
 

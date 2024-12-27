@@ -49,6 +49,8 @@
             this.dgvdata = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.msg = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.btnExport = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnPrint = new Guna.UI2.WinForms.Guna2ImageButton();
             this.cl_del = new System.Windows.Forms.DataGridViewImageColumn();
             this.cl_print = new System.Windows.Forms.DataGridViewImageColumn();
             this.cl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -195,7 +197,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverState.FillColor = System.Drawing.Color.MidnightBlue;
             this.btnSearch.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnSearch.Location = new System.Drawing.Point(914, 128);
+            this.btnSearch.Location = new System.Drawing.Point(914, 127);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(145, 36);
             this.btnSearch.TabIndex = 14;
@@ -212,13 +214,14 @@
             this.cbDate.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbDate.Location = new System.Drawing.Point(202, 92);
             this.cbDate.Name = "cbDate";
-            this.cbDate.Size = new System.Drawing.Size(116, 29);
+            this.cbDate.Size = new System.Drawing.Size(113, 29);
             this.cbDate.TabIndex = 15;
-            this.cbDate.Text = "ค้นหาด้วยวันที่";
+            this.cbDate.Text = "ค้นหาจากวันที่";
             this.cbDate.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.cbDate.UncheckedState.BorderRadius = 3;
             this.cbDate.UncheckedState.BorderThickness = 0;
             this.cbDate.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cbDate.Click += new System.EventHandler(this.cbLicense_Click);
             // 
             // cbLicense
             // 
@@ -237,6 +240,7 @@
             this.cbLicense.UncheckedState.BorderRadius = 3;
             this.cbLicense.UncheckedState.BorderThickness = 0;
             this.cbLicense.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cbLicense.Click += new System.EventHandler(this.cbLicense_Click);
             // 
             // dtpStart
             // 
@@ -244,6 +248,7 @@
             this.dtpStart.BorderRadius = 3;
             this.dtpStart.BorderThickness = 1;
             this.dtpStart.Checked = true;
+            this.dtpStart.Enabled = false;
             this.dtpStart.FillColor = System.Drawing.Color.Brown;
             this.dtpStart.Font = new System.Drawing.Font("Athiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStart.ForeColor = System.Drawing.Color.White;
@@ -262,6 +267,7 @@
             this.dtpEnd.BorderRadius = 3;
             this.dtpEnd.BorderThickness = 1;
             this.dtpEnd.Checked = true;
+            this.dtpEnd.Enabled = false;
             this.dtpEnd.FillColor = System.Drawing.Color.Brown;
             this.dtpEnd.Font = new System.Drawing.Font("Athiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEnd.ForeColor = System.Drawing.Color.White;
@@ -306,6 +312,7 @@
             this.txtLicense.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtLicense.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtLicense.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLicense.Enabled = false;
             this.txtLicense.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtLicense.Font = new System.Drawing.Font("Athiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLicense.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -363,7 +370,7 @@
             this.dgvdata.RowHeadersVisible = false;
             this.dgvdata.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvdata.RowTemplate.Height = 40;
-            this.dgvdata.Size = new System.Drawing.Size(1047, 626);
+            this.dgvdata.Size = new System.Drawing.Size(1138, 626);
             this.dgvdata.TabIndex = 10;
             this.dgvdata.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvdata.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -393,7 +400,7 @@
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(43)))), ((int)(((byte)(28)))));
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1014, 4);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1105, 4);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 22;
@@ -404,8 +411,40 @@
             this.msg.Caption = null;
             this.msg.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
             this.msg.Parent = this;
-            this.msg.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.msg.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             this.msg.Text = null;
+            // 
+            // btnExport
+            // 
+            this.btnExport.AnimatedGIF = true;
+            this.btnExport.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnExport.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnExport.ImageRotate = 0F;
+            this.btnExport.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnExport.Location = new System.Drawing.Point(1115, 129);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.PressedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnExport.Size = new System.Drawing.Size(35, 32);
+            this.btnExport.TabIndex = 25;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.AnimatedGIF = true;
+            this.btnPrint.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnPrint.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnPrint.ImageRotate = 0F;
+            this.btnPrint.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnPrint.Location = new System.Drawing.Point(1072, 130);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.PressedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnPrint.Size = new System.Drawing.Size(35, 32);
+            this.btnPrint.TabIndex = 26;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // cl_del
             // 
@@ -414,7 +453,7 @@
             this.cl_del.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.cl_del.Name = "cl_del";
             this.cl_del.ReadOnly = true;
-            this.cl_del.Width = 50;
+            this.cl_del.Width = 40;
             // 
             // cl_print
             // 
@@ -423,7 +462,7 @@
             this.cl_print.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.cl_print.Name = "cl_print";
             this.cl_print.ReadOnly = true;
-            this.cl_print.Width = 50;
+            this.cl_print.Width = 40;
             // 
             // cl_id
             // 
@@ -443,7 +482,7 @@
             // 
             // cl_job
             // 
-            this.cl_job.DataPropertyName = "jobOrder";
+            this.cl_job.DataPropertyName = "jobId";
             this.cl_job.HeaderText = "เลขที่ชั่ง";
             this.cl_job.Name = "cl_job";
             this.cl_job.ReadOnly = true;
@@ -483,13 +522,16 @@
             this.cl_status.HeaderText = "สถานะ";
             this.cl_status.Name = "cl_status";
             this.cl_status.ReadOnly = true;
+            this.cl_status.Width = 200;
             // 
             // frmHistoryLPR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1064, 806);
+            this.ClientSize = new System.Drawing.Size(1155, 806);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.txtLicense);
             this.Controls.Add(this.label4);
@@ -534,6 +576,8 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvdata;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2MessageDialog msg;
+        private Guna.UI2.WinForms.Guna2ImageButton btnPrint;
+        private Guna.UI2.WinForms.Guna2ImageButton btnExport;
         private System.Windows.Forms.DataGridViewImageColumn cl_del;
         private System.Windows.Forms.DataGridViewImageColumn cl_print;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_id;
