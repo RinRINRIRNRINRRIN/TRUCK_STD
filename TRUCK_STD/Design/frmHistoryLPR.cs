@@ -199,8 +199,14 @@ namespace TRUCK_STD.Design
             frmReport frmReport = new frmReport();
             switch (cbbWeightType.Text)
         {
-            job.SelectHistory();
-            dgvdata.DataSource = job.tb;
+                case "ดำเนินการสำเร็จ":
+                    frmReport.state = "Success";
+                    break;
+                case "กำลังดำเนินการ":
+                    frmReport.state = "Process";
+                    break;
+            }
+            frmReport.reportType = "ReportAll";
 
         }
     }
