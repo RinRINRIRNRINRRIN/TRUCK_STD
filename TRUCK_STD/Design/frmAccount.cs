@@ -6,7 +6,6 @@ using System.Linq;
 using System.Windows.Forms;
 using TRUCK_STD.DbBase;
 using TRUCK_STD.Functions;
-using TRUCK_STD.Models;
 namespace TRUCK_STD.Design
 {
     public partial class frmAccount : Form
@@ -27,29 +26,14 @@ namespace TRUCK_STD.Design
         /// 
         void GET_MENU_AND_PRIVIRATE(string emp_username)
         {
-            // หาว่า emp_user คือ id อะไร
-            DataTable tbemp = employee.SelectChar(emp_username);
-            string user_id = "";
-            foreach (DataRow rw in tbemp.Rows)
+            if (privilage.SelectPrivilage(emp_username))
             {
-                user_id = rw["id"].ToString();
-            }
-
-            // นำ user_id ไปหาว่าสิทธิ์มีอะพไรบ้าง
-            privilageModels privilageModels = new privilageModels
-            {
-                user_id = user_id
-            };
-
-            if (privilage.Select(privilageModels))
-            {
-
                 if (privilage.tb.Rows.Count > 0)
                 {
                     // ทำการจำแนก สิทธิ์การใช้งาน เมนูนั้น ๆ 
                     foreach (DataRow rw in privilage.tb.Rows)
                     {
-                        string pr_menu = rw["menus"].ToString();
+                        string pr_menu = rw["menu_id"].ToString();
                         string pr_add = rw["pr_add"].ToString();
                         string pr_del = rw["pr_del"].ToString();
                         string pr_edit = rw["pr_edit"].ToString();
@@ -228,25 +212,12 @@ namespace TRUCK_STD.Design
                 if (cbbEmployee.Text != "--เลือกชื่อผู้ใช้งาน--")
                 {
                     string[] select = cbbEmployee.Text.Split('|');
-                    #region ค้นหา user_id
-                    DataTable tbemp = employee.SelectChar(select[0].Trim());
-                    string user_id = "";
-                    foreach (DataRow rw in tbemp.Rows)
-                    {
-                        user_id = rw["id"].ToString();
-                        break;
-                    }
 
-                    // นำ user_id ไปลบสิทธิ์ทั้งหมดก่อน
-                    privilageModels privilageModels = new privilageModels
-                    {
-                        user_id = user_id
-                    };
-                    if (!privilage.Delete(privilageModels))
+                    if (!privilage.Delete(select[0].Trim()))
                     {
                         return;
                     }
-                    #endregion
+
 
                     #region อ่านค่าจาก object บันทึกข้อมู
                     // ทำการลูปบันทึกข้อมูล
@@ -286,16 +257,13 @@ namespace TRUCK_STD.Design
                                 }
                             }
                             // กำหนดค่าก่อนบันทึก
-                            privilageModels privilages = new privilageModels
-                            {
-                                user_id = user_id,
-                                menu_id = cbb.Tag.ToString(),
-                                add = pr_add,
-                                del = pr_del,
-                                edit = pr_del
-                            };
+                            privilage.user_id = select[0].Trim();
+                            privilage.menu_id = cbb.Text;
+                            privilage.pr_add = pr_add;
+                            privilage.pr_del = pr_del;
+                            privilage.pr_edit = pr_edit;
 
-                            if (!privilage.Insert(privilages))
+                            if (!privilage.Insert())
                             {
                                 msg.Show(this, "เกิดข้อผิดผลา " + privilage.ERR, BunifuSnackbar.MessageTypes.Error, 3000, "OK", BunifuSnackbar.Positions.TopCenter);
                                 return;
