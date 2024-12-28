@@ -110,7 +110,7 @@ namespace TRUCK_STD.Service
                 }
 
 
-                if (kay["cam_ip"].ToString() == "192.168.1.205")
+                if (kay["cam_ip"].ToString() == ip)
                 {
                     licens1 = kay["plate_num"].ToString();
 
@@ -122,7 +122,7 @@ namespace TRUCK_STD.Service
                     Picture1 = Picture1.Replace('_', '/');
                     Picture1 = Picture1.Replace('.', '=');
                 }
-                else if (kay["cam_ip"].ToString() == "192.168.1.206")
+                else if (kay["cam_ip"].ToString() == ip)
                 {
                     licens2 = kay["plate_num"].ToString();
 
