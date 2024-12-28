@@ -398,6 +398,7 @@ namespace TRUCK_STD.Design
                     #region บันทึกการตั้งค่า
                     // Save funcstion
                     registy.function.APIKey = "";
+                    registy.function.APIEndpoint = "";
                     registy.function.RFIDKey = "";
                     registy.function.LPRKey = "";
                     registy.function.CAMERAKey = "";
