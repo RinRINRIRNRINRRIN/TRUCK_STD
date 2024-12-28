@@ -15,7 +15,6 @@ namespace TRUCK_STD.Function
     {
 
         // ตัวแปร ฐานข้อมูล
-        static frmWeightingNoPrice frm = new frmWeightingNoPrice();
         private static Image picReport;
 
         #region Program Start up
