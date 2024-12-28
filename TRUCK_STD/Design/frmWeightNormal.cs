@@ -22,6 +22,14 @@ namespace TRUCK_STD.Design
         private double newWeight = 0;
         private string id = "";
 
+        async Task OpenBarrier()
+        {
+            // OpenGate
+            barrier.Gate1("OPEN", saPLC);
+            await Task.Delay(5000);
+            // CloseGate
+            barrier.Gate1("CLOSE", saPLC);
+        }
         /// <summary>
         /// เช็คค่าว่างก่อนทำการบันทึก
         /// </summary>
