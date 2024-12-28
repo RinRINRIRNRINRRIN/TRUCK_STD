@@ -118,6 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tgsAPI.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADsAAAAdCAYAAAAU0BSYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFPSURBVFhH7ZgvbwJBEEdPIiuRfAQ+RlVTicQ0qeQj1OMQ
+        eHSTusq7k8hKHAm2kEAD/ZNWtO8HS7Ick2p2spO8ZO5m7rIvu5DLFFbUdd2GXlVVQ3gh/710tE4Yk/eh
+        E1T+DxrvYMWDb3pJapRluWXta/KHoHQeFK9omsImfjhV8NjBjPx8lyXafMAJC2gFzcPR9bKjTTjWn7iN
+        jqL6M1rFDd5AVn5dyd5z8R4XPYLjUL/ViVX0Bp5Tyc6tojfw/NAxNoseybJeybJeybJeybJeybJe0bfx
+        0ip4A88fyT5bRW/gOdMxHpB8NYvewHEs2S6Jy5HMkeB3ux/NcDHSrKbZ5AX8qr2oghst0BTObE4ZPDX/
+        bgfVQ3BDx/kVvuPmlJEoJ/YmKJ4GDRqUP4Em6uYLUkCSoDn46Y5aQdM1zRPQRN184SXCeufwSN4LKlEU
+        xR9S+N9BhqLx9wAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="tgsBarrier.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADsAAAAdCAYAAAAU0BSYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

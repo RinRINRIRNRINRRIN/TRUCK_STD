@@ -72,10 +72,6 @@ namespace TRUCK_STD.Design
                 tgsLPR.Checked = true;
             }
 
-
-
-
-
             // Check CCTV 
             if (registy.function.CAMERAState == "TRUE")
             {
@@ -86,6 +82,12 @@ namespace TRUCK_STD.Design
             {
                 tgsRFID.Checked = true;
             }
+
+            if (registy.function.APIState == "TRUE")
+            {
+                tgsAPI.Checked = true;
+            }
+            txtAPI.Text = registy.function.APIEndpoint;
 
             cbbComRFID.Items.Clear();
             cbbComRFID.Items.Add(registy.function.RFID_COM);
@@ -104,9 +106,7 @@ namespace TRUCK_STD.Design
             txtTicTax.Text = registy.tickets.tax;
             txtTickPhone.Text = registy.tickets.phone;
         }
-
         #endregion
-
 
         private void frmSetting_Load(object sender, EventArgs e)
         {
@@ -178,9 +178,6 @@ namespace TRUCK_STD.Design
         #endregion
 
         #region SETTING LINE NOTIFY
-
-
-
         private void tgsBarrierr_CheckedChanged(object sender, BunifuToggleSwitch.CheckedChangedEventArgs e)
         {
             if (tgsBarrier.Checked == true)
@@ -228,7 +225,6 @@ namespace TRUCK_STD.Design
         #endregion
 
         #region SETTING EDIT HEADER TICK
-
         private void txtTickPhone_TextChanged(object sender, EventArgs e)
         {
             label56.Text = txtTickPhone.Text;
@@ -272,8 +268,6 @@ namespace TRUCK_STD.Design
             }
         }
         #endregion
-
-
 
         /// <summary>
         /// บันทึกตั้งค่่าทั้งหมด
@@ -333,11 +327,14 @@ namespace TRUCK_STD.Design
                         registy.function.BARRIERCOM = cbbPLC_COM.Text;
                     if (!cbbPLC_BAUDRATE.Text.Contains("--"))
                         registy.function.BARRIERBaudrate = cbbPLC_BAUDRATE.Text;
-                    registy.function.RFIDState = tgsRFID.Checked.ToString();
+                    registy.function.RFIDState = tgsRFID.Checked.ToString().ToUpper();
                     // SAVE CCTV
-                    registy.function.CAMERAState = tgsCCTV.Checked.ToString();
+                    registy.function.CAMERAState = tgsCCTV.Checked.ToString().ToUpper();
                     // SAVE LPR
-                    registy.function.LPRState = tgsLPR.Checked.ToString();
+                    registy.function.LPRState = tgsLPR.Checked.ToString().ToUpper();
+                    // SAVE API
+                    registy.function.APIState = tgsAPI.Checked.ToString().ToUpper();
+                    registy.function.APIEndpoint = txtAPI.Text;
                     // SAVE TICKET
                     if (gbTickPass.Visible == false)
                     {
@@ -380,7 +377,6 @@ namespace TRUCK_STD.Design
                         }
                         else
                         {
-                            registy.Set();
                             tgsRFID.Checked = false;
                         }
                     }
@@ -420,7 +416,6 @@ namespace TRUCK_STD.Design
                         }
                         else
                         {
-                            registy.Set();
                             tgsCCTV.Checked = true;
                         }
                     }
@@ -470,6 +465,56 @@ namespace TRUCK_STD.Design
                     tgsLPR.Checked = false;
                 }
             }
+            else
+            {
+                pnComRFID.Enabled = false;
+            }
+        }
+
+        private void tgsAPI_CheckedChanged(object sender, BunifuToggleSwitch.CheckedChangedEventArgs e)
+        {
+            if (tgsAPI.Checked == true)
+            {
+                // เช็คว่ามีฟังชั่นมีแต่แรกหรือไม่
+                if (registy.function.APIKey == "")
+                {
+                    // แต่หากไม่ได้มีการเปิดฟังชั่น line แต่แรกให้ถามผู้ใช้ก่อนว่าต้องการเปิดฟังชั่นหรือไม่
+                    DialogResult dialogResult = MessageBox.Show("แพ็คเกจคุณไม่ได้เปิดใช้งานฟังชั่น API คุณต้องการเปิดการใช้งานฟังชั่น API หรือไม่", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        frmProgramMessageAlert frmProgramMessageAlert = new frmProgramMessageAlert();
+                        frmProgramMessageAlert.alertLevel = 2;
+                        frmProgramMessageAlert.messageAlert = "รหัสสำหรับเปิดฟังชั่น API";
+                        frmProgramMessageAlert.extension = "API";
+                        frmProgramMessageAlert.ShowDialog();
+                        if (frmProgramMessageAlert.chckUnlock == false)
+                        {
+                            tgsAPI.Checked = false;
+                            txtAPI.Enabled = false;
+                        }
+                        else
+                        {
+                            tgsAPI.Checked = true;
+                            txtAPI.Enabled = true;
+                        }
+                    }
+                    else
+                    {
+                        tgsAPI.Checked = false;
+                        txtAPI.Enabled = false;
+                    }
+                }
+                else
+                {
+                    txtAPI.Enabled = true;
+                }
+            }
+            else
+            {
+                txtAPI.Enabled = false;
+            }
+
         }
     }
 }
