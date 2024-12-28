@@ -14,10 +14,32 @@ namespace TRUCK_STD.Functions
         {
             get { return registy.function.BARRIERBaudrate; }
         }
+
+        private static string State
+        {
+            get { return registy.function.BARRIERState; }
+        }
+
         public static string ERR { get; set; }
 
 
+        /// <summary>
+        /// สำหรับเช็คว่ามีการเปิดใช้งาน API หรือไม่
+        /// </summary>
+        /// <returns></returns>
+        public static bool CheckState()
+        {
+            if (State != "TRUE")
+            {
+                return false;
+            }
+            return true;
+        }
 
+        /// <summary>
+        /// เช็คว่ามีการกำหนดค่าการเชื่อมต่อหรือไม่
+        /// </summary>
+        /// <returns></returns>
         public static bool ChcekPort()
         {
             if (COM == "" || BAUDRATE == "")
@@ -53,7 +75,6 @@ namespace TRUCK_STD.Functions
             return true;
         }
 
-
         /// <summary>
         /// For open or close the gate
         /// </summary>
@@ -62,6 +83,7 @@ namespace TRUCK_STD.Functions
         /// <returns></returns>
         public static bool Gate1(string state, SerialPort sa)
         {
+            sa.ReadTimeout = 2000;
             try
             {
                 // Send command
@@ -91,7 +113,6 @@ namespace TRUCK_STD.Functions
             }
             return true;
         }
-
 
         /// <summary>
         /// For open or close the gate
@@ -131,7 +152,6 @@ namespace TRUCK_STD.Functions
             return true;
         }
 
-
         /// <summary>
         /// For on green or red of light
         /// </summary>
@@ -162,7 +182,6 @@ namespace TRUCK_STD.Functions
             return true;
         }
 
-
         /// <summary>
         /// For on green or red of light
         /// </summary>
@@ -192,22 +211,5 @@ namespace TRUCK_STD.Functions
             }
             return true;
         }
-
-
-        public static bool IntitialBoard()
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-            return true;
-        }
-
-
-
     }
 }
