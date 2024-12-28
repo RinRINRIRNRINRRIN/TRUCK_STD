@@ -113,7 +113,6 @@ namespace TRUCK_STD.Design
 
             if (keyMD5 == txtPassUnlock.Text)
             {
-
                 switch (extension)
                 {
                     case "CAMERA":
@@ -128,9 +127,11 @@ namespace TRUCK_STD.Design
                         registy.function.RFIDState = "TRUE";
                         registy.function.RFIDKey = txtPassUnlock.Text;
                         break;
-                    //case "PRICE":
-                    //    registy.function.PRICE = "TRUE";
-                    //break;
+                    case "API":
+                        registy.function.APIState = "TRUE";
+                        registy.function.APIKey = txtPassUnlock.Text;
+                        registy.function.APIEndpoint = "";
+                        break;
                     case "BARRIER":
                         registy.function.BARRIERState = "TRUE";
                         registy.function.BARRIERKey = txtPassUnlock.Text;
