@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using Guna.UI2.WinForms;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,32 +10,12 @@ namespace TRUCK_STD.Function
 {
     class Func_Report
     {
-        //public static string rtp_ordernumber { get; set; }
-        //public static string rtp_station { get; set; }
-        //public static string rtp_HeadCompany { get; set; }
-        //public static string rtp_HeadAddress { get; set; }
-        //public static string rtp_HeadPhone { get; set; }
-        //public static string rtp_customer { get; set; }
-        //public static string rtp_product { get; set; }
-        //public static string rtp_dateIn { get; set; }
-        //public static string rtp_dateOut { get; set; }
-        //public static string rtp_timeIn { get; set; }
-        //public static string rtp_timeOut { get; set; }
-        //public static string rtp_carnumber { get; set; }
-        //public static string rtp_wghIn { get; set; }
-        //public static string rtp_wghOut { get; set; }
-        //public static string rtp_wghNet { get; set; }
-        //public static string rtp_gross { get; set; }
-        //public static string rtp_price { get; set; }
-        //public static string rtp_priceNet { get; set; }
 
-        //// Prop Image LPR
-        //public static string pictureIn { get; set; }
-        //public static string pictureOut { get; set; }
-        //public static string piclicenseIn { get; set; }
-        //public static string piclicenseOut { get; set; }
+        public static string ERR { get; set; }
+        public static ReportViewer ReportViewer { get; set; }
+        public static string id { get; set; }
 
-
+        static Guna2MessageDialog msg = new Guna2MessageDialog();
         static List<string> licensePicture = new List<string>();
         static List<string> pictureFront = new List<string>();
         static List<string> pictureBack = new List<string>();
@@ -65,126 +46,252 @@ namespace TRUCK_STD.Function
         static double huminityNet = 0;
         static double impurityNet = 0;
 
+        /// <summary>
+        /// กำหนดค่า localreport ให้กับ report
+        /// </summary>
+        /// <param name="localReportName"></param>
+        /// <returns></returns>
+        static bool SetLocalReport(string localReportName)
+        {
+            ReportViewer.LocalReport.ReportEmbeddedResource = localReportName;
+            // ดึงข้อมูลจาก tbWeightDetail
+            if (!jobDetail.selectOrderDetail(id))
+            {
+                return false;
+            }
+            // ดึงข้อมูลท่ี่ได้จากการหาฐานข้อมูลมาเก็บที่ตัวแปร
+            if (!GetDataFormDatabase())
+            {
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// สำหรับดึงข้อมูลจากฐานข้อมูลมาเก็บไว้ที่ ตัวแปล
+        /// </summary>
+        /// <param name="reportViewer"></param>
+        /// <returns></returns>
+        static bool GetDataFormDatabase()
+        {
+            try
+            {
+                // clear ข้อมูลเก่า
+                dates.Clear();
+                Times.Clear();
+                weigth.Clear();
+                // ลูปดึงข้อมูลมาเก็บที่โปรแกรม
+                foreach (DataRow rw in jobDetail.tb.Rows)
+                {
+                    // Main data
+                    jobOrder = rw["jobOrder"].ToString();
+                    licenseHead = rw["licenseHead"].ToString();
+                    licenseTail = rw["licenseTail"].ToString();
+                    customerName = rw["customerName"].ToString();
+                    productName = rw["productName"].ToString();
+                    productPrice = double.Parse(rw["productPrice"].ToString());
+                    netWeight = double.Parse(rw["netWeight"].ToString());
+                    powderPercent = double.Parse(rw["powderPercent"].ToString());
+                    huminityPercent = double.Parse(rw["huminityPercent"].ToString());
+                    impurityPercent = double.Parse(rw["impurityPercent"].ToString());
+                    priceNet = double.Parse(rw["priceNet"].ToString());
+                    priceOther = rw["priceOther"].ToString();
+
+                    // Sub data
+                    DateTime dateTime = DateTime.Parse(rw["dateTimes"].ToString());
+                    dates.Add(dateTime.ToString("dd-MM-yyyy", System.Globalization.CultureInfo.CreateSpecificCulture("TH-th")));
+                    Times.Add(dateTime.ToString("HH:mm:ss", System.Globalization.CultureInfo.CreateSpecificCulture("TH-th")));
+                    weigth.Add(rw["weight"].ToString());
+                }
+
+                carNumber = $"{licenseHead}/{licenseTail}";
+                // กำหนดค่า qr code
+                qrCode = Func_GenQrCode.GenerateQRCode($"{licenseHead}|{licenseHead}|{licenseHead}|{licenseHead}");
+                // กำหนดค่า data set
+                DataSet1 dataSet1 = new DataSet1();
+                dataSet1.Tables["tbWeight"].Rows.Add(jobOrder, carNumber, productName, customerName, netWeight, qrCode, huminityPercent, impurityPercent, powderPercent);
+                if (!DefineParameterOnReport("tbWeight", dataSet1))
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ERR = ex.Message;
+                return false;
+            }
+
+            return true;
+        }
+        /// <summary>
+        /// สำหรับกำหนดค่าให้กับ parameter ของ report
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="dataSet"></param>
+        /// <param name="reportViewer"></param>
+        /// <returns></returns>
+        static bool DefineParameterOnReport(string table, DataSet dataSet)
+        {
+            try
+            {
+                ReportParameter rptCarnumber = new ReportParameter("rtpHeadCompany", registy.tickets.company);
+                ReportParameter rptDateIn = new ReportParameter("rtpHeadPhone", registy.tickets.address);
+                ReportParameter rptTimeIn = new ReportParameter("rtpHeadAddress", registy.tickets.phone);
+                ReportParameter rptDateOut = new ReportParameter("rtpDateIn", dates[0]);
+                ReportParameter rptTimeOut = new ReportParameter("rtpDateOut", dates[1]);
+                ReportParameter rptWghIn = new ReportParameter("rtpTimeIn", Times[0]);
+                ReportParameter rptwghOut = new ReportParameter("rtpTimeOut", Times[1]);
+                ReportParameter rptOrdernumber = new ReportParameter("rtpWeightIn", weigth[0]);
+                ReportParameter rptGross = new ReportParameter("rtpWeightOut", weigth[1]);
+
+                ReportViewer.LocalReport.SetParameters(new ReportParameter[] {
+                    rptCarnumber,rptDateIn,rptTimeIn,rptDateOut,rptTimeOut,
+                    rptWghIn, rptwghOut, rptOrdernumber, rptGross});
+
+                ReportViewer.LocalReport.DataSources.Clear();
+                ReportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", dataSet.Tables[table]));
+
+                ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
+                // ReportViewer.PageSetupDialog();
+                ReportViewer.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                ERR = ex.Message;
+                return false;
+            }
+            return true;
+        }
+
+
+
         public static void ReportLPR(ReportViewer reportViewer1)
         {
             reportViewer1.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptLPR.rdlc";
             //DefineParameter("LPR", reportViewer1);
         }
 
-        static void DefineParameterOnReport(string table, DataSet dataSet, ReportViewer reportViewer)
+
+
+        /// <summary>
+        /// สำหรับปร้ินข้อมูลตามสถานะการชั่ง Success,Process
+        /// </summary>
+        /// <returns></returns>
+        public static bool ReportAllData(string state)
         {
-            ReportParameter rptCarnumber = new ReportParameter("rtpHeadCompany", registy.tickets.company);
-            ReportParameter rptDateIn = new ReportParameter("rtpHeadPhone", registy.tickets.address);
-            ReportParameter rptTimeIn = new ReportParameter("rtpHeadAddress", registy.tickets.phone);
-            ReportParameter rptDateOut = new ReportParameter("rtpDateIn", dates[0]);
-            ReportParameter rptTimeOut = new ReportParameter("rtpDateOut", dates[1]);
-            ReportParameter rptWghIn = new ReportParameter("rtpTimeIn", Times[0]);
-            ReportParameter rptwghOut = new ReportParameter("rtpTimeOut", Times[1]);
-            ReportParameter rptOrdernumber = new ReportParameter("rtpWeightIn", weigth[0]);
-            ReportParameter rptGross = new ReportParameter("rtpWeightOut", weigth[1]);
+            try
+            {
+                ReportViewer.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptAllreport.rdlc";
 
-            reportViewer.LocalReport.SetParameters(new ReportParameter[] {
-                    rptCarnumber,rptDateIn,rptTimeIn,rptDateOut,rptTimeOut,
-                    rptWghIn, rptwghOut, rptOrdernumber, rptGross});
+                if (jobDetail.selectOrderMakeReport(state))
+                {
+                    DataSet1 dataSet = new DataSet1();
 
-            reportViewer.LocalReport.DataSources.Clear();
-            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", dataSet.Tables[table]));
+                    int rows = 1;
+                    foreach (DataRow rw in jobDetail.tb.Rows)
+                    {
+                        string _jobOrder = rw["jobOrder"].ToString();
+                        string _licenseHead = rw["licenseHead"].ToString();
+                        string _licenseTail = rw["licenseTail"].ToString();
+                        string _customerName = rw["customerName"].ToString();
+                        string _productName = rw["productName"].ToString();
+                        string _dateTime = rw["dateTimes"].ToString();
+                        string _weightType = rw["weightType"].ToString();
+                        string _weight = rw["weight"].ToString();
+                        string _netWeight = rw["netWeight"].ToString();
+                        string[] dates = _dateTime.Split(' ');
+                        switch (rows)
+                        {
+                            case 1:
+                                dataSet.Tables["tbWeightReport"].Rows.Add(_jobOrder, $"{_licenseHead}", _licenseTail, _customerName, _productName, _netWeight);
+                                dataSet.Tables["tbWeightReport"].Rows.Add("", "", "", _weightType, _dateTime, _weight);
+                                rows = 2;
+                                break;
+                            case 2:
+                                dataSet.Tables["tbWeightReport"].Rows.Add("", "", "", _weightType, _dateTime, _weight);
+                                rows = 1;
+                                break;
 
-            reportViewer.SetDisplayMode(DisplayMode.PrintLayout);
-            reportViewer.PageSetupDialog();
-            reportViewer.RefreshReport();
+                        }
+                    }
+
+                    ReportViewer.LocalReport.DataSources.Clear();
+                    ReportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", dataSet.Tables["tbWeightReport"]));
+
+                    ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
+                    //ReportViewer.PageSetupDialog();
+                    ReportViewer.RefreshReport();
+                }
+                else
+                {
+                    ERR = jobDetail.ERR;
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ERR = ex.Message;
+                return false;
+            }
+            return true;
+
         }
 
-        static void GetDataFormDatabase()
+        /// <summary>
+        /// รายงานสำหรับประเภทธุระกิจทั่วไป
+        /// </summary>
+        /// <param name="reportViewer"></param>
+        /// <param name="id"></param>
+        public static bool ReportManual()
         {
-            foreach (DataRow rw in job.tb.Rows)
+            if (!SetLocalReport("TRUCK_STD.Report.rptNomal.rdlc"))
             {
-                // Main data
-                jobOrder = rw["jobOrder"].ToString();
-                licenseHead = rw["licenseHead"].ToString();
-                licenseTail = rw["licenseTail"].ToString();
-                customerName = rw["customerName"].ToString();
-                productName = rw["productName"].ToString();
-                productPrice = double.Parse(rw["productPrice"].ToString());
-                netWeight = double.Parse(rw["netWeight"].ToString());
-                powderPercent = double.Parse(rw["powderPercent"].ToString());
-                huminityPercent = double.Parse(rw["huminityPercent"].ToString());
-                impurityPercent = double.Parse(rw["impurityPercent"].ToString());
-                priceNet = double.Parse(rw["priceNet"].ToString());
-                priceOther = rw["priceOther"].ToString();
-
-                // Sub data
-                DateTime dateTime = DateTime.Parse(rw["dateTimes"].ToString());
-                dates.Add(dateTime.ToString("dd-MM-yyyy", System.Globalization.CultureInfo.CreateSpecificCulture("TH-th")));
-                Times.Add(dateTime.ToString("HH:mm:ss", System.Globalization.CultureInfo.CreateSpecificCulture("TH-th")));
-                weigth.Add(rw["weight"].ToString());
+                return false;
             }
+            return true;
         }
 
-        public static void ReportManual(ReportViewer reportViewer, int id)
+        /// <summary>
+        /// รายงานสำหรับประเภทธุระกิจหัวมันสด
+        /// </summary>
+        /// <param name="reportViewer1"></param>
+        /// <param name="id"></param>
+        public static bool ReportCassava()
         {
-            reportViewer.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptNoMoney.rdlc";
-
-            DataSet1 dataSet1 = new DataSet1();
-
-            if (job.SelectId(id))
+            if (!SetLocalReport("TRUCK_STD.Report.rptCassava.rdlc"))
             {
-                GetDataFormDatabase();
-                carNumber = $"{licenseHead}/{licenseTail}";
-                qrCode = Func_GenQrCode.GenerateQRCode($"{licenseHead}|{licenseHead}|{licenseHead}|{licenseHead}");
-
-                //dataSet1.Tables["tbimg"].Rows.Add(jobOrder, carNumber, powderPercent, productName, customerName, netWeight, qrCode);
-                dataSet1.Tables["tbWeight"].Rows.Add(jobOrder, carNumber, productName, customerName, netWeight, qrCode, huminityPercent, impurityPercent, powderPercent);
-
-                DefineParameterOnReport("tbWeight", dataSet1, reportViewer);
-
+                return false;
             }
+            return true;
         }
 
-        public static void ReportCassava(ReportViewer reportViewer1, int id)
+
+        /// <summary>
+        /// รายงานสำหรับประเภทธุระกิจข้าวเปลือก
+        /// </summary>
+        /// <param name="reportViewer1"></param>
+        /// <param name="id"></param>
+        public static bool ReportPaddy()
         {
-            reportViewer1.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptCassava.rdlc";
-
-            DataSet1 dataSet1 = new DataSet1();
-
-            if (job.SelectId(id))
+            if (!SetLocalReport("TRUCK_STD.Report.rptPaddy.rdlc"))
             {
-                GetDataFormDatabase();
-                carNumber = $"{licenseHead}/{licenseTail}";
-                qrCode = Func_GenQrCode.GenerateQRCode($"{licenseHead}|{licenseHead}|{licenseHead}|{licenseHead}");
-
-                dataSet1.Tables["tbWeight"].Rows.Add(jobOrder, carNumber, powderPercent, productName, customerName, netWeight, qrCode);
-
-                DefineParameterOnReport("tbWeight", dataSet1, reportViewer1);
+                return false;
             }
+            return true;
         }
 
-        public static void ReportPaddy(ReportViewer reportViewer1, int id)
+
+        /// <summary>
+        /// รายงานสำหรับประเภทธุระกิจข้าวโพดเลี้ยงสัตว์
+        /// </summary>
+        /// <param name="reportViewer1"></param>
+        /// <param name="id"></param>
+        public static bool ReportCorn()
         {
-            reportViewer1.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptPaddy.rdlc";
-            DataSet1 dataSet1 = new DataSet1();
-
-            if (job.SelectId(id))
+            if (!SetLocalReport("TRUCK_STD.Report.rptCorn.rdlc"))
             {
-                GetDataFormDatabase();
-                qrCode = Func_GenQrCode.GenerateQRCode($"{licenseHead}|{licenseHead}|{licenseHead}|{licenseHead}");
-                dataSet1.Tables["tbWeight"].Rows.Add(jobOrder, carNumber, productName, customerName, netWeight, qrCode, huminityPercent, impurityPercent);
-                DefineParameterOnReport("tbWeight", dataSet1, reportViewer1);
+                return false;
             }
-        }
-
-        public static void ReportCorn(ReportViewer reportViewer1, int id)
-        {
-            reportViewer1.LocalReport.ReportEmbeddedResource = "TRUCK_STD.Report.rptCorn.rdlc";
-            DataSet1 dataSet1 = new DataSet1();
-
-            if (job.SelectId(id))
-            {
-                carNumber = $"{licenseHead}/{licenseTail}";
-                qrCode = Func_GenQrCode.GenerateQRCode($"{licenseHead}|{licenseHead}|{licenseHead}|{licenseHead}");
-                dataSet1.Tables["tbWeight"].Rows.Add(jobOrder, carNumber, productName, customerName, netWeight, qrCode, huminityPercent);
-                DefineParameterOnReport("tbWeight", dataSet1, reportViewer1);
-            }
+            return true;
         }
     }
 }
