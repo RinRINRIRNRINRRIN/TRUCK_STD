@@ -360,8 +360,37 @@ namespace TRUCK_STD.Design
         }
         private void saScale_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
-            string a = saScale.ReadLine();
-            string wgh = a.Substring(1, 8).Trim();
+            string wgh = scales.RS232_DataReceived(sender);
+            scales.isConnect = true;
+            switch (wgh)
+            {
+                case "NOT FORMAT":
+                    BeginInvoke(new MethodInvoker(delegate ()
+                    {
+                        label12.Text = "";
+                        label12.Visible = true;
+                    }));
+                    break;
+                case "ERROR":
+                    BeginInvoke(new MethodInvoker(delegate ()
+                    {
+                        label12.Text = "สัญญาณที่มาไม่ตรงกับน้ำหนักที่เลือก";
+                        label12.Visible = true;
+                    }));
+                    break;
+
+                default:
+                    // เช็คน้ำหนักว่าเกินพิกัดสูงสุดหรือไม่
+                    if (int.Parse(wgh) > scales.SCALE_CAPACITY)
+                    {
+                        BeginInvoke(new MethodInvoker(delegate ()
+                        {
+                            lblWeight.Text = "ERROR";
+                            label12.Text = "น้ำหนักเกินกว่าพิกัดกำหนด";
+                            label12.Visible = true;
+                        }));
+                        return;
+                    }
             newWeight = double.Parse(wgh);
 
             if (newWeight == 0)
