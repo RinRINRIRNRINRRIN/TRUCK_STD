@@ -648,5 +648,22 @@ namespace TRUCK_STD.Design
             frmReport.reportType = "Cassava";
             frmReport.ShowDialog();
         }
+        private void tmCheckScale_Tick(object sender, EventArgs e)
+        {
+            if (!scales.isConnect)
+            {
+                label12.Visible = true;
+                label12.Text = "ไม่สามารถเชื่อมต่อเครื่องชั่ง";
+                lblWeight.Text = "ERROR";
+                lblWeight.ForeColor = Color.Red;
+                scales.isConnect = false;
+            }
+            else
+            {
+                //label12.Visible = false;
+                scales.isConnect = false;
+            }
+
+        }
     }
 }
