@@ -75,6 +75,13 @@ namespace TRUCK_STD.Design
                             }
                             break;
                         case "ข้าวโพดเลี้ยงสัตว์":
+                            if (txtHumidity.Text == "0" || txtHumidity.Text == "")
+                            {
+                                msgD.Icon = MessageDialogIcon.Warning;
+                                msgD.Buttons = MessageDialogButtons.OK;
+                                msgD.Show("Please fill in the percent contaminants or percent huminity or others price information before saving", "Fill in information before saving");
+                                return false;
+                            }
                             break;
                     }
                     break;
