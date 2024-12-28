@@ -17,7 +17,7 @@ namespace TRUCK_STD.Functions
         string keyId = "MRQD8";
 
         // ข้อมูลที่ต้องการเข้ารหัส
-        string content = "กข1234 31/10/24 09:41:50 36,560kg 31/10/24 09:55:10 16,000kg";
+        public static string content = "กข1234 31/10/24 09:41:50 36,560kg 31/10/24 09:55:10 16,000kg";
 
         // Public Key
         string _publicKey = @"
@@ -25,7 +25,7 @@ namespace TRUCK_STD.Functions
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJfwamBzJ25StkJEt8mnWwNB8z
 F5/iLrPe/Lg6ZYlFjf0jqfnvXA2z5cuJ02vFIGu5Kp1VDyBGDq0J5RCRqm7VPZlc
 Fb7HyUBIRAvo0jcBvplofQPn+oaSCnmQ4rPUpVJWWlxKqdYSIhqk50GkgeX7zWm0
-aQnj0OsFs3Siw4gt+QIDAQAB
+aQnj0OsFs3Siw4gt+QIDAQAB 
 -----END PUBLIC KEY-----";
 
 
@@ -44,6 +44,7 @@ aQnj0OsFs3Siw4gt+QIDAQAB
 
             return GenerateQRCode(finalUrl);
         }
+
 
         public string GetUrlPublicKey()
         {
