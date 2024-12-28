@@ -379,9 +379,8 @@ namespace TRUCK_STD.Design
         {
             string[] cusSplit = cbbCustomer.Text.Split('|');
             string[] proSplit = cbbProduct.Text.Split('|');
-            string customerId = customer.SelectChar(cusSplit[1].Trim());
-            string productId = product.SelectChar(proSplit[1].Trim());
-            if (job.AddNewOrder(lblLicense.Text, txtLicenseTail.Text, customerId, productId, txtPriceProduct.Text, lblWeight.Text, picturePlate, picture, "-"))
+
+            if (job.AddNewOrder(lblLicense.Text, txtLicenseTail.Text, cusSplit[1].Trim(), proSplit[1].Trim(), txtPriceProduct.Text, lblWeight.Text, picturePlate, picture, "-"))
             {
                 // แสดงข้อมูลว่าบันทึกสำเร็จ
                 msg.Show(this, "Save to data success", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
@@ -404,7 +403,7 @@ namespace TRUCK_STD.Design
                 }
             }
 
-            if (jobDetail.InsertNewOrderdetail(int.Parse(id), "ชั่งออก", int.Parse(lblWeight.Text), picturePlate, picture, "-"))
+            if (jobDetail.InsertNewOrderdetail(id, "ชั่งออก", int.Parse(lblWeight.Text), picturePlate, picture, "-"))
             {
                 // เครีย์
                 ClearFormToReady();
@@ -683,7 +682,7 @@ namespace TRUCK_STD.Design
                         DialogResult reult = msgD.Show("Do you want to canncel?", "Cancel");
                         if (reult == DialogResult.Yes)
                         {
-                            if (job.deleteOrdet(int.Parse(id)))
+                            if (job.deleteOrdet(id))
                             {
                                 id = "";
                                 ShowData();
