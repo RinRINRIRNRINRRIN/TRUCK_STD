@@ -1,10 +1,8 @@
 ﻿using Serilog;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace TRUCK_STD.Functions
 {
@@ -23,8 +21,13 @@ namespace TRUCK_STD.Functions
         {
             get { return registy.scale.scaleBaudrate; }
         }
-        public static string ERR { get; set; }
+        public static int SCALE_CAPACITY
+        {
+            get { return registy.scale.scalecapacity; }
+        }
 
+        public static bool isConnect { get; set; } = false;
+        public static string ERR { get; set; }
 
 
         public static string GetScaleName()
@@ -72,9 +75,10 @@ namespace TRUCK_STD.Functions
                 sa.Close();
             }
         }
-        public static void RS232_DataReceived(object sender, Label label)
+        public static string RS232_DataReceived(object sender)
         {
-            string value = "";
+            // ตั้งค่าให้มันคนละ FORMAT
+            string value = "NOT FORMAT";
             try
             {
                 SerialPort serialPort1 = sender as SerialPort;
@@ -131,6 +135,20 @@ namespace TRUCK_STD.Functions
                             }
                         }
                         break;
+                    case "RickLake 720i":
+                        string lll = serialPort1.ReadLine();
+                        if (lll.Length == 13)
+                        {
+                            if (lll.Contains('-'))
+                            {
+                                value = "-" + lll.Substring(2, 7).Trim();
+                            }
+                            else
+                            {
+                                value = lll.Substring(1, 8).Trim();
+                            }
+                        }
+                        break;
                     case "Leon Engineer LD5204-06":
                         string c = serialPort1.ReadExisting();
                         string[] cc = c.Split('\r');
@@ -169,7 +187,7 @@ namespace TRUCK_STD.Functions
                             value = Convert.ToString(fff);
                         }
                         break;
-                    case "3590 TRUCKSCALE":
+                    case "Dini Argeo 3590ETD":
                         string h = serialPort1.ReadLine();
                         string[] hh = h.Split(',');
 
@@ -210,21 +228,25 @@ namespace TRUCK_STD.Functions
                         break;
                 }
                 // ส่งค่าที่รับมากลับไป
-                label.BeginInvoke(new MethodInvoker(delegate ()
-                {
-                    if (value != "")
-                    {
+                //label.BeginInvoke(new MethodInvoker(delegate ()
+                //{
+                //    if (value != "")
+                //    {
 
-                        double DD = double.Parse(value);
-                        label.ForeColor = Color.Green;
-                        label.Text = Convert.ToString(DD);
-                    }
-                }));
+                //        double DD = double.Parse(value);
+                //        label.ForeColor = Color.Green;
+                //        label.Text = Convert.ToString(DD);
+                //    }
+                //}));
             }
             catch (Exception ex)
             {
                 Log.Error("FuncMain RS232 Received " + ex.Message);
+
+                return "ERROR";
             }
+
+            return value;
 
         }
     }
