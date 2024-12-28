@@ -14,7 +14,7 @@ namespace TRUCK_STD
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmSettingEnvironment());
-            //Application.Run(new frmNewWeight());
+            //Application.Run(new frmTest());
 
         }
     }

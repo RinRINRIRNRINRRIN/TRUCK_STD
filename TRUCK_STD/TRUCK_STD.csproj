@@ -396,6 +396,30 @@
     <Compile Include="Design\frmCCTV_TEST.Designer.cs">
       <DependentUpon>frmCCTV_TEST.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\frmHireLPR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmHireLPR.Designer.cs">
+      <DependentUpon>frmHireLPR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmHireNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmHireNormal.Designer.cs">
+      <DependentUpon>frmHireNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmHireRFID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmHireRFID.Designer.cs">
+      <DependentUpon>frmHireRFID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmHistoryLPR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmHistoryLPR.Designer.cs">
+      <DependentUpon>frmHistoryLPR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\frmInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -408,11 +432,11 @@
     <Compile Include="Design\frmLPR.Designer.cs">
       <DependentUpon>frmLPR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\frmNewWeight.cs">
+    <Compile Include="Design\frmWeightLPR_CCTV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Design\frmNewWeight.Designer.cs">
-      <DependentUpon>frmNewWeight.cs</DependentUpon>
+    <Compile Include="Design\frmWeightLPR_CCTV.Designer.cs">
+      <DependentUpon>frmWeightLPR_CCTV.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\frmRegisterLPR.cs">
       <SubType>Form</SubType>
@@ -455,12 +479,6 @@
     </Compile>
     <Compile Include="Design\frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Design\frmWeightHire.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Design\frmWeightHire.Designer.cs">
-      <DependentUpon>frmWeightHire.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\frmProduct.cs">
       <SubType>Form</SubType>
@@ -534,17 +552,17 @@
     <Compile Include="Design\frmVersionInfo.Designer.cs">
       <DependentUpon>frmVersionInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\frmWeightingPrice.cs">
+    <Compile Include="Design\frmWeightNormal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Design\frmWeightingPrice.Designer.cs">
-      <DependentUpon>frmWeightingPrice.cs</DependentUpon>
+    <Compile Include="Design\frmWeightNormal.Designer.cs">
+      <DependentUpon>frmWeightNormal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\frmWeightingNoPrice.cs">
+    <Compile Include="Design\frmWeightRFID.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Design\frmWeightingNoPrice.Designer.cs">
-      <DependentUpon>frmWeightingNoPrice.cs</DependentUpon>
+    <Compile Include="Design\frmWeightRFID.Designer.cs">
+      <DependentUpon>frmWeightRFID.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTest.cs">
       <SubType>Form</SubType>
@@ -555,14 +573,14 @@
     <Compile Include="Functions\barrier.cs" />
     <Compile Include="Functions\CCTV.cs" />
     <Compile Include="Functions\drives.cs" />
-    <Compile Include="Functions\lineNotify.cs" />
     <Compile Include="Functions\LRP.cs" />
     <Compile Include="Functions\md5.cs" />
-    <Compile Include="Functions\plc.cs" />
+    <Compile Include="Functions\publicKey.cs" />
     <Compile Include="Functions\registy.cs" />
     <Compile Include="Functions\rfid.cs" />
     <Compile Include="Functions\scales.cs" />
     <Compile Include="Functions\smartCard.cs" />
+    <Compile Include="Functions\systems.cs" />
     <Compile Include="Function\Func_API.cs" />
     <Compile Include="Function\Func_Database.cs" />
     <Compile Include="Function\Func_GenQrCode.cs" />
@@ -582,13 +600,6 @@
     <Compile Include="Models\menuModels.cs" />
     <Compile Include="Models\privilageModels.cs" />
     <Compile Include="Models\productModel.cs" />
-    <Compile Include="MSACCESSCommand\tbCOMPANY.cs" />
-    <Compile Include="MSACCESSCommand\tbEMPLOYEE.cs" />
-    <Compile Include="MSACCESSCommand\tbHireWeight.cs" />
-    <Compile Include="MSACCESSCommand\tbID_FI.cs" />
-    <Compile Include="MSACCESSCommand\tbPRIVIVRAGE.cs" />
-    <Compile Include="MSACCESSCommand\tbTYPE.cs" />
-    <Compile Include="MSACCESSCommand\tbWGH.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\lpr.cs" />
@@ -621,14 +632,26 @@
     <EmbeddedResource Include="Design\frmCCTV_TEST.resx">
       <DependentUpon>frmCCTV_TEST.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmHireLPR.resx">
+      <DependentUpon>frmHireLPR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmHireNormal.resx">
+      <DependentUpon>frmHireNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmHireRFID.resx">
+      <DependentUpon>frmHireRFID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmHistoryLPR.resx">
+      <DependentUpon>frmHistoryLPR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\frmInformation.resx">
       <DependentUpon>frmInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\frmLPR.resx">
       <DependentUpon>frmLPR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\frmNewWeight.resx">
-      <DependentUpon>frmNewWeight.cs</DependentUpon>
+    <EmbeddedResource Include="Design\frmWeightLPR_CCTV.resx">
+      <DependentUpon>frmWeightLPR_CCTV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\frmRegisterLPR.resx">
       <DependentUpon>frmRegisterLPR.cs</DependentUpon>
@@ -650,9 +673,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Design\frmWeightHire.resx">
-      <DependentUpon>frmWeightHire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
@@ -690,11 +710,11 @@
     <EmbeddedResource Include="Design\frmVersionInfo.resx">
       <DependentUpon>frmVersionInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\frmWeightingPrice.resx">
-      <DependentUpon>frmWeightingPrice.cs</DependentUpon>
+    <EmbeddedResource Include="Design\frmWeightNormal.resx">
+      <DependentUpon>frmWeightNormal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\frmWeightingNoPrice.resx">
-      <DependentUpon>frmWeightingNoPrice.cs</DependentUpon>
+    <EmbeddedResource Include="Design\frmWeightRFID.resx">
+      <DependentUpon>frmWeightRFID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTest.resx">
       <DependentUpon>frmTest.cs</DependentUpon>
@@ -709,12 +729,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report\rptAllHireWGH.rdlc" />
     <EmbeddedResource Include="Report\rptAllreport.rdlc" />
     <EmbeddedResource Include="Report\rptCarWait.rdlc" />
-    <EmbeddedResource Include="Report\rptHaveMoney.rdlc" />
-    <EmbeddedResource Include="Report\rptHireWeigh.rdlc" />
-    <EmbeddedResource Include="Report\rptNoMoney.rdlc" />
+    <EmbeddedResource Include="Report\rptCassava.rdlc" />
+    <EmbeddedResource Include="Report\rptCorn.rdlc" />
+    <EmbeddedResource Include="Report\rptLPR.rdlc" />
+    <EmbeddedResource Include="Report\rptNomal.rdlc" />
+    <EmbeddedResource Include="Report\rptPaddy.rdlc" />
     <EmbeddedResource Include="UControls\ucCCTV.resx">
       <DependentUpon>ucCCTV.cs</DependentUpon>
     </EmbeddedResource>
