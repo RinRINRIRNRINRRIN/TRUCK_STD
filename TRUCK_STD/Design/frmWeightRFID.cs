@@ -53,5 +53,10 @@ namespace TRUCK_STD.Design
                     break;
             }
         }
+
+        private void frmWeightRFID_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
