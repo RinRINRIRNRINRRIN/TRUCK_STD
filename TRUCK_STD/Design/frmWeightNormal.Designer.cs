@@ -94,6 +94,8 @@
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             this.tmCheckWeight = new System.Windows.Forms.Timer(this.components);
             this.lblScaleName = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tmCheckScale = new System.Windows.Forms.Timer(this.components);
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.pnText.SuspendLayout();
@@ -995,12 +997,30 @@
             this.lblScaleName.TabIndex = 25;
             this.lblScaleName.Text = "เครื่องชั่ง";
             // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Athiti Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(10, 176);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(799, 33);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "ไม่สามารถเชื่อมต่อเครื่องชั่งได้";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tmCheckScale
+            // 
+            this.tmCheckScale.Interval = 1000;
+            this.tmCheckScale.Tick += new System.EventHandler(this.tmCheckScale_Tick);
+            // 
             // frmWeightNormal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1445, 740);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.lblScaleName);
             this.Controls.Add(this.pnText);
             this.Controls.Add(this.guna2GroupBox2);
@@ -1071,6 +1091,13 @@
         private Guna.UI2.WinForms.Guna2TextBox txtLicenseTail;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox txtLicenseHead;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel pnMainInformation;
+        private System.Windows.Forms.Label lblWeightIn;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Timer tmCheckScale;
         private System.Windows.Forms.DataGridViewImageColumn cl_del;
         private System.Windows.Forms.DataGridViewImageColumn cl_print;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_customerId;
@@ -1091,10 +1118,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_licenseHead;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_licenseTail;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_weightIn;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel pnMainInformation;
-        private System.Windows.Forms.Label lblWeightIn;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
     }
 }

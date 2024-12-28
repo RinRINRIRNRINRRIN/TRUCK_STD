@@ -18,6 +18,7 @@ namespace TRUCK_STD.Design
 
             dgvdata.DefaultCellStyle.ForeColor = Color.Black;
         }
+
         private double lastWeight = 0;
         private double newWeight = 0;
         private string id = "";
@@ -119,10 +120,10 @@ namespace TRUCK_STD.Design
                     string licenseTail = rw["licenseTail"].ToString();
                     string weight = rw["weight"].ToString();
                     string note = rw["note"].ToString();
-                    string customerId = rw["customerId1"].ToString();
-                    string customerName = rw["customerName"].ToString();
-                    string productId = rw["productId1"].ToString();
-                    string productName = rw["productName"].ToString();
+                    string customerId = rw["customerId"].ToString();
+                    string customerName = rw["customerName1"].ToString();
+                    string productId = rw["productId"].ToString();
+                    string productName = rw["productName1"].ToString();
                     string productPrice = rw["productPrice"].ToString();
                     tb.Rows.Add(id, job, licenseHead, licenseTail, weight, note, customerId, customerName, productId, productName, productPrice);
                 }
@@ -174,14 +175,13 @@ namespace TRUCK_STD.Design
             {
                 txt.Clear();
             }
-            lblScaleName.Text = "";
             txtOther.Clear();
             cbbCustomer.Items.Clear();
             cbbProduct.Items.Clear();
             id = "";
             lblWeightIn.Text = "--";
             lblWeightIn.Visible = false;
-
+            pnMainInformation.Enabled = true;
             // Clear percent text
             txtPowder.Text = "0";
             txtHumidity.Text = "0";
@@ -206,9 +206,7 @@ namespace TRUCK_STD.Design
         {
             string[] cusSplit = cbbCustomer.Text.Split('|');
             string[] proSplit = cbbProduct.Text.Split('|');
-            string customerId = customer.SelectChar(cusSplit[1].Trim());
-            string productId = product.SelectChar(proSplit[1].Trim());
-            if (job.AddNewOrder(txtLicenseHead.Text, txtLicenseTail.Text, customerId, productId, lblWeight.Text, txtPriceProduct.Text))
+            if (job.AddNewOrder(txtLicenseHead.Text, txtLicenseTail.Text, cusSplit[1].Trim(), proSplit[1].Trim(), lblWeight.Text, txtPriceProduct.Text))
             {
                 // แสดงข้อมูลว่าบันทึกสำเร็จ 
                 msgD.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
@@ -222,13 +220,14 @@ namespace TRUCK_STD.Design
                 // เครีย์ 
                 ClearFormToReady();
                 ShowData();
-                await Task.Delay(1000);
+                await OpenBarrier();
             }
             else
             {
                 msgD.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
                 msgD.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
                 msgD.Show("Incorrent to save first weight \n" + job.ERR, "Error first weight.");
+            }
         }
         /// <summary>
         /// ชั่งออก
@@ -236,7 +235,8 @@ namespace TRUCK_STD.Design
         /// <returns></returns>
         async Task<bool> AddWeightOut()
         {
-            if (job.SelectId(int.Parse(id)))
+            //if (job.SelectId(int.Parse(id)))
+            if (jobDetail.selectOrderDetail(id))
             {
                 // คำนวนราคารวม
                 double productPrice = double.Parse(txtPriceProduct.Text);
@@ -265,7 +265,7 @@ namespace TRUCK_STD.Design
                     weightNet = weightOut - weightIn;
                 }
 
-                jobDetail.InsertNewOrderdetail(int.Parse(id), "ชั่งออก", weightOut);
+                jobDetail.InsertNewOrderdetail(id, "ชั่งออก", weightOut, "", "", "");
 
 
                 // Print()
@@ -283,19 +283,17 @@ namespace TRUCK_STD.Design
                         break;
                     case "หัวมันสด":
                         frmReport.reportType = "Cassava";
-
                         break;
                 }
 
-                job.updateStatusWeightOut(int.Parse(id), "Success", weightNet, impurity, huminity, powder, txtOther.Text, priceNet);
+                job.updateStatusWeightOut(id, "Success", weightNet, impurity, huminity, powder, txtOther.Text, priceNet);
                 frmReport.id = id;
                 frmReport.ShowDialog();
             }
 
             // เครีย์
             ClearFormToReady();
-            ShowData();
-            await Task.Delay(1000);
+            await OpenBarrier();
 
             msgD.Icon = MessageDialogIcon.Information;
             msgD.Buttons = MessageDialogButtons.OK;
@@ -321,6 +319,7 @@ namespace TRUCK_STD.Design
                     this.Close();
                     return;
                 }
+                tmCheckScale.Start();
             }
             else
             {
@@ -391,35 +390,40 @@ namespace TRUCK_STD.Design
                         }));
                         return;
                     }
-            newWeight = double.Parse(wgh);
+                    newWeight = double.Parse(wgh);
+                    BeginInvoke(new MethodInvoker(delegate ()
+                    {
+                        label12.Visible = false;
+                    }));
+                    if (newWeight == 0)
+                    {
+                        BeginInvoke(new MethodInvoker(delegate ()
+                        {
+                            btnCancelWeight.Enabled = false;
+                            btnSave.Enabled = false;
+                        }));
+                    }
 
-            if (newWeight == 0)
-            {
-                BeginInvoke(new MethodInvoker(delegate ()
-                {
-                    btnCancelWeight.Enabled = false;
-                    btnSave.Enabled = false;
-                }));
+                    // ถ้าน้ำหนักแตกต่างจากน้ำหนักล่าสุด
+                    if (newWeight != lastWeight)
+                    {
+                        lastWeight = newWeight;
+                        BeginInvoke(new MethodInvoker(delegate ()
+                        {
+                            tmCheckWeight.Stop();
+                            tmCheckWeight.Start();
+                            lblWeight.ForeColor = System.Drawing.Color.Red; // เปลี่ยนสี Label เป็นสีแดง
+                            btnSave.Enabled = false;
+                            btnCancelWeight.Enabled = false;
+                        }));
+                    }
+
+                    BeginInvoke(new MethodInvoker(delegate ()
+                    {
+                        lblWeight.Text = wgh;
+                    }));
+                    break;
             }
-
-            // ถ้าน้ำหนักแตกต่างจากน้ำหนักล่าสุด
-            if (newWeight != lastWeight)
-            {
-                lastWeight = newWeight;
-                BeginInvoke(new MethodInvoker(delegate ()
-                {
-                    tmCheckWeight.Stop();
-                    tmCheckWeight.Start();
-                    lblWeight.ForeColor = System.Drawing.Color.Red; // เปลี่ยนสี Label เป็นสีแดง
-                    btnSave.Enabled = false;
-                    btnCancelWeight.Enabled = false;
-                }));
-            }
-
-            BeginInvoke(new MethodInvoker(delegate ()
-            {
-                lblWeight.Text = wgh;
-            }));
         }
         private void tmCheckWeight_Tick(object sender, EventArgs e)
         {
@@ -528,7 +532,6 @@ namespace TRUCK_STD.Design
         {
             msgD.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
             msgD.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
-            msgD.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
 
             DialogResult reult = msgD.Show("Do you want to canncel?", "Cancel");
             if (reult == DialogResult.Yes)
@@ -541,7 +544,7 @@ namespace TRUCK_STD.Design
         {
             try
             {
-                id = dgvdata.Rows[e.RowIndex].Cells["cl_id"].Value.ToString();
+                id = dgvdata.Rows[e.RowIndex].Cells["cl_job"].Value.ToString();
 
                 string names = dgvdata.Columns[e.ColumnIndex].Name.ToString();
                 switch (names)
@@ -552,7 +555,8 @@ namespace TRUCK_STD.Design
                         DialogResult reult = msgD.Show("Do you want to canncel?", "Cancel");
                         if (reult == DialogResult.Yes)
                         {
-                            if (job.deleteOrdet(int.Parse(id)))
+                            // ปรับสถานะเป็น ยกเลิก
+                            if (!job.updateStataWhenDelete(id))
                             {
                                 msgD.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
                                 msgD.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
@@ -562,9 +566,9 @@ namespace TRUCK_STD.Design
                             msgD.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
                             msgD.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
                             msgD.Show($"Delete order success \nJobOrder : {id}", "Error delete");
-                                ClearFormToReady();
-                                ShowData();
-                            }
+                            ClearFormToReady();
+                            ShowData();
+                            id = "";
                         }
                         break;
                     case "cl_print":
@@ -580,6 +584,7 @@ namespace TRUCK_STD.Design
         {
             try
             {
+
                 string licenseHead = dgvdata.Rows[e.RowIndex].Cells["cl_licenseHead"].Value.ToString();
                 string licenseTail = dgvdata.Rows[e.RowIndex].Cells["cl_licenseTail"].Value.ToString();
                 string customerId = dgvdata.Rows[e.RowIndex].Cells["cl_customerId"].Value.ToString();
@@ -591,7 +596,7 @@ namespace TRUCK_STD.Design
 
                 lblWeightIn.Text = $"น้ำหนักชั่งเข้า {weightIn}";
                 lblWeightIn.Visible = true;
-                id = dgvdata.Rows[e.RowIndex].Cells["cl_id"].Value.ToString();
+                id = dgvdata.Rows[e.RowIndex].Cells["cl_job"].Value.ToString();
                 txtLicenseHead.Text = licenseHead;
                 txtLicenseTail.Text = licenseTail;
 
@@ -619,10 +624,10 @@ namespace TRUCK_STD.Design
                         pnHumidity.Enabled = true;
                         break;
                 }
+                pnMainInformation.Enabled = false;
             }
             catch (Exception)
             {
-
             }
         }
         private void frmWeightNormal_FormClosing(object sender, FormClosingEventArgs e)
@@ -633,19 +638,19 @@ namespace TRUCK_STD.Design
         private void cbbProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] proSplit = cbbProduct.Text.Split('|');
-            string productId = product.SelectChar(proSplit[1].Trim());
-            DataTable dataTable = product.SelectId(int.Parse(productId));
+            DataTable dataTable = product.SelectId(proSplit[0].Trim());
             foreach (DataRow rw in dataTable.Rows)
             {
-                txtPriceProduct.Text = rw["price"].ToString();
+                txtPriceProduct.Text = rw["productPrice"].ToString();
+                break;
             }
         }
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             frmReport frmReport = new frmReport();
 
-            frmReport.id = "103";
-            frmReport.reportType = "Cassava";
+            frmReport.id = "dddd241226-004";
+            frmReport.reportType = "Corn";
             frmReport.ShowDialog();
         }
         private void tmCheckScale_Tick(object sender, EventArgs e)
