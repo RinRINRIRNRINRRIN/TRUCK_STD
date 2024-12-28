@@ -13,19 +13,28 @@ namespace TRUCK_STD.Functions
 
         public class function
         {
-            public static string PRICE { get; set; }
             public static string RFIDState { get; set; }
             public static string RFIDKey { get; set; }
             public static string RFID_COM { get; set; }
             public static string RFID_BAUDRATE { get; set; }
+
+
             public static string CAMERAState { get; set; }
             public static string CAMERAKey { get; set; }
+
+
             public static string LPRState { get; set; }
             public static string LPRKey { get; set; }
+
+
             public static string BARRIERState { get; set; }
             public static string BARRIERKey { get; set; }
             public static string BARRIERCOM { get; set; }
             public static string BARRIERBaudrate { get; set; }
+
+            public static string APIState { get; set; }
+            public static string APIKey { get; set; }
+            public static string APIEndpoint { get; set; }
         }
 
         public class db
@@ -58,24 +67,73 @@ namespace TRUCK_STD.Functions
 
         public class system
         {
-
+            /// <summary>
+            /// ประเภทธุรกิจ
+            /// </summary>
             public static string bussinessType { get; set; }
+
+            /// <summary>
+            /// วันที่ปัจจุบันเมื่อเปิดโปรแกรมจะเอาวันที่มาเก็บไว้กันย้อนหลังโปรแกรม
+            /// </summary>
             public static string date { get; set; }
+
+            /// <summary>
+            /// วันหมดอายุโปรแกรมหากโปรแกรมเป็นแบบหมดอายุ
+            /// </summary>
             public static string dateExpire { get; set; }
+
+            /// <summary>
+            /// ประเภทโปรแกรม (ชั่วคราว,ถาวร)
+            /// </summary>
             public static string programType { get; set; }
+
+
+            /// <summary>
+            /// สถานะโปรแกรม (lock,unlock)
+            /// </summary>
             public static string steate { get; set; }
+
+            /// <summary>
+            /// เลขที่โปรแกรม (SM00000000)
+            /// </summary>
             public static string id { get; set; }
+
+
+            /// <summary>
+            /// ประเภทสภานีชั่ง (จุดลงทะเบียน,สถานีชั่ง)
+            /// </summary>
             public static string stationType { get; set; }
+
+            /// <summary>
+            /// ชื่อสถานีชั่งหรือจุดลงทะเบียน 
+            /// </summary>
             public static string stationName { get; set; }
-            public static string token { get; set; }
+
+            /// <summary>
+            /// keyID ที่ได้จาก ชตว
+            /// </summary>
+            public static string keyID { get; set; }
+
+
+            /// <summary>
+            /// Public Key ที่ได้จาก ชตว
+            /// </summary>
+            public static string publicKey { get; set; }
         }
 
         public class scale
         {
-
+            /// <summary>
+            /// ชื่อเครื่องชั่ง
+            /// </summary>
             public static string scaleName { get; set; }
             public static string scalePort { get; set; }
             public static int scaleBaudrate { get; set; }
+
+            /// <summary>
+            /// พิกัดสูงสุดของเครื่อง
+            /// </summary>
+            public static int scalecapacity { get; set; }
         }
 
 
@@ -128,11 +186,13 @@ namespace TRUCK_STD.Functions
                     Patch.SetValue("key_functionCAMERAKey", "");
                     Patch.SetValue("key_functionLPRState", "");
                     Patch.SetValue("key_functionLPRKey", "");
-                    Patch.SetValue("key_functionPrice", "");
                     Patch.SetValue("key_functionBarrierState", "");
                     Patch.SetValue("key_functionBarrierKey", "");
                     Patch.SetValue("key_functionBarrierCOM", "");
                     Patch.SetValue("key_functionBarrierBaudrate", "");
+                    Patch.SetValue("key_functionAPIKey", "");
+                    Patch.SetValue("key_functionAPIState", "");
+                    Patch.SetValue("key_functionAPIEndpoint", "");
 
                     // tickets
                     Patch.SetValue("key_ticketAddress", "");
@@ -171,6 +231,8 @@ namespace TRUCK_STD.Functions
                     Patch.SetValue("key_scaleName", scale.scaleName);
                     Patch.SetValue("key_scalePort", scale.scalePort);
                     Patch.SetValue("key_scaleBaudrate", scale.scaleBaudrate.ToString());
+                    Patch.SetValue("key_scaleCapacity", scale.scalecapacity.ToString());
+
 
                     // system
                     Patch.SetValue("key_systemBussinessType", system.bussinessType);
@@ -181,7 +243,8 @@ namespace TRUCK_STD.Functions
                     Patch.SetValue("key_systemID", system.id);
                     Patch.SetValue("key_systemStationStype", system.stationType);
                     Patch.SetValue("key_systemStationName", system.stationName);
-                    Patch.SetValue("key_systemtoken", system.token);
+                    Patch.SetValue("key_systemKeyID", system.keyID);
+                    Patch.SetValue("key_systemPublicKey", system.publicKey);
                     // dbLocal
                     Patch.SetValue("key_LocalHost", db.host);
                     Patch.SetValue("key_LocalPort", db.Port.ToString());
@@ -204,11 +267,13 @@ namespace TRUCK_STD.Functions
                     Patch.SetValue("key_functionCAMERAKey", function.CAMERAKey);
                     Patch.SetValue("key_functionLPRState", function.LPRState);
                     Patch.SetValue("key_functionLPRKey", function.LPRKey);
-                    Patch.SetValue("key_functionPrice", function.PRICE);
                     Patch.SetValue("key_functionBarrierState", function.BARRIERState);
                     Patch.SetValue("key_functionBarrierKey", function.BARRIERKey);
                     Patch.SetValue("key_functionBarrierCOM", function.BARRIERCOM);
                     Patch.SetValue("key_functionBarrierBaudrate", function.BARRIERBaudrate);
+                    Patch.SetValue("key_functionAPIState", function.APIState);
+                    Patch.SetValue("key_functionAPIKey", function.APIKey);
+                    Patch.SetValue("key_functionAPIEndpoint", function.APIEndpoint);
                     // tickets
                     Patch.SetValue("key_ticketAddress", tickets.address);
                     Patch.SetValue("key_ticketCompany", tickets.company);
@@ -243,6 +308,7 @@ namespace TRUCK_STD.Functions
                     scale.scaleName = Convert.ToString(Patch.GetValue("key_scaleName"));
                     scale.scalePort = Convert.ToString(Patch.GetValue("key_scalePort"));
                     scale.scaleBaudrate = Convert.ToInt16(Patch.GetValue("key_scaleBaudrate"));
+                    scale.scalecapacity = Convert.ToInt16(Patch.GetValue("key_scaleCapacity"));
 
                     // system
                     system.bussinessType = Convert.ToString(Patch.GetValue("key_systemBussinessType"));
@@ -253,7 +319,8 @@ namespace TRUCK_STD.Functions
                     system.id = Convert.ToString(Patch.GetValue("key_systemID"));
                     system.stationType = Convert.ToString(Patch.GetValue("key_systemStationSType"));
                     system.stationName = Convert.ToString(Patch.GetValue("key_systemStationName"));
-                    system.token = Convert.ToString(Patch.GetValue("key_systemtoken"));
+                    system.keyID = Convert.ToString(Patch.GetValue("key_systemKeyID"));
+                    system.publicKey = Convert.ToString(Patch.GetValue("key_systemPublickKey"));
                     // db
                     db.host = Convert.ToString(Patch.GetValue("key_LocalHost"));
                     db.Port = Convert.ToInt16(Patch.GetValue("key_LocalPort"));
@@ -272,15 +339,21 @@ namespace TRUCK_STD.Functions
                     function.RFIDKey = Convert.ToString(Patch.GetValue("key_functionRFIDKey"));
                     function.RFID_COM = Convert.ToString(Patch.GetValue("key_functionRFID_COM"));
                     function.RFID_BAUDRATE = Convert.ToString(Patch.GetValue("key_functionRFID_BAUDRATE"));
+                    //---------------------------------------------------------------------
                     function.CAMERAState = Convert.ToString(Patch.GetValue("key_functionCAMERAState"));
                     function.CAMERAKey = Convert.ToString(Patch.GetValue("key_functionCAMERAKey"));
+                    //---------------------------------------------------------------------
                     function.LPRState = Convert.ToString(Patch.GetValue("key_functionLPRState"));
                     function.LPRKey = Convert.ToString(Patch.GetValue("key_functionLPRKey"));
-                    function.PRICE = Convert.ToString(Patch.GetValue("key_functionPRICE"));
+                    //---------------------------------------------------------------------
                     function.BARRIERState = Convert.ToString(Patch.GetValue("key_functionBarrierState"));
                     function.BARRIERKey = Convert.ToString(Patch.GetValue("key_functionBarrierKey"));
                     function.BARRIERCOM = Convert.ToString(Patch.GetValue("key_functionBarrierCOM"));
                     function.BARRIERBaudrate = Convert.ToString(Patch.GetValue("key_functionBarrierBaudrate"));
+                    //---------------------------------------------------------------------
+                    function.APIKey = Convert.ToString(Patch.GetValue("key_functionAPIKey"));
+                    function.APIState = Convert.ToString(Patch.GetValue("key_functionAPIState"));
+                    function.APIEndpoint = Convert.ToString(Patch.GetValue("key_functionAPIEndpoint"));
                     // tickets
                     tickets.address = Convert.ToString(Patch.GetValue("key_ticketAddress"));
                     tickets.company = Convert.ToString(Patch.GetValue("key_ticketCompany"));
