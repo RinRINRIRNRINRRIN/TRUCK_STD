@@ -1271,7 +1271,8 @@
       </Body>
       <Width>8in</Width>
       <Page>
-        <PageHeight>5.5in</PageHeight>
+        <PageHeight>13.97cm</PageHeight>
+        <PageWidth>21.59cm</PageWidth>
         <InteractiveHeight>5.5in</InteractiveHeight>
         <InteractiveWidth>8.5in</InteractiveWidth>
         <LeftMargin>0cm</LeftMargin>

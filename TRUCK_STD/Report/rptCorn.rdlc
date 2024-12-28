@@ -449,25 +449,6 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Image Name="Image1">
-            <Source>Database</Source>
-            <Value>=First(Fields!imgQR.Value, "DataSet1")</Value>
-            <MIMEType>image/png</MIMEType>
-            <Sizing>FitProportional</Sizing>
-            <Top>0.39956cm</Top>
-            <Left>0.59554cm</Left>
-            <Height>2.41455cm</Height>
-            <Width>3.73068cm</Width>
-            <ZIndex>10</ZIndex>
-            <Visibility>
-              <Hidden>true</Hidden>
-            </Visibility>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Image>
           <Textbox Name="Textbox21">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -493,7 +474,7 @@
             <Left>13.76419cm</Left>
             <Height>0.58125cm</Height>
             <Width>1.63582cm</Width>
-            <ZIndex>11</ZIndex>
+            <ZIndex>10</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -529,7 +510,7 @@
             <Left>15.59404cm</Left>
             <Height>0.58806cm</Height>
             <Width>3.08858cm</Width>
-            <ZIndex>12</ZIndex>
+            <ZIndex>11</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -564,7 +545,7 @@
             <Left>0.70663cm</Left>
             <Height>0.6cm</Height>
             <Width>2.53274cm</Width>
-            <ZIndex>13</ZIndex>
+            <ZIndex>12</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -599,7 +580,7 @@
             <Left>3.23937cm</Left>
             <Height>0.6cm</Height>
             <Width>5.5288cm</Width>
-            <ZIndex>14</ZIndex>
+            <ZIndex>13</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -634,7 +615,7 @@
             <Left>8.76816cm</Left>
             <Height>0.6cm</Height>
             <Width>3.74367cm</Width>
-            <ZIndex>15</ZIndex>
+            <ZIndex>14</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -669,7 +650,7 @@
             <Left>12.51183cm</Left>
             <Height>0.6cm</Height>
             <Width>3.08221cm</Width>
-            <ZIndex>16</ZIndex>
+            <ZIndex>15</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -704,7 +685,7 @@
             <Left>15.59404cm</Left>
             <Height>0.6cm</Height>
             <Width>3.08858cm</Width>
-            <ZIndex>17</ZIndex>
+            <ZIndex>16</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -739,7 +720,7 @@
             <Left>0.70663cm</Left>
             <Height>0.67938cm</Height>
             <Width>2.53274cm</Width>
-            <ZIndex>18</ZIndex>
+            <ZIndex>17</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -774,7 +755,7 @@
             <Left>3.23937cm</Left>
             <Height>0.67938cm</Height>
             <Width>5.5288cm</Width>
-            <ZIndex>19</ZIndex>
+            <ZIndex>18</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -809,7 +790,7 @@
             <Left>12.51183cm</Left>
             <Height>0.67938cm</Height>
             <Width>3.08221cm</Width>
-            <ZIndex>20</ZIndex>
+            <ZIndex>19</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -844,7 +825,7 @@
             <Left>15.59404cm</Left>
             <Height>0.67938cm</Height>
             <Width>3.08858cm</Width>
-            <ZIndex>21</ZIndex>
+            <ZIndex>20</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -879,7 +860,7 @@
             <Left>0.70663cm</Left>
             <Height>0.65345cm</Height>
             <Width>2.53274cm</Width>
-            <ZIndex>22</ZIndex>
+            <ZIndex>21</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -914,7 +895,7 @@
             <Left>3.23937cm</Left>
             <Height>0.65345cm</Height>
             <Width>5.5288cm</Width>
-            <ZIndex>23</ZIndex>
+            <ZIndex>22</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -949,7 +930,7 @@
             <Left>8.76816cm</Left>
             <Height>0.65345cm</Height>
             <Width>3.74367cm</Width>
-            <ZIndex>24</ZIndex>
+            <ZIndex>23</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -984,7 +965,7 @@
             <Left>12.51183cm</Left>
             <Height>0.65345cm</Height>
             <Width>3.08221cm</Width>
-            <ZIndex>25</ZIndex>
+            <ZIndex>24</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1019,7 +1000,7 @@
             <Left>15.59404cm</Left>
             <Height>0.65345cm</Height>
             <Width>3.08858cm</Width>
-            <ZIndex>26</ZIndex>
+            <ZIndex>25</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1055,7 +1036,7 @@
             <Left>8.76816cm</Left>
             <Height>0.58125cm</Height>
             <Width>3.74368cm</Width>
-            <ZIndex>27</ZIndex>
+            <ZIndex>26</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1091,7 +1072,7 @@
             <Left>5.66831cm</Left>
             <Height>0.58125cm</Height>
             <Width>2.90582cm</Width>
-            <ZIndex>28</ZIndex>
+            <ZIndex>27</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1126,7 +1107,7 @@
             <Left>8.76817cm</Left>
             <Height>0.67937cm</Height>
             <Width>3.74367cm</Width>
-            <ZIndex>29</ZIndex>
+            <ZIndex>28</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1162,7 +1143,7 @@
             <Left>12.51183cm</Left>
             <Height>0.58125cm</Height>
             <Width>0.76729cm</Width>
-            <ZIndex>30</ZIndex>
+            <ZIndex>29</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1198,7 +1179,7 @@
             <Left>2.18096cm</Left>
             <Height>0.74cm</Height>
             <Width>7.60365cm</Width>
-            <ZIndex>31</ZIndex>
+            <ZIndex>30</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1234,7 +1215,7 @@
             <Left>10.74793cm</Left>
             <Height>0.74cm</Height>
             <Width>8.11515cm</Width>
-            <ZIndex>32</ZIndex>
+            <ZIndex>31</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1270,7 +1251,7 @@
             <Left>2.18095cm</Left>
             <Height>0.74cm</Height>
             <Width>7.60365cm</Width>
-            <ZIndex>33</ZIndex>
+            <ZIndex>32</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1306,7 +1287,7 @@
             <Left>10.74793cm</Left>
             <Height>0.74cm</Height>
             <Width>8.11515cm</Width>
-            <ZIndex>34</ZIndex>
+            <ZIndex>33</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1342,7 +1323,7 @@
             <Left>18.68262cm</Left>
             <Height>0.58125cm</Height>
             <Width>0.76729cm</Width>
-            <ZIndex>35</ZIndex>
+            <ZIndex>34</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1378,7 +1359,7 @@
             <Left>18.68262cm</Left>
             <Height>0.58125cm</Height>
             <Width>0.76729cm</Width>
-            <ZIndex>36</ZIndex>
+            <ZIndex>35</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1414,7 +1395,7 @@
             <Left>18.68262cm</Left>
             <Height>0.67938cm</Height>
             <Width>0.76729cm</Width>
-            <ZIndex>37</ZIndex>
+            <ZIndex>36</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1425,14 +1406,30 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Image Name="Image1">
+            <Source>Database</Source>
+            <Value>=First(Fields!imgQR.Value, "DataSet1")</Value>
+            <MIMEType>image/jpeg</MIMEType>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.3937cm</Top>
+            <Left>0.60537cm</Left>
+            <Height>2.45569cm</Height>
+            <Width>3.51896cm</Width>
+            <ZIndex>37</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
         </ReportItems>
-        <Height>4.10417in</Height>
+        <Height>4.27689in</Height>
         <Style />
       </Body>
-      <Width>7.95833in</Width>
+      <Width>8in</Width>
       <Page>
-        <PageHeight>21cm</PageHeight>
-        <PageWidth>29.7cm</PageWidth>
+        <PageHeight>13.97cm</PageHeight>
+        <PageWidth>21.59cm</PageWidth>
         <LeftMargin>0cm</LeftMargin>
         <RightMargin>0cm</RightMargin>
         <TopMargin>0cm</TopMargin>
