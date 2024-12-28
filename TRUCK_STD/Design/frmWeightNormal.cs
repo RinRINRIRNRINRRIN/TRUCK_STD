@@ -211,12 +211,24 @@ namespace TRUCK_STD.Design
             if (job.AddNewOrder(txtLicenseHead.Text, txtLicenseTail.Text, customerId, productId, lblWeight.Text, txtPriceProduct.Text))
             {
                 // แสดงข้อมูลว่าบันทึกสำเร็จ 
-                msg.Show(this, "Save to data success", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                msgD.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                msgD.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+                msgD.Show("Save first weight success\n" +
+                    $"Gross weight : {lblWeight.Text}\n" +
+                    $"License plate front : {txtLicenseHead.Text}\n" +
+                    $"License plate back : {txtLicenseTail.Text}\n" +
+                    $"Customer name : {cbbCustomer.Text}\n" +
+                    $"Product name : {cbbProduct.Text}", "Save first weight ");
                 // เครีย์ 
                 ClearFormToReady();
                 ShowData();
                 await Task.Delay(1000);
             }
+            else
+            {
+                msgD.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                msgD.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                msgD.Show("Incorrent to save first weight \n" + job.ERR, "Error first weight.");
         }
         /// <summary>
         /// ชั่งออก
@@ -286,7 +298,8 @@ namespace TRUCK_STD.Design
             await Task.Delay(1000);
 
             msgD.Icon = MessageDialogIcon.Information;
-            msgD.Show("Save to data success", "Save data success");
+            msgD.Buttons = MessageDialogButtons.OK;
+            msgD.Show("Save second weight success", "Save seconde weight");
             return true;
         }
         private async void frmWeightNormal_Load(object sender, EventArgs e)
@@ -428,10 +441,24 @@ namespace TRUCK_STD.Design
         }
         private async void btnSave_Click(object sender, EventArgs e)
         {
+            // เช็คว่า Error หรือ เลขติดลบหรือไม่
+            if (lblWeight.Text == "ERROR" || lblWeight.Text.Contains('-'))
+            {
+                msgD.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                msgD.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+                msgD.Show("Please check the weight as it is not according to specification.", "Weight is nagative");
+                //msg.Show(this, "โปรดตรวจสอบน้ำหนักเนื่องจากไม่อยู่ในช่วงที่กำหนดจึงไม่สามารถบันทึกได้", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                return;
+            }
+
             // เช็คน้ำหนักต้องมากกว่า 1000 kg
             if (int.Parse(lblWeight.Text) <= 1000)
             {
-                msg.Show(this, "น้ำหนักน้อยเกินกว่าจะบันทึกได้", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                msgD.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                msgD.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+                msgD.Show("Weight is less then 1000 KG", "Weight is nagative");
+                return;
+                //msg.Show(this, "น้ำหนักน้อยเกินกว่าจะบันทึกได้", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, "", Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
             }
 
 
@@ -498,7 +525,14 @@ namespace TRUCK_STD.Design
                         {
                             if (job.deleteOrdet(int.Parse(id)))
                             {
-                                id = "";
+                                msgD.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                                msgD.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                                msgD.Show($"Error delete order : {id}\n{job.ERR}", "Error delete");
+                                return;
+                            }
+                            msgD.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+                            msgD.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                            msgD.Show($"Delete order success \nJobOrder : {id}", "Error delete");
                                 ClearFormToReady();
                                 ShowData();
                             }
